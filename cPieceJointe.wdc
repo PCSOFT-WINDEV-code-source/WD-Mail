@@ -1,0 +1,244 @@
+#To edit and compare internal_properties, use WINDEV integrated tools.
+#Internal properties refer to the properties of controls in windows, reports, etc.
+info :
+ name : cPieceJointe
+ major_version : 28
+ minor_version : 0
+ type : 4
+ description : ""
+ subtype : 0
+class :
+ identifier : 0x1b4f671200a32c7e
+ internal_properties : CAAAAAgAAAB2/vstTMCJbS/hlxjFxirSqKvCUuv8YxgpWyl7S3iA
+ code_elements :
+  type_code : 10
+  p_codes :
+   -
+     code : |1+
+      
+      //
+      // Classe représentant une pièce jointe
+      //
+      cPieceJointe est une Classe
+      protegee	
+      	m_nIDFichier			est un entier sur 8 octets
+      	m_sNom					est une chaîne UNICODE
+      	m_bufData				est un buffer
+      	m_nTailleFichier		est un entier sans signe sur 4 octets
+      	m_nIDEmail				est un entier sur 8 octets
+      	m_sIDAttache			est une chaîne ANSI
+      	m_sContentType			est une chaîne ANSI
+      	m_sContentDescription	est une chaîne ANSI
+      FIN
+      
+     type : 131072
+  procedures :
+   -
+     name : Constructeur
+     procedure_id : 1967904889202027646
+     type_code : 27
+     code : |1+
+      PROCÉDURE Constructeur()
+     type : 589824
+   -
+     name : Destructeur
+     procedure_id : 1967904889202093182
+     type_code : 28
+     code : |1+
+      PROCÉDURE Destructeur()
+      
+     type : 655360
+   -
+     name : imageEstGerée
+     internal_properties : CAAAAAgAAAB8TogqUICmyIYtWsD4lgzh8KpVfg9Vd/z5OuSv53e+Igg3QaRGSQ0jjw9YDLEOfPalTJzZPzjxo0KM+xaZ/NxGSwmlhdApTF3V6rh87n09M4W3jg6NhADM9yiNaoFoBYNwcooQ9M24tFE4jATVVyPX0eJPKLOgLgAe17hprquM5PpL6vACEYy67I1VYSn6RqJxPfTpWQ==
+     procedure_id : 2027876771796366877
+     type_code : 12
+     code : |1+
+      // Résumé : Permet de savoir si le format d'une image est géré
+      // Syntaxe :
+      //[ <Résultat> = ] imageEstGerée (<sCheminImage>)
+      //
+      // Paramètres :
+      //	sCheminImage : chemin de l'image
+      // Valeur de retour :
+      // 	booléen
+      
+      PROCÉDURE GLOBALE imageEstGerée(LOCAL sCheminImage)
+      
+      // variable
+      bGere est un booléen = Faux
+      
+      // Si c'est une image on l'affiche
+      POUR TOUTE CHAÎNE sFiltre DE fFiltreImage() separee par rc
+      	
+      	si 	Position(ExtraitChaîne(sFiltre,2,TAB), fExtraitChemin(sCheminImage,fExtension) ) > 0 alors
+      		bGere = Vrai
+      		SORTIR
+      	FIN
+      FIN
+      
+      // Si c'est une image géré on l'affiche
+      SI bGere = Faux ALORS
+      	// C'est peut être une image prise avec le bouton pour faire une HC ? Dans ce cas il faut l'afficher également
+      	SI fExtraitChemin(sCheminImage,fFichier) [= "IMG" ET fExtraitChemin(sCheminImage,fExtension) ~= ".tmp" ALORS
+      		bGere = Vrai
+      	FIN
+      FIN
+      
+      RENVOYER bGere
+      
+     type : 458752
+  properties :
+   -
+     name : Contenu
+     identifier : 0x1b507d3705a6a368
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCÉDURE Contenu()
+         
+         RENVOYER m_bufdata
+        type : 1966080
+      -
+        code : |1-
+         PROCÉDURE Contenu(Valeur)
+         
+         m_bufData = Valeur
+        type : 2031616
+     template_refs : []
+   -
+     name : IDEmail
+     identifier : 0x1b507d3e05a7bf22
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCÉDURE IDEmail() : entier sur 8
+         
+         RENVOYER m_nIDEmail
+        type : 1966080
+      -
+        code : |1-
+         PROCÉDURE IDEmail(Valeur est un entier sur 8)
+         
+         m_nIDEmail = Valeur
+        type : 2031616
+     template_refs : []
+   -
+     name : TailleFichier
+     identifier : 0x1b507d4a05a8f0eb
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCÉDURE TailleFichier()
+         
+         RENVOYER m_nTailleFichier
+        type : 1966080
+      -
+        code : |1-
+         PROCÉDURE TailleFichier(Valeur)
+         
+         m_nTailleFichier = Valeur
+        type : 2031616
+     template_refs : []
+   -
+     name : NomFichier
+     identifier : 0x1b507d5b05a932fa
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCÉDURE NomFichier()
+         
+         RENVOYER m_sNom
+        type : 1966080
+      -
+        code : |1-
+         PROCÉDURE NomFichier(Valeur)
+         
+         m_sNom = Valeur
+        type : 2031616
+     template_refs : []
+   -
+     name : IDFichier
+     identifier : 0x1b508f0d065a522f
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCÉDURE IDFichier() : entier sur 8
+         
+         RENVOYER m_nIDFichier
+        type : 1966080
+      -
+        code : |1+
+         PROCÉDURE PRIVÉ IDFichier(Valeur <utile>)
+        type : 2031616
+     template_refs : []
+   -
+     name : IDAttache
+     identifier : 0x1fc0e7a10bc54847
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         procédure publique IDAttache() : chaîne
+         
+         renvoyer m_sIDAttache
+        type : 1966080
+      -
+        code : |1-
+         procédure publique IDAttache(sValeur est une chaîne)
+         
+         m_sIDAttache=sValeur
+        type : 2031616
+     template_refs : []
+   -
+     name : ContentType
+     identifier : 0x1fc0e7b50bc698b9
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         procédure publique ContentType() : chaîne
+         
+         renvoyer m_sContentType
+        type : 1966080
+      -
+        code : |1-
+         procédure publique ContentType(sValeur est une chaîne)
+         
+         m_sContentType=sValeur
+        type : 2031616
+     template_refs : []
+   -
+     name : ContentDescription
+     identifier : 0x1fc0e7bf0bc7c075
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         procédure publique ContentDescription() : chaîne
+         
+         renvoyer m_sContentDescription
+        type : 1966080
+      -
+        code : |1-
+         procédure publique ContentDescription(sValeur est une chaîne)
+         
+         m_sContentDescription=sValeur
+        type : 2031616
+     template_refs : []
+  procedure_templates : []
+  property_templates : []
+ code_parameters :
+  internal_properties : CAAAAAgAAACVGQgYbalU7DKC3oH4ItDrjtcTHXXV/EuH8q0IbhyQlw==
+  original_name : CClasse1
+resources :
+ string_res :
+  identifier : 0x1fa286c60056e4fa
+  internal_properties : CAAAAAgAAACm76HWfKGWp33VjXInA4cRlqArlgTTA862QGt72W2ld5Y=
+custom_note :
+ internal_properties : CAAAAAgAAABtB9HWVzrXO2+4NDRVK0vmzaNKrCKqH1DBX30lMmGZ

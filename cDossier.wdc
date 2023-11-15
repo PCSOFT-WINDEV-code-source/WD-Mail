@@ -1,0 +1,720 @@
+#To edit and compare internal_properties, use WINDEV integrated tools.
+#Internal properties refer to the properties of controls in windows, reports, etc.
+info :
+ name : cDossier
+ major_version : 28
+ minor_version : 0
+ type : 4
+ description : ""
+ subtype : 0
+class :
+ identifier : 0x1b4b59e8003f52e5
+ internal_properties : CAAAAAgAAAB2/vstTMCJbS/hlxjFxirSqKvCUuv8YxgpWyl7S3iA
+ code_elements :
+  internal_properties : CAAAAAgAAABCUiYGJKsy72bvVNAcA6gNlSvMsE5IMzlqdSb3wULVDu3J2bXi6F+PFXugtKPxYSg2tQni7f9V7jNkRBu2ZSBF1P6cI2IdwUkXbHapVilh6zxA7Vu3eTwjElChczG0ZWPXO7rcU69oM2Pe0pK4lFN+kf1YmtMZ11xGkDfNiN6dzmBq+74kvjk=
+  type_code : 10
+  p_codes :
+   -
+     code : |1+
+      
+      // Types de dossier - les constantes sont les noms normalisés par la RFC 6154
+      ETypeDossier est une enumeration
+      	DOSSIER_INDEFINI			 	= ""
+      	DOSSIER_ENTRANT					= "INBOX"
+      	DOSSIER_ENVOYE					= "Sent"
+      	DOSSIER_CORBEILLE				= "Trash"
+      	DOSSIER_BROUILLON				= "Drafts"
+      	DOSSIER_ARCHIVE					= "Archive"
+      	DOSSIER_MARQUES					= "Flagged"
+      	DOSSIER_TOUS					= "All"
+      	DOSSIER_JUNK					= "Junk"
+      	
+      	DOSSIER_PERSONNEL				= "Personal"	// Constante non normalisée
+      fin
+      
+      CONSTANTE
+      	// Gestion des fils / parent
+      	DOSSIER_AUCUN_PARENT			= 0
+      FIN
+      
+      //
+      // Classe représentant un dossier d'un compte
+      //
+      cDossier est une Classe <mapping=Dossier>
+      protegee
+      	<MAPPING>
+      	m_nIDDossier		est un entier sur 8 octets	<mapping=IDDossier, clé unique>
+      	m_sLibelle			est une chaîne UNICODE		<mapping=Libelle>
+      	m_nIDCompte			est un entier sur 8 octets	<mapping=IDCompte>
+      	m_sType				est une chaîne ANSI			<mapping=Type>
+      	m_sChemin			est une chaîne UNICODE		<mapping=Chemin>
+      	m_bIgnoreSynchro	est un booléen				<mapping=IgnoreSynchro>
+      	<FIN>
+      
+      // Membres privés
+      PRIVÉ
+      	// Cache des emails du dossier
+      	m_taListeEmail est un tableau associatif (*, *, wlEntier_8) de cEmail dynamique
+      	m_dhDernièreSynchro est un dateheure
+      	m_nNbNonLu est un entier
+      FIN
+      
+     type : 131072
+  procedures :
+   -
+     name : Constructeur
+     procedure_id : 1966764515248853733
+     type_code : 27
+     code : |1+
+      PROCÉDURE Constructeur(LOCAL nIDDossier est un entier sur 8 = -1)
+      
+      // Sauvegarde contexte
+      nPosition est un entier = HSauvePosition(Dossier,"*",hSauveRubriques)
+      
+      SI nIDDossier pas _dans_ (-1, 0) ALORS
+      	HLitRecherchePremier(Dossier,IDDossier,nIDDossier)
+      	dbgAssertion(HTrouve(Dossier),"Dossier introuvable !")
+      	
+      	// Affectation des valeurs
+      	FichierVersMémoire(objet,Dossier)
+      	
+      	actualiseNbNonLus()
+      	
+      SINON
+      	// Nouveau dossier
+      	:m_nIDDossier       = -1
+      FIN
+      
+      m_dhDernièreSynchro..PartieDate = "20000101"
+      m_dhDernièreSynchro..PartieHeure = "000000"
+      
+      FIN:
+      	HRetourPosition(nPosition)
+     type : 589824
+   -
+     name : Destructeur
+     procedure_id : 1966764515248919269
+     type_code : 28
+     code : |1+
+      PROCÉDURE Destructeur()
+      
+     type : 655360
+   -
+     name : emaiNbTotal
+     internal_properties : CAAAAAgAAAAV5TcTg3tU81B1wT5bm+DIRoFR/WS7cx5dSFzvygP7eLIfi7ltLGdcPMURDz0/2m1DMi60u5DXVY52l5k/1O3sgLjaA50ujwpXbAHRF7kecR5XKMuGKN+QD1rqEVTgFF3/euhnyZ9JXuM4cf0ijbbHzM6hE+wA2xympYeAvcujXom5Xh/f2ROaKAdGliqVHJxUCxfu
+     procedure_id : 1967022148915861662
+     type_code : 12
+     code : |1+
+      // Résumé : Retourne le nombre d'email dans le dossier
+      // Syntaxe :
+      //[ <Résultat> = ] emaiNbTotal ()
+      //
+      // Paramètres :
+      //	Aucun
+      // Valeur de retour :
+      // 	entier : // 	Aucune
+      
+      PROCÉDURE emaiNbTotal()
+      
+      RENVOYER m_taListeEmail..Occurrence
+     type : 458752
+   -
+     name : sauvegarde
+     procedure_id : 1967027852635134746
+     type_code : 12
+     code : |1-
+      // Résumé : Sauvegarde les informations en base
+      // Syntaxe :
+      //[ <Résultat> = ] sauvegarde ()
+      //
+      // Paramètres :
+      //	Aucun
+      // Valeur de retour :
+      // 	entier sur 8 octets : ID du dossier
+      
+      PROCÉDURE sauvegarde()
+      
+      // Sauvegarde contexte
+      nPosition est un entier = HSauvePosition(Dossier,"*",hSauveRubriques)
+      
+      // Ajout ? Modification ?
+      SI :m_nIDDossier <> -1 ALORS
+      	// Positionnement
+      	HLitRecherchePremier(Dossier,IDDossier,:m_nIDDossier)
+      	dbgAssertion(HTrouve(Dossier),"Impossible de trouver le dossier")
+      SINON
+      	HRAZ(Dossier)
+      FIN
+      
+      // Affectation des valeurs
+      MémoireVersFichier(objet,Dossier)
+      
+      // Sauvegarde
+      HEnregistre(Dossier)
+      :m_nIDDossier = dossier.IDDossier
+      
+      RENVOYER :m_nIDDossier
+      
+      FIN:
+      	HRetourPosition(nPosition)
+     type : 458752
+   -
+     name : emailAjoute
+     procedure_id : 1967070003405822956
+     type_code : 12
+     code : |1+
+      // Résumé : Ajoute un email dans le dossier
+      // Syntaxe :
+      //[ <Résultat> = ] emailAjoute (<pclEmail> est cEmail dynamique)
+      //
+      // Paramètres :
+      //	pclEmail (cEmail dynamique) : email à ajouter
+      // Valeur de retour :
+      // 	entier sur 8 octets : ID de l'email
+      
+      // 	pclAncienDossier (cDossier dynamique - valeur par défaut=0) : <indiquez ici le rôle de pclAncienDossier>
+      PROCÉDURE emailAjoute( pclEmail est un cEmail dynamique )
+      
+      // Si le mail vient d'un autre dossier, on le retire du cache
+      si pclEmail.IDCompte<>0 _et_ pclEmail.IDDossier<>0 ALORS
+      	pclCompte est un cCompte dynamique = cCompte::s_GetCompte(pclEmail.IDCompte)
+      	pclAncienDossier est un cDossier dynamique = pclCompte:getDossier(pclEmail.IDDossier)
+      	
+      	supprime(pclAncienDossier:m_taListeEmail,pclEmail.IDEmail)
+      FIN
+      
+      // Renseigne les identifiants
+      pclEmail.IDCompte  = :m_nIDCompte
+      pclEmail.IDDossier = :m_nIDDossier
+      
+      // Sauve en base
+      pclEmail.sauvegarde()
+      
+      // Actualise le compteur de mails non lus
+      si pclEmail.Lu=faux _et_ m_taListeEmail[pclEmail.IDEmail]..Existe=faux ALORS
+      	m_nNbNonLu++
+      FIN
+      
+      // Ajoute
+      :m_taListeEmail[pclEmail.IDEmail] = pclEmail
+      
+      // Retourne l'identifiant
+      RENVOYER pclEmail.IDEmail
+      
+     type : 458752
+   -
+     name : dossiersFils
+     procedure_id : 1967075608348034338
+     type_code : 12
+     code : |1+
+      // Résumé : Retourne tous les dossiers fils du dossier courant
+      // Syntaxe :
+      //[ <Résultat> = ] dossiersFils ()
+      //
+      // Paramètres :
+      //	Aucun
+      // Valeur de retour :
+      // 	tableau :  
+      
+      PROCÉDURE dossiersFils() : tableau de cDossier dynamique
+      
+      tabListeFils est un tableau de 0 cDossier dynamique
+      pclDossier   est un cDossier dynamique = Null
+      
+      sdDossiersFils est une requête SQL = 
+      [
+      	SELECT * FROM DOSSIEr
+      	WHERE IDCompte={pIDCompte}
+      	AND Chemin LIKE {pCheminBase}
+      ]
+      
+      sdDossiersFils.pIDCompte = m_nIDCompte
+      sdDossiersFils.pCheminBase = m_sChemin+"/%"<§aad:0§>
+      
+      si HExécuteRequête(sdDossiersFils,hRequêteDéfaut) ALORS
+      	pour TOUT sdDossiersFils 
+      		pclDossier = allouer un cDossier(sdDossiersFils.IDDossier)
+      		Ajoute(tabListeFils, pclDossier)
+      	FIN
+      FIN
+      
+      RENVOYER tabListeFils
+     type : 458752
+   -
+     name : cheminDossierParent
+     procedure_id : 1967095914981009235
+     type_code : 12
+     code : |1+
+      // Résumé : Retourne le chemin pour arriver à ce dossier( si il possède des parents)
+      // Syntaxe :
+      //[ <Résultat> = ] cheminDossierParent ()
+      //
+      // Paramètres :
+      //	Aucun
+      // Valeur de retour :
+      // 	chaîne UNICODE 
+      
+      PROCÉDURE cheminDossierParent() : chaine
+      
+      nDernierSlash est un entier = position(m_sChemin,"/",0,DepuisFin)
+      si nDernierSlash>0 ALORS
+      	renvoyer m_sChemin[[ à nDernierSlash-1]]
+      FIN
+      
+      renvoyer ""
+     type : 458752
+   -
+     name : emailsContenus
+     procedure_id : 1967138095880110587
+     type_code : 12
+     code : |1+
+      // Résumé : Retourne les emails du dossier
+      // Syntaxe :
+      //[ <Résultat> = ] emailsContenus ()
+      //
+      // Paramètres :
+      //	Aucun
+      // Valeur de retour :
+      // 	tableau associatif
+      
+      PROCÉDURE emailsContenus() : tableau associatif de cemail dynamiques
+      
+      m_taListeEmail.SupprimeTout()
+      
+      sdEmailDossier est une requête SQL = 
+      [
+      	SELECT IDEmail FROM Emails
+      	WHERE Emails.IDDossier={pIDDossier}
+      ]
+      
+      sdEmailDossier.pIDDossier = m_nIDDossier
+      si HExécuteRequête(sdEmailDossier) alors
+      	pour TOUT sdEmailDossier 
+      		pclEmail  est un cEmail dynamique = allouer un cEmail(sdEmailDossier.IDEmail)
+      		:m_taListeEmail[sdEmailDossier.IDEmail] =  pclEmail
+      	FIN
+      fin
+      
+      actualiseNbNonLus()
+      
+      RENVOYER :m_taListeEmail
+     type : 458752
+   -
+     name : emailSupprime
+     internal_properties : CAAAAAgAAADqPHqg404nKKZ9qiA4JtwhIMqV/m91Z/wJWmTft9c+UoinMTT2Ge1T7z8oTBEeDNZ1DPx5n7gBg/Kse4bJHBwWa3lVNQC5bM01WkDUBlXli20fdkYVfGhEv7C1InkgDZt4evJo3CWgjDnAlFxtjyuPWWoXoBt4FniGH6BhhqOU/OKzskiqSbRSdDWdOcEiXWXvs2J7yw==
+     procedure_id : 1967481113371876353
+     type_code : 12
+     code : |1+
+      // Résumé : Supprime un email
+      // Syntaxe :
+      //emailSupprime (<nIDEmail> est entier sur 8 octets)
+      //
+      // Paramètres :
+      //	nIDEmail (entier sur 8 octets) : ID de l'email
+      // Valeur de retour :
+      // 	Aucune
+      
+      PROCÉDURE emailSupprime(LOCAL nIDEmail est un entier sur 8)
+      
+      // Sauvegarde contexte
+      nPositionEmails est un entier = HSauvePosition(Emails,"*",hSauveRubriques)
+      
+      // Positionnement et suppression
+      HLitRecherchePremier(Emails,IDEmail,nIDEmail)
+      dbgAssertion(HTrouve(Emails),<§$0001§>)
+      HSupprime(Emails)
+      
+      // Supprime du tableau
+      SI :m_taListeEmail[nIDEmail]..Vide = Faux ALORS
+      	Supprime(:m_taListeEmail, nIDEmail)
+      FIN
+      
+      FIN:
+      	HRetourPosition(nPositionEmails)
+     type : 458752
+   -
+     name : s_EnumTypeVersChaine
+     procedure_id : 2303268343992729922
+     type_code : 12
+     code : |1+
+      // Résumé : Retourne une chaîne correspondant à la valeur de l'énumération ETypeDossier
+      // Syntaxe :
+      // [ <Résultat> = ] s_EnumTypeVersChaine (<eVal> est cDossier.ETypeDossier)
+      //
+      // Paramètres :
+      //	eVal (cDossier.ETypeDossier) : valeur à convertir
+      // Valeur de retour :
+      // 	chaîne UNICODE : chaîne
+      //
+      procédure globale privee s_EnumTypeVersChaine( eVal est un ETypeDossier ) : chaine
+      
+      selon eVal
+      	CAS DOSSIER_ENTRANT
+      		renvoyer "INBOX"
+      	CAS DOSSIER_ENVOYE
+      		renvoyer "Sent"
+      	CAS DOSSIER_CORBEILLE
+      		RENVOYER "Trash"
+      	CAS DOSSIER_BROUILLON
+      		RENVOYER "Drafts"
+      	CAS DOSSIER_ARCHIVE
+      		RENVOYER "Archive"
+      	CAS DOSSIER_MARQUES
+      		RENVOYER "Flagged"
+      	CAS DOSSIER_TOUS
+      		RENVOYER "All"
+      	CAS DOSSIER_JUNK
+      		RENVOYER "Junk"
+      FIN
+      
+      RENVOYER "Personal"
+      
+     type : 458752
+   -
+     name : s_imageDossier
+     procedure_id : 2303269374806682321
+     type_code : 12
+     code : |1+
+      // Résumé : Retourne l'image correspondant à un type de dossier
+      // Syntaxe :
+      // [ <Résultat> = ] s_imageDossier (<eType> est cDossier.ETypeDossier)
+      //
+      // Paramètres :
+      //	eType (cDossier.ETypeDossier) : type de dossier
+      // Valeur de retour :
+      // 	chaîne UNICODE : nom de l'image
+      //
+      procédure publique globale s_imageDossier( eType est un ETypeDossier ) : chaine
+      
+      selon eType
+      	CAS DOSSIER_ENTRANT
+      		renvoyer IMG_ENTRANT
+      	CAS DOSSIER_ENVOYE
+      		RENVOYER IMG_ENVOYE
+      	CAS DOSSIER_CORBEILLE
+      		RENVOYER IMG_CORBEILLE
+      	CAS DOSSIER_BROUILLON
+      		RENVOYER IMG_BROUILLON
+      	CAS DOSSIER_ARCHIVE
+      		RENVOYER IMG_ARCHIVE
+      	CAS DOSSIER_MARQUES
+      		RENVOYER IMG_MARQUES
+      	CAS DOSSIER_TOUS
+      		RENVOYER IMG_TOUS
+      	CAS DOSSIER_JUNK
+      		RENVOYER IMG_JUNK
+      	CAS DOSSIER_PERSONNEL
+      		RENVOYER IMG_PERSONNEL
+      	AUTRE CAS:
+      		dbgAssertion(Faux,"Type d'image non géré")	
+      		RENVOYER IMG_PERSONNEL
+      FIN
+      
+     type : 458752
+   -
+     name : image
+     procedure_id : 2303270006166956297
+     type_code : 12
+     code : |1+
+      // Résumé : Retourne l'image du dossier
+      // Syntaxe :
+      // [ <Résultat> = ] image ()
+      //
+      // Paramètres :
+      //	Aucun
+      // Valeur de retour :
+      // 	chaîne UNICODE
+      //
+      procédure image() : chaine
+      
+      renvoyer s_imageDossier(Type)
+     type : 458752
+   -
+     name : supprimeMessageAbsents
+     procedure_id : 2303613578683238567
+     type_code : 12
+     code : |1+
+      // Résumé : Supprime de la base les messages absents sur le serveur IMAP dans un dossier
+      // Syntaxe :
+      // supprimeMessageAbsents (<tabUIDVus> est tableau)
+      //
+      // Paramètres :
+      //	tabUIDVus (tableau) : tableau des UID vus sur le serveur pendant la synchronisation
+      // Valeur de retour :
+      // 	Aucune
+      //
+      procédure supprimeMessageAbsents( tabUIDVus est un tableau d'entier )
+      
+      sdReqSupprimeVu est une requête SQL = 
+      [
+      	DELETE from Emails
+      	where IDDossier = {pIDDossier}
+      	AND UID NOT IN ({pListeID})
+      ]
+      
+      sdReqSupprimeVu.pIDDossier = m_nIDDossier
+      sdReqSupprimeVu.pListeID = TableauVersChaîne(tabUIDVus,";")
+      
+      HExécuteRequête(sdReqSupprimeVu,hRequêteDéfaut+hVérifieIntégrité)
+     type : 458752
+   -
+     name : fixeType
+     procedure_id : 2304750614409046225
+     type_code : 12
+     code : |1+
+      // Résumé : Fixe le type du dossier en fonction des noms normalisés par la RFC 
+      // et en acceptant des valeurs autres fréquemment utilisées
+      // Syntaxe :
+      // fixeType ()
+      //
+      // Paramètres :
+      //	Aucun
+      // Valeur de retour :
+      // 	Aucune
+      //
+      procédure fixeType()
+      
+      SELON Majuscule(m_sLibelle)
+      	CAS "INBOX"
+      		m_sType = cDossier.DOSSIER_ENTRANT
+      	CAS "SENT"
+      		m_sType = cDossier.DOSSIER_ENVOYE
+      	CAS "TRASH", "DELETED ITEMS"
+      		m_sType = cDossier.DOSSIER_CORBEILLE
+      	CAS "DRAFTS"
+      		m_sType = cDossier.DOSSIER_BROUILLON
+      	CAS "ARCHIVE"
+      		m_sType = cDossier.DOSSIER_ARCHIVE
+      	CAS "FLAGGED"
+      		m_sType = cDossier.DOSSIER_MARQUES
+      	CAS "ALL"
+      		m_sType = cDossier.DOSSIER_TOUS
+      	CAS "JUNK", "JUNK E-MAIL"
+      		m_sType = cDossier.DOSSIER_JUNK
+      	AUTRE CAS
+      		m_sType = cDossier.DOSSIER_PERSONNEL
+      FIN
+     type : 458752
+   -
+     name : bDossierAIgnorer
+     procedure_id : 1155186301078690243
+     type_code : 12
+     code : |1+
+      procédure bDossierAIgnorer()
+      
+      bIgnore est un booleen = (Majuscule(m_sChemin) _dans_ ("DRAFTS", "ALL", "[GMAIL]/BROUILLONS", "[GMAIL]/TOUS LES MESSAGES", "[GMAIL]/IMPORTANT", "[GMAIL]/SUIVIS", "[GMAIL]" ))
+      
+      renvoyer bIgnore
+     type : 458752
+   -
+     name : SynchroAFaire
+     procedure_id : 1155287185555769063
+     type_code : 12
+     code : |1+
+      procédure SynchroAFaire()
+      
+      dh est un dateheure = DateHeureSys()
+      du est une duree = dh-m_dhDernièreSynchro
+      
+      // On refait la synchro si elle date de plus de 5 minutes
+      bAFaire est un booleen = (du..EnMinutes>5) _et_ (m_bIgnoreSynchro=faux)
+      
+      renvoyer bAFaire
+     type : 458752
+   -
+     name : getEmail
+     procedure_id : 1155515042130840192
+     type_code : 12
+     code : |1+
+      procédure getEmail( nIDEmail est un entier sur 8 )
+      
+      dbgAssertion(m_taListeEmail[nIDEmail]..Existe)
+      
+      renvoyer m_taListeEmail[nIDEmail]
+      
+     type : 458752
+   -
+     name : actualiseNbNonLus
+     procedure_id : 1155616347731538447
+     type_code : 12
+     code : |1+
+      procédure actualiseNbNonLus()
+      
+      sdNbEmailNonLusDossier est une Requête SQL = 
+      [
+      	SELECT COUNT(IDEmail) AS NbNonLus FROM Emails
+      	WHERE Emails.IDDossier={pIDDossier}
+      	AND Lu={pLu}
+      ]
+      sdNbEmailNonLusDossier.pIDDossier = m_nIDDossier
+      
+      // Cas particulier du dossier des brouillons : tous les brouillons sont comptés
+      sdNbEmailNonLusDossier.plu = (Type=DOSSIER_BROUILLON ? null sinon 0)
+      
+      SI HExécuteRequête(sdNbEmailNonLusDossier,hRequêteDéfaut) ALORS
+      	m_nNbNonLu = sdNbEmailNonLusDossier.NbNonLus
+      FIN
+     type : 458752
+  properties :
+   -
+     name : Libelle
+     identifier : 0x1b4c3fde036995ef
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCÉDURE Libelle()
+         
+         RENVOYER m_sLibelle
+        type : 1966080
+      -
+        code : |1+
+         PROCÉDURE Libelle(Valeur)
+         
+         m_sLibelle = Valeur
+        type : 2031616
+     template_refs : []
+   -
+     name : Type
+     identifier : 0x1b4c3fe7036ab6f6
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCÉDURE Type() : ETypeDossier
+         
+         RENVOYER EnumérationDepuisValeur(ETypeDossier,m_sType,DOSSIER_PERSONNEL)
+        type : 1966080
+      -
+        code : |1-
+         PROCÉDURE Type(Valeur)
+         
+         m_sType = s_EnumTypeVersChaine(Valeur)
+        type : 2031616
+     template_refs : []
+   -
+     name : IDCompte
+     identifier : 0x1b4c4b5403a25a09
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCÉDURE IDCompte() : entier sur 8
+         
+         RENVOYER m_nIDCompte
+        type : 1966080
+      -
+        code : |1-
+         PROCÉDURE IDCompte(Valeur est un entier sur 8)
+         
+         m_nIDCompte = Valeur
+        type : 2031616
+     template_refs : []
+   -
+     name : IDDossier
+     identifier : 0x1b4c76c7022910ec
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCÉDURE IDDossier() : entier sur 8
+         
+         RENVOYER m_nIDDossier
+        type : 1966080
+      -
+        code : |1+
+         PROCÉDURE PRIVÉ IDDossier(Valeur <utile>)
+        type : 2031616
+     template_refs : []
+   -
+     name : Chemin
+     identifier : 0x1ff6cfc201e65b3c
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         procédure publique Chemin() : chaîne
+         
+         renvoyer m_sChemin
+        type : 1966080
+      -
+        code : |1-
+         procédure publique Chemin(sValeur est une chaîne)
+         
+         m_sChemin=sValeur
+        type : 2031616
+     template_refs : []
+   -
+     name : DernièreSynchro
+     identifier : 0x100865d603dafda9
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         procédure publique DernièreSynchro() : dateheure
+         
+         renvoyer m_dhDernièreSynchro
+        type : 1966080
+      -
+        code : |1-
+         procédure publique DernièreSynchro(dhValeur est une dateheure)
+         
+         m_dhDernièreSynchro=dhValeur
+        type : 2031616
+     template_refs : []
+   -
+     name : NbNonLus
+     identifier : 0x1009347100c40b50
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         procédure publique NbNonLus() : entier
+         
+         renvoyer m_nNbNonLu
+        type : 1966080
+      -
+        code : |1-
+         procédure publique NbNonLus(nValeur est un entier)
+         
+         m_nNbNonLu=nValeur
+        type : 2031616
+     template_refs : []
+   -
+     name : IgnoreSynchro
+     identifier : 0x10098eff04f9c535
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         procédure publique IgnoreSynchro() : booléen
+         
+         renvoyer m_bIgnoreSynchro
+        type : 1966080
+      -
+        code : |1-
+         procédure publique IgnoreSynchro(bValeur est un booléen)
+         
+         m_bIgnoreSynchro=bValeur
+        type : 2031616
+     template_refs : []
+  procedure_templates : []
+  property_templates : []
+ code_parameters :
+  internal_properties : CAAAAAgAAACVGQgYbalU7DKC3oH4ItDrjtcTHXXV/EuH8q0IbhyQlw==
+  original_name : CClasse1
+resources :
+ string_res :
+  identifier : 0x1b4b59e8003c52e5
+  internal_properties : CAAAAAgAAACm76HWfKGWp33VjXInA4cRlqArlgTTA862QGt72W2ld5Y=
+  strings :
+   -
+     text :
+      fr-FR : Ce dossier existe déjà
+     index : 0
+   -
+     text :
+      fr-FR : Impossible de trouver cet email
+     index : 1
+custom_note :
+ internal_properties : CAAAAAgAAABtB9HWVzrXO2+4NDRVK0vmzaNKrCKqH1DBX30lMmGZ

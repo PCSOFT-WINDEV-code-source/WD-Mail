@@ -1,0 +1,2386 @@
+#To edit and compare internal_properties, use WINDEV integrated tools.
+#Internal properties refer to the properties of controls in windows, reports, etc.
+info :
+ name : cCompte
+ major_version : 28
+ minor_version : 0
+ type : 4
+ description : ""
+ subtype : 0
+class :
+ identifier : 0x1b4b682f012c172e
+ internal_properties : CAAAAAgAAAB2/vstTMCJbS/hlxjFxirSqKvCUuv8YxgpWyl7S3iA
+ code_elements :
+  internal_properties : CAAAAAgAAAAMoRiU9Yg/INKxHhawlnOLmV+ii5Dvd2IFS/yBd3vcroUddBv+J9em6RYSTLRV+/R9KlNw14vhl0yIiew/qNNEZc5z42N4kVOgfg5HMHwi5h7fsepUtZLAHSRYYkW5VPqGsMEqSTRUopXKJfH44LH1IuoX1Us6QAJ3O0XWGiVCxGiG8qm9E5POHwtktxFon6E3biZCHod2CTJfzr1lpCtHGSF+0CBBqrx62rPBSh2+o/R+xjdWW3jVDWwGHWCyRZT1SHvESVwi9APsPc7jPziBs62OdoBwC1EbnKMTWUQYX1NKCaR/9K0c0LYBZAH06PUNhKxmSya82EjeDs2Xv6QT9RiKScmW/cQDEDE+X2wL1OmysR7jb/0/WDDOyQ==
+  type_code : 10
+  p_codes :
+   -
+     internal_properties : CAAAAAgAAABtR3izcwhbQuW243zI83ZPTUfW4F47z99d/IcK7PEpsXf6qPztlsUttnXTqmhWOyTtGHh4Bn6TR1MCSXorhQFhqJzFMKw9ZSc1f+thiQ87RyYMVVQ18A+upQ2GcXIWpg1sNAj2sWncWB6wUQo=
+     code : |1+
+      
+      CONSTANTE
+      	// Types de réception
+      	RECEPTION_POP					= "#POP#"
+      	RECEPTION_IMAP					= "#IMAP#"
+      	
+      	// Options de connexion
+      	CONNEXION_NORMALE				= "#NORMALE#"
+      	CONNEXION_TLS					= "#TLS#"
+      	CONNEXION_SSL					= "#SSL#"
+      	
+      	// Différents ports par défaut
+      	PORT_POP						= 110
+      	PORT_IMAP						= 143
+      	
+      	// Différentes exceptions
+      	EXCEPTION_DOSSIER_SUPPRESSION	= 1
+      	EXCEPTION_EMAIL_RECUPERER		= 2
+      	EXCEPTION_COMPTE_EXISTE			= 3
+      	
+      	SECTION_OP = "OPERATION_EN_COURS"
+      FIN
+      
+      //
+      // Classe représentant un compte
+      //
+      cCompte est une Classe <mapping=Compte>
+      PRIVÉ
+      	// Membres privés
+      	<MAPPING>
+      	m_nIDCompte					est un entier sur 8 octets	<mapping=IDCompte, clé unique>
+      	m_sLibelle					est une chaîne UNICODE		<mapping=Libelle>
+      	m_sProprietaire				est une chaîne ANSI			<mapping=Proprietaire>
+      	m_sEmail					est une chaîne ANSI			<mapping=Email>
+      	m_sSMTPUtilisateur			est une chaîne ANSI			<mapping=SMTPUtilisateur>
+      	m_sSMTPPassword				est une chaîne ANSI			<mapping=SMTPPassword>
+      	m_sSMTPServeur				est une chaîne ANSI			<mapping=SMTPServeur>
+      	m_nSMTPPort					est un entier				<mapping=SMTPPort>
+      	m_sSMTPConnexion			est une chaîne ANSI			<mapping=SMTPConnexion>
+      	m_sReceptionUtilisateur		est une chaîne ANSI			<mapping=ReceptionUtilisateur>
+      	m_sReceptionPassword		est une chaîne ANSI			<mapping=ReceptionPassword>
+      	m_sReceptionServeur			est une chaîne ANSI			<mapping=ReceptionServeur>
+      	m_nReceptionPort			est un entier				<mapping=ReceptionPort>
+      	m_sReceptionType			est une chaîne ANSI			<mapping=ReceptionType>
+      	m_sReceptionConnexion		est une chaîne ANSI			<mapping=ReceptionConnexion>
+      	m_bVerificationAuto			est un booléen				<mapping=VerificationAuto>
+      	m_nVerificationDuree		est un entier				<mapping=VerificationDuree>
+      	m_bVerificationLancement	est un booléen				<mapping=VerificationLancement>
+      	m_bOAuthNécessaire			est un booléen				<mapping=oAuthNécessaire>
+      	m_sOAuthClientID			est une chaîne ANSI			<mapping=oAuthClientID>
+      	m_sOAuthClientSecret		est une chaîne ANSI			<mapping=oAuthClientSecret>
+      	m_sOAuthURLAuth				est une chaîne ANSI			<mapping=oAuthURLAuth>
+      	m_sOAuthURLToken			est une chaîne ANSI			<mapping=oAuthURLToken>
+      	m_sOAuthURLRedirection		est une chaîne ANSI			<mapping=oAuthURLRedirection>
+      	m_sOAuthScope				est une chaîne ANSI			<mapping=oAuthScope>
+      	m_sOAuthTypeRéponse			est une chaîne ANSI			<mapping=oAuthTypeRéponse>
+      	m_bufOAuthToken				est un buffer				<mapping=oAuthToken>
+      	m_bPOPGardeSurServeur		est un booléen				<mapping=POPGardeSurServeur>
+      	<FIN>
+      	
+      	// Dossiers composant le compte
+      	m_taListeDossier			est un tableau associatif (*, *, wlEntier_8) de cDossier dynamique
+      	
+      	// Filtres associés au compte
+      	m_taListeFiltre				est un tableau associatif (*, *, wlEntier_8) de cFiltre dynamique
+      	
+      	// En IMAP
+      	m_sessionIMAP est un emailSessionIMAP
+      	m_bSessionOuverte est un booleen
+      	
+      	m_pCallbackAvancement est une procédure
+      	
+      	global
+      		mg_taCompte est un tableau associatif (*, *, wlEntier_8) de cCompte dynamique
+      FIN
+      
+     type : 131072
+  procedures :
+   -
+     name : Constructeur
+     procedure_id : 1966780213369837358
+     type_code : 27
+     code : |1-
+      // Le constructeur doit rester privé
+      // L'instanciation des comptes se fait par la méthode statique s_GetCompte
+      PROCÉDURE privee Constructeur(LOCAL nIDCompte est un entier sur 8 = -1)
+      
+      // Sauvegarde contexte
+      nPositionCompte		est un entier	= HSauvePosition(Compte,"*",hSauveRubriques)
+      nPositionDossier	est un entier	= HSauvePosition(Dossier,"*",hSauveRubriques)
+      nPositionFiltre		est un entier	= HSauvePosition(Filtre,"*",hSauveRubriques)
+      
+      // Chargement du compte
+      SI nIDCompte <> -1 ALORS
+      	HLitRecherchePremier(Compte,IDCompte,nIDCompte)
+      	FichierVersMémoire(objet,Compte)
+      		
+      	// Charge les dossiers
+      	HFiltre(Dossier, IDCompte, Compte.IDCompte)
+      	HLitPremier(Dossier, IDCompte)
+      	TANTQUE PAS HEnDehors(Dossier)
+      		:m_taListeDossier[Dossier.IDDossier] = allouer un cDossier(Dossier.IDDossier)
+      		HLitSuivant(Dossier, IDCompte)
+      	FIN
+      	HDésactiveFiltre(Dossier)
+      	
+      	// Charge les filtres
+      	HFiltre(Filtre, IDCompte, Compte.IDCompte)
+      	HLitPremier(Filtre, IDCompte)
+      	TANTQUE PAS HEnDehors(Filtre)
+      		:m_taListeFiltre[Filtre.IDFiltre] = allouer un cFiltre(Filtre.IDFiltre)
+      		HLitSuivant(Filtre, IDCompte)
+      	FIN
+      	HDésactiveFiltre(Filtre)
+      SINON
+      	// Nouveau compte
+      	:m_nIDCompte  = -1
+      FIN
+      
+      FIN:
+      HRetourPosition(nPositionCompte)
+      HRetourPosition(nPositionDossier)
+      HRetourPosition(nPositionFiltre)
+     type : 589824
+   -
+     name : Destructeur
+     procedure_id : 1966780213369902894
+     type_code : 28
+     code : |1+
+      PROCÉDURE Destructeur()
+      
+     type : 655360
+   -
+     name : sauvegarde
+     internal_properties : CAAAAAgAAAAOnwshnPw9ngGKzc4wkDckO7Zv1GG7svgPstlUHWc4Trz+csw36unrerOuhyjXfa+t2gpQClBDCqTA/DDwokyws36DefaYMqLNklofe2AZf748irmWWA9It4ry23TITHUBtLY9wWcb8LG6FXlCdf6PimQPl06WWVqQp7Oy1etdg1TsCeYgmMKLabyDRdmrfolsMeZqWp9KboLXT5ThRauLLiqDdA==
+     procedure_id : 1966784431030276920
+     type_code : 12
+     code : |1+
+      // Résumé : Sauvegarde le compte en base
+      // Syntaxe :
+      //[ <Résultat> = ] sauvegarde ()
+      //
+      // Paramètres :
+      //	Aucun
+      // Valeur de retour :
+      // 	entier sur 8 octets :   // 	Aucune
+      
+      PROCÉDURE sauvegarde()
+      
+      // Variables
+      pclDossier	est un cDossier dynamique	= Null
+      
+      // Sauvegarde contexte
+      nPosition	est un entier				= HSauvePosition(Compte,"*",hSauveRubriques)
+      
+      // Vérifie que ce compte n'existe pas déjà
+      HLitRecherchePremier(Compte,Libelle,:m_sLibelle)
+      SI HTrouve(Compte) ET Compte.IDCompte <> :m_nIDCompte ALORS ExceptionDéclenche(EXCEPTION_COMPTE_EXISTE, <§$000a§>)
+      
+      // Vérifie que l'adresse email n'existe pas déjà
+      HLitRecherchePremier(Compte,Email,:m_sEmail)
+      SI HTrouve(Compte) ET Compte.IDCompte <> :m_nIDCompte ALORS ExceptionDéclenche(EXCEPTION_COMPTE_EXISTE, <§$000b§>)
+      
+      // Modification ?
+      SI :m_nIDCompte <> -1 ALORS
+      	// Positionnement
+      	HLitRecherchePremier(Compte, IDCompte, :m_nIDCompte)
+      	dbgAssertion(HTrouve(Compte),"Compte introuvable")
+      	// Ajout
+      SINON
+      	// RAZ un enregistrement
+      	HRAZ(Compte)
+      FIN
+      
+      // Affectation des valeurs
+      MémoireVersFichier(objet,Compte)
+      
+      si m_bOAuthNécessaire alors
+      	si montoken..valide = vrai alors
+      		bufToken est un buffer
+      		Sérialise(montoken,bufToken, psdBinaire)
+      		Compte.oAuthToken = bufToken
+      	FIN
+      fin
+      
+      SI :m_nIDCompte <> -1 ALORS
+      	// Sauvegarde
+      	HModifie(Compte)
+      SINON	
+      	// Ajout en base
+      	HAjoute(Compte)
+      	
+      	// Sauvegarde l'IDCompte
+      	:m_nIDCompte = Compte.IDCompte	
+      	
+      	// Créer les dossiers par défaut associés au compte (Reçus, Envoyés, Supprimés, Brouillon)
+      	creeDossiersSpeciaux()
+      FIN
+      
+      RENVOYER :m_nIDCompte
+      
+      FIN:
+      HRetourPosition(nPosition)
+     type : 458752
+   -
+     name : getDossiers
+     procedure_id : 1967022312124918869
+     type_code : 12
+     code : |1+
+      // Résumé : Récupère les dossiers associés au compte
+      // Syntaxe :
+      //[ <Résultat> = ] getDossiers ()
+      //
+      // Paramètres :
+      //	Aucun
+      // Valeur de retour :
+      // 	tableau :  // 	Aucune
+      //// Exemple :
+      // Indiquez ici un exemple d'utilisation.
+      //
+      PROCÉDURE getDossiers()
+      
+      sdReqListeDossier est une requête SQL = 
+      [
+      	SELECT IDDossier FROM Dossier
+      	WHERE IDCompte={pIDCompte}
+      	ORDER BY Chemin ASC
+      ]
+      
+      tabDossier est un tableau de cDossier dynamique
+      sdReqListeDossier.pIDCompte = m_nIDCompte
+      HExécuteRequête(sdReqListeDossier)
+      pour TOUT sdReqListeDossier 
+      		pclDossier est un cDossier dynamique = allouer un cDossier(sdReqListeDossier.IDDossier)
+      		tabDossier.ajoute(pclDossier)
+      FIN
+      
+      // Recherche du dossier "Réception" et permutation avec le premier pour l'afficher en premier
+      nIndReception    est un entier
+      nIndReception = TableauCherche(tabDossier,tcLinéaire,"m_sType",cDossier::DOSSIER_ENTRANT)
+      
+      // Permutation
+      SI nIndReception>0 ALORS
+      	TableauDéplace(tabDossier,nIndReception,1,tdEchange)
+      FIN
+      
+      
+      renvoyer tabDossier
+     type : 458752
+   -
+     name : dossierAjouteEnBase
+     procedure_id : 1967045951643199335
+     type_code : 12
+     code : |1+
+      PROCÉDURE protegee dossierAjouteEnBase(LOCAL sNomDossier est une chaine, LOCAL sCheminParent est une chaine = "", eType est un cdossier::etypedossier = cDossier.DOSSIER_INDEFINI, bIgnoreSynchro est un booleen = faux )
+      
+      // Variables
+      pclDossier est un cDossier dynamique = allouer un cDossier()
+      
+      // Initialisation
+      pclDossier.IDCompte = :m_nIDCompte
+      pclDossier.Libelle = sNomDossier
+      pclDossier.Chemin = sCheminParent+["/"]+sNomDossier
+      si eType<>cDossier.DOSSIER_INDEFINI alors
+      	pclDossier.Type = eType
+      sinon
+      	pclDossier.fixeType()
+      fin
+      pclDossier.IgnoreSynchro = bIgnoreSynchro
+      
+      nIDDossier est un entier = pclDossier.sauvegarde()
+      :m_taListeDossier[nIDDossier] = pclDossier
+      
+      renvoyer pclDossier
+      
+     type : 458752
+   -
+     name : dossierSupprime
+     procedure_id : 1967052557231235290
+     type_code : 12
+     code : |1-
+      // Résumé : Supprime le dossier du compte
+      // Syntaxe :
+      //dossierSupprime (<nIDDossier> est entier sur 8 octets)
+      //
+      // Paramètres :
+      //	nIDDossier (entier sur 8 octets) : <indiquez ici le rôle de nIDDossier>
+      // Valeur de retour :
+      // 	Aucune
+      //// Exemple :
+      // Indiquez ici un exemple d'utilisation.
+      //
+      PROCÉDURE dossierSupprime(LOCAL nIDDossier est un entier sur 8)
+      
+      _debutOperation()
+      
+      pclDossierASuppr est un cDossier dynamique= :getDossier(nIDDossier)
+      
+      // Il faut d'abord supprimer chaque dossier fils
+      tabListeDossierFils est un tableau de cDossier dynamique = pclDossierASuppr.dossiersFils()
+      POUR TOUT ELEMENT pclDossierFils DE tabListeDossierFils
+      	// Supprime les fils de ce dossier
+      	:dossierSupprime(pclDossierFils.IDDossier)
+      FIN
+      
+      // Supprime les filtres associés au dossier
+      dossierSupprimeFiltre(nIDDossier)
+      
+      // Supprime le dossier en lui même
+      dossierSupprimeEnBase(nIDDossier)
+      
+      // Enlève le dossier du compte
+      TableauSupprime(:m_taListeDossier, nIDDossier)
+      
+      si TypeReception=RECEPTION_IMAP ALORS
+      	si ouvreSessionIMAP() ALORS
+      		EmailSupprimeDossier(m_sessionIMAP,pclDossierASuppr.Chemin)
+      	FIN
+      FIN
+      
+      fin:
+      _finOpération()
+     type : 458752
+   -
+     name : emailRecupere
+     internal_properties : CAAAAAgAAADqPHqg4cZVeJY90oCAPgTB0EodTtfdN0TxIiSXJ3cuqtCPEZy2eeVDjx9AfLnGVBa1XDSZd5ChGwpU677ZPGyuI7G1TXA5xN1FOmQQUqFZ38FzKvoxODyIu4x5HqUsAR/s/kacmGFU0GXMWPj5G5/jLU57NNdkeswiWzR9sl9YYEYnNswmNZhGMDGxVS1e2yvvs2J7yw==
+     procedure_id : 1967056096299594304
+     type_code : 12
+     code : |1-
+      // Résumé : Récupère les mails sur le serveur
+      // Syntaxe :
+      //[ <Résultat> = ] emailRecupere ()
+      //
+      // Paramètres :
+      //	Aucun
+      // Valeur de retour :
+      // 	Type indéterminé :    
+      
+      PROCÉDURE emailRecupere()
+      
+      _debutOperation()
+      
+      // Réception des emails
+      SELON :m_sReceptionType
+      	CAS ::RECEPTION_IMAP:
+      		RENVOYER :emailSynchroIMAP()
+      		
+      	CAS ::RECEPTION_POP:
+      		RENVOYER :emailRecuperePOP3()
+      	
+      	AUTRE CAS:
+      		dbgAssertion(Faux,"Type de réception non géré")
+      		RENVOYER 0
+      FIN
+      
+      fin:
+      _finOpération()
+     type : 458752
+   -
+     name : getDossier
+     procedure_id : 1967076501701308767
+     type_code : 12
+     code : |1-
+      // Résumé : Retourne un dossier en particulier
+      // Syntaxe :
+      //[ <Résultat> = ] getDossier (<nIDDossier> est entier sur 8 octets)
+      //
+      // Paramètres :
+      //	nIDDossier (entier sur 8 octets) : <indiquez ici le rôle de nIDDossier>
+      // Valeur de retour :
+      // 	Type indéterminé :  // 	Aucune
+      //// Exemple :
+      // Indiquez ici un exemple d'utilisation.
+      //
+      PROCÉDURE getDossier(LOCAL nIDDossier est un entier sur 8)
+      
+      SI :m_taListeDossier[nIDDossier]..Vide ALORS
+      	dbgAssertion(Faux,"Dossier demandé inexistant")
+      	RENVOYER Null
+      SINON
+      	RENVOYER :m_taListeDossier[nIDDossier]
+      FIN
+     type : 458752
+   -
+     name : getDossierReception
+     procedure_id : 1967124661214758255
+     type_code : 12
+     code : |1-
+      // Résumé : Retourne le dossier de réception associé au compte
+      // Syntaxe :
+      //[ <Résultat> = ] getDossierReception ()
+      //
+      // Paramètres :
+      //	Aucun
+      // Valeur de retour :
+      // 	Type indéterminé :   // 	Aucune
+      //// Exemple :
+      // Indiquez ici un exemple d'utilisation.
+      //
+      PROCÉDURE PUBLIQUE  getDossierReception()
+      
+      // Parcours des dossiers
+      POUR TOUT ELEMENT pclDossier DE :m_taListeDossier
+      	SI pclDossier.Type = cDossier::DOSSIER_ENTRANT ALORS
+      		RENVOYER pclDossier
+      	FIN
+      FIN
+      
+      RENVOYER Null
+     type : 458752
+   -
+     name : getDossierBrouillon
+     procedure_id : 1967157032352139421
+     type_code : 12
+     code : |1-
+      // Résumé : Récupère le dossier brouillon du compte
+      // Syntaxe :
+      //[ <Résultat> = ] getDossierBrouillon ()
+      //
+      // Paramètres :
+      //	Aucun
+      // Valeur de retour :
+      // 	cDossier : // 	Aucune
+      //// Exemple :
+      // Indiquez ici un exemple d'utilisation.
+      //
+      PROCÉDURE getDossierBrouillon() : cDossier
+      
+      // Parcours des dossiers
+      POUR TOUT ELEMENT pclDossier DE :m_taListeDossier
+      	SI pclDossier.Type = cDossier::DOSSIER_BROUILLON ALORS
+      		RENVOYER pclDossier
+      	FIN
+      FIN
+      
+      RENVOYER Null
+     type : 458752
+   -
+     name : getDossierEnvoye
+     procedure_id : 1967157354474761610
+     type_code : 12
+     code : |1-
+      // Résumé : Retourne le dossier des emails envoyés
+      // Syntaxe :
+      //[ <Résultat> = ] getDossierEnvoye ()
+      //
+      // Paramètres :
+      //	Aucun
+      // Valeur de retour :
+      // 	cDossier : // 	Aucune
+      //// Exemple :
+      // Indiquez ici un exemple d'utilisation.
+      //
+      PROCÉDURE getDossierEnvoye() : cDossier
+      
+      // Parcours des dossiers
+      POUR TOUT ELEMENT pclDossier DE :m_taListeDossier
+      	SI pclDossier.Type = cDossier::DOSSIER_ENVOYE ALORS
+      		RENVOYER pclDossier
+      	FIN
+      FIN
+      
+      RENVOYER Null
+     type : 458752
+   -
+     name : getEmail
+     internal_properties : CAAAAAgAAAAV5TcTg/tU81B1wT5bm+DIRoFR/WS7cx5dSFzvygP7eLIfi7ltLGdcPMURDz0/2m1DMi60u5DXVY52l5k/1O3sgLjaA50ujwpXbIFRlzme8Z7XqEsGqF8Qj9pqkdRglN1/+mjnSR/J3mO48X2iDTZHTE4hk2yAW5wmJQcAPUsj3gk53p9fWZMaqIfGFqoVHJxUCxfu
+     procedure_id : 1967159355930838834
+     type_code : 12
+     code : |1+
+      // Résumé : Permet de retrouver un email dans le compte
+      // Syntaxe :
+      //[ <Résultat> = ] getEmail (<nIDEmail>)
+      //
+      // Paramètres :
+      //	nIDEmail : <indiquez ici le rôle de nIDEmail>
+      // Valeur de retour :
+      // 	Type indéterminé :   // 	Aucune
+      
+      PROCÉDURE getEmail(LOCAL nIDEmail est un entier sur 8)
+      
+      // Parcours des dossiers du compte
+      POUR TOUT ELEMENT pclDossier DE :m_taListeDossier
+      	POUR TOUT ELEMENT pclEmail DE pclDossier.emailsContenus()
+      		SI pclEmail.IDEmail = nIDEmail ALORS
+      			RENVOYER pclEmail
+      		FIN
+      	FIN
+      FIN
+      
+      RENVOYER Null
+      
+     type : 458752
+   -
+     name : getDossierCorbeille
+     procedure_id : 1967844343101658185
+     type_code : 12
+     code : |1+
+      // Résumé : Récupère le dossier corbeille
+      // Syntaxe :
+      //[ <Résultat> = ] getDossierCorbeille ()
+      //
+      // Paramètres :
+      //	Aucun
+      // Valeur de retour :
+      // 	cDossier : <indiquez ici le rôle de la valeur de retour>
+      //// Exemple :
+      // Indiquez ici un exemple d'utilisation.
+      //
+      PROCÉDURE getDossierCorbeille() : cDossier
+      
+      // Parcours des dossiers
+      POUR TOUT ELEMENT pclDossier DE :m_taListeDossier
+      	SI pclDossier.Type = cDossier::DOSSIER_CORBEILLE ALORS
+      		RENVOYER pclDossier
+      	FIN
+      FIN
+      
+      RENVOYER Null
+     type : 458752
+   -
+     name : getFiltres
+     procedure_id : 1969325247765948045
+     type_code : 12
+     code : |1+
+      // Résumé : Retourne les filtres du compte
+      // Syntaxe :
+      //[ <Résultat> = ] getFiltres ()
+      //
+      // Paramètres :
+      //	Aucun
+      // Valeur de retour :
+      // 	tableau associatif :  // 	Aucune
+      //// Exemple :
+      // Indiquez ici un exemple d'utilisation.
+      //
+      PROCÉDURE getFiltres()
+      
+      // Variables
+      pclFiltre est un cFiltre dynamique = Null
+      
+      // Sauvegarde contexte
+      nPosition est un entier = HSauvePosition(Filtre,"*",hSauveRubriques)
+      
+      SI :m_taListeFiltre..Occurrence = 0 ALORS
+      	HFiltre(Filtre, IDCompte, :m_nIDCompte)
+      	HLitPremier(Filtre, IDCompte)
+      	TANTQUE PAS HEnDehors(Filtre)
+      		pclFiltre = allouer un cFiltre(Filtre.IDFiltre)
+      		:m_taListeFiltre[Filtre.IDFiltre] = pclFiltre
+      		HLitSuivant(Filtre, IDCompte)
+      	FIN
+      	HDésactiveFiltre(Filtre)
+      FIN
+      
+      RENVOYER m_taListeFiltre
+      
+      FIN:
+      	HRetourPosition(nPosition)
+     type : 458752
+   -
+     name : getFiltre
+     procedure_id : 1969325587068443989
+     type_code : 12
+     code : |1-
+      // Résumé : Retourne un filtre en particulier
+      // Syntaxe :
+      //[ <Résultat> = ] getFiltre (<nIDFiltre>)
+      //
+      // Paramètres :
+      //	nIDFiltre : Identifiant du filtre à récupérer
+      // Valeur de retour :
+      // 	Type indéterminé : // 	Aucune
+      //// Exemple :
+      // Indiquez ici un exemple d'utilisation.
+      //
+      PROCÉDURE getFiltre(LOCAL nIDFiltre est un entier sur 8)
+      
+      SI :m_taListeFiltre[nIDFiltre]..Vide ALORS
+      	dbgAssertion(Faux,"Filtre demandé inexistant")
+      	RENVOYER Null
+      SINON
+      	RENVOYER :m_taListeFiltre[nIDFiltre]
+      FIN
+     type : 458752
+   -
+     name : filtreAjoute
+     procedure_id : 1969325797521890041
+     type_code : 12
+     code : |1-
+      // Résumé : Ajoute un filtre
+      // Syntaxe :
+      //filtreAjoute (<pclFiltre> est cFiltre dynamique)
+      //
+      // Paramètres :
+      //	pclFiltre (cFiltre dynamique) : Filtre à ajouter
+      // Valeur de retour :
+      // 	Aucune
+      //// Exemple :
+      // Indiquez ici un exemple d'utilisation.
+      //
+      PROCÉDURE filtreAjoute(pclFiltre est un cFiltre dynamique)
+      
+      // Associe le filtre au compte
+      pclFiltre.IDCompte = :m_nIDCompte
+      
+      // Sauvegarde
+      :m_taListeFiltre[pclFiltre.sauvegarde()] = pclFiltre
+     type : 458752
+   -
+     name : filtreSupprime
+     procedure_id : 1969325870536417081
+     type_code : 12
+     code : |1+
+      // Résumé : Supprime un filtre
+      // Syntaxe :
+      //filtreSupprime (<nIDFiltre> est entier sur 8 octets)
+      //
+      // Paramètres :
+      //	nIDFiltre (entier sur 8 octets) : Identifiant du filtre à supprimer
+      // Valeur de retour :
+      // 	Aucune
+      //// Exemple :
+      // Indiquez ici un exemple d'utilisation.
+      //
+      PROCÉDURE filtreSupprime(LOCAL nIDFiltre est un entier sur 8)
+      
+      // Sauvegarde contexte
+      nPosition est un entier = HSauvePosition(Filtre, "*", hSauveRubriques)
+      
+      // Positionnement
+      HLitRecherchePremier(Filtre,IDFiltre,nIDFiltre)
+      dbgAssertion(HTrouve(Filtre),"Filtre inexistant")
+      
+      // Supprime de la liste
+      Supprime(:m_taListeFiltre, nIDFiltre)
+      
+      // Supprime en base
+      HSupprime(Filtre)
+      
+      FIN:
+      	HRetourPosition(nPosition)
+     type : 458752
+   -
+     name : filtreApplique
+     internal_properties : CAAAAAgAAAAV5TcTg/tU81B1wT5bm+DIRoFR/WS7cx5dSFzvygP7eLIfi7ltLGdcPMURDz0/2m1DMi60u5DXVY52l5k/1O3sgLjaA50ujwpXbIFRlzme8Z7XqEsGqF8Qj9pqkdRglN1/+mjnSR/J3mO48X2iDTZHTE4hk2yAW5wmJQcAPUsj3gk53p9fWZMaqIfGFqoVHJxUCxfu
+     procedure_id : 1969687962058931936
+     type_code : 12
+     code : |1+
+      // Résumé : Applique les filtres à l'email
+      // Syntaxe :
+      //filtreApplique (<pclEmail> est cEmail dynamique)
+      //
+      // Paramètres :
+      //	pclEmail (cEmail dynamique) : <indiquez ici le rôle de pclEmail>
+      // Valeur de retour :
+      // 	Aucune
+      //// Exemple :
+      // Indiquez ici un exemple d'utilisation.
+      //
+      PROCÉDURE filtreApplique(pclEmail est un cEmail dynamique)
+      
+      // Variables
+      tabFiltre est un tableau de cFiltre dynamique
+      
+      // Alimentation du tableau
+      POUR TOUT ELEMENT pclFiltre DE :m_taListeFiltre
+      	Ajoute(tabFiltre, pclFiltre)
+      FIN
+      
+      // Trie dans l'ordre que les filtres doivent être appliqués
+      TableauTrie(tabFiltre,ttMembre,"+m_nNumOrdre")
+      
+      // Parcours de chaque filtre
+      POUR TOUT ELEMENT pclFiltre DE tabFiltre
+      	SI pclFiltre.EstActif = Vrai ALORS
+      		// Vérification de la condition
+      		SI pclFiltre.verifieCondition(pclEmail) = Vrai ALORS
+      			// Applique l'action et s'arrête si cela ne sert à rien de continuer à appliquer un filtre
+      			SI pclFiltre.appliqueAction(pclEmail, objet) = Faux ALORS SORTIR
+      		FIN
+      	FIN
+      FIN
+     type : 458752
+   -
+     name : verifieEmission
+     internal_properties : CAAAAAgAAACyiWk8eKCQkM1yApv5AlEieDWP40sdMO8eA9JavhlKt0II0gNvdQNYDVt2dQtCrmt81yc4BQcC6kWHyQElTCYJrRI6cfhDhwfZ35Mt16nM858boGQd3eDT0fxMfpwc/IRNgZYXtEKfYSbvYjJ/Nzh5tG4PVc709DwQK3gcYlwKLK4kOzw=
+     procedure_id : 1969735734976082849
+     type_code : 12
+     code : |1-
+      // Résumé : Vérifie la configuration d'émission
+      // Syntaxe :
+      //[ <Résultat> = ] verifieEmission ()
+      //
+      // Paramètres :
+      //	Aucun
+      // Valeur de retour :
+      // 	booléen :  
+      
+      PROCÉDURE verifieEmission()
+      
+      // Variables
+      objSMTPSession est un emailSessionSMTP
+      
+      // Objet Session SMTP
+      objSMTPSession.Nom            = :m_sSMTPUtilisateur
+      objSMTPSession.MotDePasse     = :m_sSMTPPassword
+      objSMTPSession.AdresseServeur = :m_sSMTPServeur
+      objSMTPSession.Port           = :m_nSMTPPort
+      
+      
+      Sablier(Vrai)
+      
+      // Type de connexion
+      SELON :m_sSMTPConnexion
+      	CAS CONNEXION_NORMALE:
+      	// Rien à faire, aucune option
+      	CAS CONNEXION_SSL:
+      		objSMTPSession.Option = optionSSL
+      	CAS CONNEXION_TLS:
+      		objSMTPSession.Option = emailOptionSécuriséTLS
+      	AUTRE CAS
+      		dbgAssertion(Faux, "Valeur non gérée")		
+      FIN
+      
+      
+      
+      SI :m_bOAuthNécessaire = Vrai ALORS
+      	
+      	objSMTPSession.AuthToken = getToken()
+      	
+      	
+      FIN
+      
+      // Ouverture session SMTP
+      renvoyer EmailOuvreSession(objSMTPSession)
+      
+      CAS ERREUR:
+      	RENVOYER Faux
+      CAS EXCEPTION:
+      	RENVOYER Faux
+      FIN:
+      	Sablier(Faux)
+      	EmailFermeSession(objSMTPSession)
+     type : 458752
+   -
+     name : verifieReception
+     procedure_id : 1969735825170482677
+     type_code : 12
+     code : |1-
+      // Résumé : Vérifie la configuration de réception
+      // Syntaxe :
+      //[ <Résultat> = ] verifieReception ()
+      //
+      // Paramètres :
+      //	Aucun
+      // Valeur de retour :
+      // 	booléen :     
+      
+      PROCÉDURE verifieReception()
+      
+      Sablier(Vrai)
+      
+      // Type de réception
+      SELON :m_sReceptiontype
+      	CAS ::RECEPTION_IMAP:
+      		RENVOYER :verifieReceptionIMAP()
+      		
+      	CAS ::RECEPTION_POP:
+      		RENVOYER :verifieReceptionPOP()
+      		
+      	AUTRE CAS:
+      		dbgAssertion(Faux,"Type de réception non géré")
+      		RENVOYER Faux
+      FIN
+      
+      FIN:
+      Sablier(Faux)
+     type : 458752
+   -
+     name : verifieReceptionPOP
+     internal_properties : CAAAAAgAAACyiWk8eKCQkM1yApv5AlEieDWP40sdMO8eA9JavhlKt0II0gNvdQNYDVt2dQtCrmt81yc4BQcC6kWHyQElTCYJrRI6cfhDhwfZ35Mt16nM858boGQd3eDT0fxMfpwc/IRNgZYXtEKfYSbvYjJ/Nzh5tG4PVc709DwQK3gcYlwKLK4kOzw=
+     procedure_id : 1969753305689350607
+     type_code : 12
+     code : |1-
+      // Résumé : Vérifie le serveur POP
+      // Syntaxe :
+      //[ <Résultat> = ] verifieReceptionPOP ()
+      //
+      // Paramètres :
+      //	Aucun
+      // Valeur de retour :
+      // 	booléen :   
+      
+      PROCÉDURE PRIVÉ verifieReceptionPOP()
+      
+      // Variable
+      objSessionPOP est un emailSessionPOP3
+      
+      // Ouvre la session POP
+      objSessionPOP.Nom            = :m_sReceptionUtilisateur
+      objSessionPOP.MotDePasse     = :m_sReceptionPassword
+      objSessionPOP.AdresseServeur = :m_sReceptionServeur
+      objSessionPOP.Port           = :m_nReceptionPort
+      
+      // Type de connexion
+      SELON :m_sReceptionConnexion
+      	CAS ::CONNEXION_NORMALE:
+      		// Rien à faire, aucune option
+      	CAS ::CONNEXION_SSL:
+      		objSessionPOP.Option = optionSSL
+      	CAS ::CONNEXION_TLS:
+      		// Pas encore géré pour la réception
+      	AUTRE CAS
+      		dbgAssertion(Faux, "Valeur non gérée")		
+      FIN
+      
+      SI EmailOuvreSession(objSessionPOP) = Faux ALORS
+      	RENVOYER Faux
+      FIN
+      
+      RENVOYER Vrai
+      
+      // Fermeture de la connexion POP
+      CAS ERREUR:
+      	RENVOYER Faux
+      CAS EXCEPTION:
+      	RENVOYER Faux
+      FIN:
+      	EmailFermeSession(objSessionPOP)
+     type : 458752
+   -
+     name : verifieReceptionIMAP
+     internal_properties : CAAAAAgAAACyiWk8eKCQkM1yApv5AlEieDWP40sdMO8eA9JavhlKt0II0gNvdQNYDVt2dQtCrmt81yc4BQcC6kWHyQElTCYJrRI6cfhDhwfZ35Mt16nM858boGQd3eDT0fxMfpwc/IRNgZYXtEKfYSbvYjJ/Nzh5tG4PVc709DwQK3gcYlwKLK4kOzw=
+     procedure_id : 1969753374408843474
+     type_code : 12
+     code : |1-
+      // Résumé : Vérifie le serveur IMAP
+      // Syntaxe :
+      //[ <Résultat> = ] verifieReceptionIMAP ()
+      //
+      // Paramètres :
+      //	Aucun
+      // Valeur de retour :
+      // 	booléen :     
+      // Traitement automatique des erreurs :   exécuter le bloc de code CAS ERREUR
+      //
+      // Traitement automatique des exceptions :   exécuter le bloc de code CAS EXCEPTION:
+      //
+      
+      PROCÉDURE PRIVÉ verifieReceptionIMAP()
+      
+      // Variable
+      objSessionIMAP est un emailSessionIMAP
+      
+      // Ouvre la session IMAP
+      objSessionIMAP.Nom				= :m_sReceptionUtilisateur
+      objSessionIMAP.MotDePasse		= :m_sReceptionPassword
+      objSessionIMAP.AdresseServeur	= :m_sReceptionServeur
+      objSessionIMAP.Port				= :m_nReceptionPort
+      
+      
+      // Type de connexion
+      SELON :m_sReceptionConnexion
+      	CAS ::CONNEXION_NORMALE:
+      	// Rien à faire, aucune option
+      	CAS ::CONNEXION_SSL:
+      		objSessionIMAP.Option = optionSSL
+      	CAS ::CONNEXION_TLS:
+      		objSessionIMAP.Option = optionSSL
+      	AUTRE CAS
+      		dbgAssertion(Faux, "Valeur non gérée")		
+      FIN
+      
+      
+      
+      SI :m_bOAuthNécessaire = Vrai ALORS
+      	
+      	objSessionIMAP.AuthToken = getToken()		
+      	
+      FIN
+      
+      
+      
+      
+      SI EmailOuvreSession(objSessionIMAP) = Faux ALORS
+      	RENVOYER Faux
+      FIN
+      
+      RENVOYER Vrai
+      
+      // Fermeture de la connexion IMAP
+      CAS ERREUR:
+      RENVOYER Faux
+      CAS EXCEPTION:
+      RENVOYER Faux
+      FIN:
+      EmailFermeSession(objSessionIMAP)
+     type : 458752
+   -
+     name : getToken
+     procedure_id : 2289182839722657970
+     type_code : 12
+     code : |1-
+      // Résumé : Permet d'obtenir un token 
+      // Syntaxe :
+      //[ <Résultat> = ] getToken ()
+      //
+      // Paramètres :
+      //	Aucun
+      // Valeur de retour :
+      // 	AuthToken : // 	Aucune
+      
+      procédure getToken()
+      
+      
+      //Token invalide ? 
+      SI MonToken.Valide = Faux ALORS
+      	
+      	OAuth2Params est OAuth2Paramètres
+      	OAuth2Params.ClientID					= OAuth_ClientID
+      	OAuth2Params.ClientSecret				= OAuth_ClientSecret
+      	OAuth2Params.URLAuth					= OAuth_URLAuth
+      	OAuth2Params.URLToken					= OAuth_URLToken
+      	OAuth2Params.URLRedirection				= OAuth_URLRedirection
+      	OAuth2Params.Scope						= OAuth_Scope
+      	OAuth2Params.TypeRéponse				= OAuth_TypeRéponse
+      	OAuth2Params.ParamètresSupplémentaires = ""
+      	
+      	// Demande d'authentification 
+      	MonToken								= AuthIdentifie(OAuth2Params)
+      	si MonToken..Valide alors
+      		SauvegardeToken()
+      	fin
+      	
+      	
+      sinon
+      	
+      	//Token valide mais expiré ? 
+      	MaintenantToutDeSuite est une DateHeure
+      	SI MonToken.DateExpiration < MaintenantToutDeSuite ALORS
+      		
+      		MonToken = AuthRenouvelleToken(MonToken)
+      		SI MonToken..Valide ALORS
+      			SauvegardeToken()
+      		fin		
+      	FIN
+      fin
+      
+      
+      fin: 
+      renvoyer montoken
+     type : 458752
+   -
+     name : SauvegardeToken
+     procedure_id : 2289222155901957200
+     type_code : 12
+     code : |1+
+      // Résumé : <indiquez ici ce que fait la procédure>
+      // Syntaxe :
+      // SauvegardeToken ()
+      //
+      // Paramètres :
+      //	Aucun
+      // Valeur de retour :
+      // 	Aucune
+      //
+      
+      procédure SauvegardeToken()
+      
+      
+      // Sauvegarde contexte
+      nPosition	est un entier				= HSauvePosition(Compte,"*",hSauveRubriques)
+      SI :m_nIDCompte <> -1 ALORS
+      	HLitRecherchePremier(Compte, IDCompte, :m_nIDCompte)
+      	si htrouve(compte) alors
+      		bufToken est un Buffer
+      		Sérialise(MonToken,bufToken, psdBinaire)
+      		Compte.oAuthToken = bufToken
+      		
+      		// Sauvegarde
+      		HModifie(Compte)
+      		
+      	fin
+      fin
+      
+      FIN:
+      HRetourPosition(nPosition)
+     type : 458752
+   -
+     name : s_GetListeCompte
+     procedure_id : 2294855984816829735
+     type_code : 12
+     code : |1+
+      procedure globale s_GetListeCompte()
+      
+      sdReqListeCompte est une requête SQL = 
+      [
+      select IDCompte FROM Compte
+      ]
+      
+      HExécuteRequête(sdReqListeCompte,hRequêteDéfaut)
+      pour TOUT sdReqListeCompte
+      	si mg_taCompte[sdReqListeCompte.IDCompte]..existe=faux alors
+      		mg_taCompte[sdReqListeCompte.IDCompte] = s_GetCompte(sdReqListeCompte.IDCompte)
+      	fin
+      FIN
+      
+      renvoyer mg_taCompte
+     type : 458752
+   -
+     name : s_GetCompte
+     procedure_id : 2294856869580166998
+     type_code : 12
+     code : |1+
+      procedure globale s_GetCompte( local nIDCompte est un entier sur 8 )
+      
+      // Si l'ID vaut -1, on crée un nouvel objet
+      si nIDCompte=-1 alors
+      	renvoyer allouer un cCompte()
+      FIN
+      
+      // Sinon, on regarde si le compte a déjà été chargé
+      // Chaque compte n'est chargé qu'une seule fois et conservée dans un cache pour préserver la session IMAP
+      si mg_taCompte[nIDCompte]..Existe ALORS
+      	renvoyer mg_taCompte[nIDCompte]
+      FIN
+      
+      // Si le compte n'est pas encore dans le cache, on l'ajoute
+      si HLitRecherchePremier(Compte,IDCompte,nIDCompte) ALORS
+      	mg_taCompte[nIDCompte] = allouer un cCompte(compte.IDCompte)
+      	renvoyer mg_taCompte[nIDCompte]
+      FIN
+      
+      // Le compte n'existe pas
+      renvoyer null
+     type : 458752
+   -
+     name : s_Supprime
+     procedure_id : 2295096421227490112
+     type_code : 12
+     code : |1+
+      procedure globale s_Supprime( nIDCompte est un entier sur 8 )
+      
+      si HLitRecherchePremier(Compte,IDCompte,nIDCompte) ALORS
+      	HSupprime(Compte)
+      FIN
+     type : 458752
+   -
+     name : emailRecuperePOP3
+     procedure_id : 2302521023905379661
+     type_code : 12
+     code : |1+
+      procédure protégée emailRecuperePOP3()
+      
+      objPOP  est un emailSessionpop3
+      pclDossRecep	est un cDossier dynamique
+      
+      // Récupère le dossier de réception
+      pclDossRecep				= :getDossierReception()
+      
+      // Ouvre la session de réception
+      objPOP.Nom				= :m_sReceptionUtilisateur
+      objPOP.MotDePasse		= :m_sReceptionPassword
+      objPOP.AdresseServeur	= :m_sReceptionServeur
+      objPOP.Port				= :m_nReceptionPort
+      
+      // Type de connexion
+      SELON :m_sReceptionConnexion
+      	CAS ::CONNEXION_NORMALE:
+      	// Rien à faire, aucune option
+      	CAS ::CONNEXION_SSL:
+      		objPOP.Option = optionSSL
+      	AUTRE CAS
+      		dbgAssertion(Faux, "Valeur non gérée")		
+      FIN
+      
+      dbgassertion(:m_bOAuthNécessaire=faux,"Double authentification non disponible en POP3")
+      
+      SI EmailOuvreSession(objPOP) = Faux ALORS
+      	Erreur(<§$000e§>)
+      	RENVOYER 0
+      FIN
+      
+      // Récupération des emails
+      nIndice		est un entier	= 1
+      objEmail	est un Email
+      nNbLus		est un entier
+      
+      // On part de la fin pour récupérer d'abord les messages les plus récents
+      EmailLitDernier(objPOP, objEmail)
+      TANTQUE objEmail.EnDehors = Faux
+      	si cEmail.chercheParMessageID( objEmail.MessageID, pclDossRecep.IDDossier )=-1 ALORS
+      		// Message inconnu dans la base : il faut l'ajouter
+      		pclEmail est un cemail dynamique = emailAjouteMessageEnBase(objEmail,pclDossRecep,faux)
+      		// Applique les filtres sur l'email
+      		:filtreApplique(pclEmail)
+      		nNbLus++
+      	FIN
+      	
+      	// Supprime du serveur si nécessaire
+      	SI POPGardeSurServeur=Faux ALORS
+      		EmailSupprimeMessage(objPOP)
+      	FIN
+      	
+      	nIndice++ 
+      	EmailLitPrécédent(objPOP, objEmail)
+      	
+      	// Demande d'abandon
+      	si COL_WDMail.gbDemandeAbandonOperation ALORS
+      		COL_WDMail.gbDemandeAbandonOperation = faux
+      		sortir
+      	FIN
+      FIN
+      
+      RENVOYER nNbLus
+      
+      // Fermeture de la connexion
+      FIN:
+      EmailJauge("")
+      EmailFermeSession(objPOP)
+      
+      
+     type : 458752
+   -
+     name : emailSynchroIMAP
+     procedure_id : 2302521088329970418
+     type_code : 12
+     code : |1+
+      procédure protégée emailSynchroIMAP()
+      
+      _debutOperation()
+      
+      nNbNouveau est un entier
+      
+      // Ouvre la session
+      si ouvreSessionIMAP()=Faux ALORS
+      	renvoyer 0
+      FIN
+      
+      // On construit deux tableaux temporaires pour faciliter la synchro
+      taDossierParNom est un tableau associatif de cDossier dynamique
+      taDossierVuEnSynchro est un tableau associatif (*, *, wlEntier_8) de booleen
+      pour tout pclDossier de m_taListeDossier
+      	taDossierParNom[pclDossier.Chemin] = pclDossier
+      	taDossierVuEnSynchro[pclDossier.IDDossier] = faux
+      FIN
+      
+      // Synchronisation des dossiers
+      sListeDossier est une chaine = EmailListeDossier(m_sessionIMAP,LstDossierNormal)
+      pour toute chaine sDossier de sListeDossier separee par RC
+      	// Si le dossier existe sur le serveur et pas en local, on le crée en local
+      	si taDossierParNom[sDossier]..existe = faux  ALORS
+      		m_pCallbackAvancement("Nouveau dossier sur le serveur : [%sDossier%]")
+      		nPosDernierSlash est un entier = position(sDossier,"/",0,DepuisFin)
+      		sNomDossier est une chaine = sDossier[[ nPosDernierSlash+1 a ]]
+      		sNomDossierParent est une chaine = sDossier[[ à nPosDernierSlash-1 ]]
+      		taDossierParNom[sDossier] = dossierAjouteEnBase(sNomDossier,sNomDossierParent)
+      	FIN
+      	// Le dossier a été vu en synchro
+      	pclDossier est un cDossier dynamique = taDossierParNom[sDossier]
+      	pclDossier.DernièreSynchro..PartieDate = "20000101"
+      	dbgAssertion(pclDossier<>null)
+      	taDossierVuEnSynchro[pclDossier.IDDossier] = vrai
+      FIN
+      
+      // Supprime localement tous les dossiers qui n'ont pas été vus en synchro
+      pour tout bVu, nIDDossier de taDossierVuEnSynchro
+      		si bVu=faux ALORS
+      			pclDossier est un cDossier dynamique = getDossier(nIDDossier)
+      			si pclDossier.IgnoreSynchro=faux alors
+      				dossierSupprimeFiltre(nIDDossier)
+      				dossierSupprime(nIDDossier)
+      			fin
+      		FIN
+      FIN
+      
+      // Synchronise le contenu de la INBOX
+      si taDossierParNom["INBOX"]..Existe alors
+      	nNbNouveau += dossierSynchroniseIMAP(taDossierParNom["INBOX"])
+      fin
+      
+      renvoyer nNbNouveau
+      
+      fin:
+      _finOpération()
+     type : 458752
+   -
+     name : ouvreSessionIMAP
+     procedure_id : 2303019261692597716
+     type_code : 12
+     code : |1-
+      procédure ouvreSessionIMAP()
+      
+      si m_bSessionOuverte=faux alors
+      	m_pCallbackAvancement("Ouverture d'une session IMAP sur [%m_sReceptionServeur%]")
+      	m_sessionIMAP.Nom				= m_sReceptionUtilisateur
+      	m_sessionIMAP.MotDePasse		= m_sReceptionPassword
+      	m_sessionIMAP.AdresseServeur	= m_sReceptionServeur
+      	m_sessionIMAP.Port				= m_nReceptionPort
+      	
+      	// Type de connexion
+      	SELON :m_sReceptionConnexion
+      		CAS ::CONNEXION_NORMALE
+      		// Rien à faire, aucune option
+      		CAS ::CONNEXION_SSL, ::CONNEXION_TLS
+      			m_sessionIMAP.Option = optionSSL
+      		AUTRE CAS
+      			dbgAssertion(Faux, "Valeur non gérée")		
+      	FIN
+      	
+      	SI :m_bOAuthNécessaire = Vrai ALORS
+      		m_sessionIMAP.AuthToken = getToken()
+      	FIN
+      	
+      	m_bSessionOuverte = EmailOuvreSession(m_sessionIMAP)
+      fin
+      
+      renvoyer m_bSessionOuverte
+     type : 458752
+   -
+     name : dossierCrée
+     procedure_id : 2303321112042290334
+     type_code : 12
+     code : |1-
+      procédure dossierCrée(LOCAL sNomDossier est une chaîne, local sCheminParent est une chaîne = "")
+      
+      _debutOperation()
+      
+      // Création dans la base
+      pclDossier est un cDossier dynamique = dossierAjouteEnBase(sNomDossier, sCheminParent)
+      
+      // Synchronisation IMAP
+      si pclDossier<>null _et_ TypeReception=RECEPTION_IMAP ALORS
+      	si ouvreSessionIMAP() ALORS
+      		EmailAjouteDossier(m_sessionIMAP,pclDossier.Chemin)
+      	FIN
+      FIN
+      
+      fin:
+      _finOpération()
+     type : 458752
+   -
+     name : dossierSupprimeEnBase
+     procedure_id : 2303328666976130006
+     type_code : 12
+     code : |1+
+      procédure protégée dossierSupprimeEnBase( local nIDDossier est un entier sur 8 octets )
+      
+      si HLitRecherchePremier(Dossier,IDDossier,nIDDossier) ALORS
+      	HSupprime(Dossier)
+      FIN
+      
+      
+     type : 458752
+   -
+     name : dossierSupprimeFiltre
+     procedure_id : 2303332158784633695
+     type_code : 12
+     code : |1+
+      procédure protégée dossierSupprimeFiltre(LOCAL nIDDossier est un entier sur 8)
+      
+      // Suppression dans le tableau en mémoire
+      sdReqListeFiltre est une Requête SQL = 
+      [
+      	SELECT IDFiltre FROM Filtre
+      	WHERE IDDossier={pIDDossier}
+      ]
+      sdReqListeFiltre.pIDDossier = nIDDossier
+      HExécuteRequête(sdReqListeFiltre,hRequêteDéfaut)
+      pour tout sdReqListeFiltre
+      	TableauSupprime(:m_taListeFiltre, sdReqListeFiltre.IDFiltre)
+      FIN
+      
+      // Suppression en base
+      sdReqSupprFiltre est une Requête SQL = 
+      [
+      	DELETE FROM Filtre
+      	WHERE IDDossier={pIDDossier}
+      ]
+      sdReqSupprFiltre.pIDDossier = nIDDossier
+      HExécuteRequête(sdReqSupprFiltre,hRequêteDéfaut+hVérifieIntégrité)
+      
+     type : 458752
+   -
+     name : dossierSynchroniseIMAP
+     procedure_id : 2303343759727177873
+     type_code : 12
+     code : |1-
+      procédure dossierSynchroniseIMAP( pclDossierSynchro est un cDossier dynamique )
+      
+      _debutOperation()
+      
+      dbgAssertion(TypeReception=RECEPTION_IMAP)
+      dbgAssertion(pclDossierSynchro.bDossierAIgnorer()=faux,"On tente de synchroniser un dossier à ignorer")
+      
+      m_pCallbackAvancement("Synchronisation du dossier [%pclDossierSynchro.Chemin%]")
+      
+      // Il faut récupérer le corps des messages si on est sur une INBOX et qu'il y a des filtres sur le corps
+      bRecupèreCorps est un booléen = pclDossierSynchro.Type=cDossier.DOSSIER_ENTRANT _et_ bFiltreSurCorps()
+      
+      tabMailAFiltrer est un tableau de cEmail dynamique
+      nNbOK est un entier
+      si ouvreSessionIMAP() ALORS
+      	si EmailChangeDossier(m_sessionIMAP,pclDossierSynchro.Chemin)=faux ALORS
+      		renvoyer 0
+      	fin
+      	// Récupération des entêtes des emails
+      	nIndice		est un entier	= 1
+      	objEmail	est un Email
+      
+      	nMessage est un entier = 0
+      	nTotalMessage est un entier = EmailNbMessage(m_sessionIMAP)
+      	tabUIDVus est un tableau d'entiers
+      	si bRecupèreCorps alors
+      		EmailLitPremier(m_sessionIMAP,objEmail)
+      	sinon
+      		EmailLitEntêtePremier(m_sessionIMAP,objEmail)
+      	fin
+      	tantque pas objEmail.EnDehors
+      		nMessage++
+      		tabUIDVus.ajoute(val(objEmail.ID))
+      		nIDEmail est un entier sur 8 = cEmail.chercheParUID( val(objEmail.ID), pclDossierSynchro.IDDossier )
+      		SI nIDEmail=-1 ALORS
+      			// Message inconnu dans la base : il faut l'importer
+      			pclEmail est un cemail dynamique = emailAjouteMessageEnBase(objEmail,pclDossierSynchro,pas bRecupèreCorps)
+      			m_pCallbackAvancement("[%pclDossierSynchro.Libelle%] - Lecture du message [%nMessage%]/[%nTotalMessage%]")
+      			tabMailAFiltrer.ajoute(pclEmail)
+      			nNbOK++
+      		FIN
+      		
+      		si bRecupèreCorps alors
+      			EmailLitSuivant(m_sessionIMAP,objEmail)
+      		sinon
+      			EmailLitEntêteSuivant(m_sessionIMAP,objEmail)
+      		fin
+      		
+      		si modulo(nMessage,10)=0 alors m_pCallbackAvancement("[%pclDossierSynchro.Libelle%] - Synchronisation des messages [%nMessage%]/[%nTotalMessage%]")
+      		
+      		// Demande d'abandon
+      		SI COL_WDMail.gbDemandeAbandonOperation ALORS
+      			COL_WDMail.gbDemandeAbandonOperation = Faux
+      			SORTIR
+      		FIN
+      	FIN
+      
+      	// Supprime de la base les messages qui ne sont plus dans le dossier	
+      	pclDossierSynchro.supprimeMessageAbsents(tabUIDVus)
+      FIN
+      
+      si pclDossierSynchro.Type=cDossier.DOSSIER_ENTRANT alors
+      	pour tout pclEmailFiltre de tabMailAFiltrer
+      		// Applique les filtres sur l'email
+      		:filtreApplique(pclEmailFiltre)
+      	fin
+      fin
+      
+      si nNbOK>0 alors
+      	si nNbOK=1 alors
+      		m_pCallbackAvancement("Dossier [%pclDossierSynchro.Chemin%] : 1 nouveau message")
+      	sinon
+      		m_pCallbackAvancement("Dossier [%pclDossierSynchro.Chemin%] : [%nNbOK%] nouveaux messages")
+      	fin
+      sinon
+      	m_pCallbackAvancement("")
+      fin
+      
+      pclDossierSynchro.DernièreSynchro = DateHeureSys()
+      pclDossierSynchro.actualiseNbNonLus()
+      
+      RENVOYER nNbOK
+      
+      fin:
+      _finOpération()
+     type : 458752
+   -
+     name : emailAjouteMessageEnBase
+     procedure_id : 2303347264422356079
+     type_code : 12
+     code : |1-
+      procédure emailAjouteMessageEnBase( objEmail est un email, pclDossRecep est un cDossier dynamique, bEnteteSeulement est un booleen )
+      
+      pclEmail		est un cEmail dynamique
+      pclPJ			est un cPieceJointe dynamique
+      
+      // Instancie un email
+      pclEmail					= allouer un cEmail()
+      
+      // Enregistre le fichier source
+      si objEmail.Source="" alors
+      	EmailConstruitSource(objEmail)
+      fin
+      pclEmail.EMLSource				= objEmail.Source
+      
+      pclEmail.Expediteur				= objEmail.Expediteur
+      pclEmail.Sujet					= objEmail.Sujet
+      pclEmail.DateHeureReception		= objEmail.DateRéception
+      pclEmail.MessageID				= objEmail.MessageID
+      pclEmail.UID = objEmail.ID
+      
+      // Ajoute les destinataires
+      pclEmail.destinataireAjouteListe(objEmail.Destinataire, objEmail.Destinataire..Occurrence, cEmail::DESTINATAIRE_CLASSIQUE)
+      pclEmail.destinataireAjouteListe(objEmail.Cc, objEmail.Cc..Occurrence, cEmail::DESTINATAIRE_CC)
+      pclEmail.destinataireAjouteListe(objEmail.Cci, objEmail.Cci..Occurrence, cEmail::DESTINATAIRE_CCI)
+      
+      // Contenu
+      si bEnteteSeulement=faux alors
+      	pclEmail.ContenuTexte	= objEmail.TexteBrut
+      	pclEmail.ContenuHTML	= objEmail.HTML
+      	pclEmail.HTML			= (objEmail.HTML<>"")
+      	pclEmail.ContenuEstSynchro = vrai
+      fin
+      
+      // Ajoute l'email dans le dossier
+      pclDossRecep.emailAjoute(pclEmail)
+      
+      // Ajoute les pièces jointes maintenant que l'email existe
+      POUR TOUT ELEMENT tmpAttache DE objEmail.Attache
+      	// Créer une nouvelle pièce jointe
+      	pclPJ				= allouer un cPieceJointe()
+      	
+      	// Initialise avec les valeurs
+      	pclPJ.Contenu		= tmpAttache.Contenu
+      	pclPJ.NomFichier	= tmpAttache.Nom
+      	pclPJ.TailleFichier	= Taille(tmpAttache.Contenu)
+      	
+      	// Ajoute la pièce jointe à l'email
+      	pclEmail.ajoutePieceJointe(pclPJ)
+      FIN
+      
+      renvoyer pclEmail
+     type : 458752
+   -
+     name : emailDeplace
+     procedure_id : 2303359243236651595
+     type_code : 12
+     code : |1+
+      procédure emailDeplace( pclEmail est un cEmail dynamique, pclDossierDestination est un cDossier dynamique )
+      
+      _debutOperation()
+      
+      pclCompte	est un cCompte dynamique = cCompte::s_GetCompte(pclEmail.IDCompte)
+      pclDossierSource est un cDossier dynamique = pclCompte.getDossier(pclEmail.IDDossier)
+      
+      // En IMAP, il faut faire le déplacement sur le serveur
+      si TypeReception=RECEPTION_IMAP ALORS
+      	si ouvreSessionIMAP() ALORS
+      		EmailChangeDossier(m_sessionIMAP,pclDossierSource.Chemin)
+      		
+      		objEmail est un email
+      		EmailLitMessage(m_sessionIMAP,objEmail,pclEmail.UID)
+      		si pclDossierDestination.IgnoreSynchro=vrai _ou_ EmailCopie(objEmail,pclDossierDestination.Chemin) ALORS
+      			EmailSupprimeMessage(m_sessionIMAP,objEmail)
+      			EmailDétruit(m_sessionIMAP)
+      		FIN
+      		// Il faut invalider la synchro des dossiers destination
+      		pclDossierDestination.DernièreSynchro..Année = 2000
+      	FIN
+      FIN
+      
+      pclDossierDestination.emailAjoute(pclEmail)
+      
+      fin:
+      _finOpération()
+     type : 458752
+   -
+     name : emailRecupèreContenu
+     procedure_id : 2303718650421745204
+     type_code : 12
+     code : |1+
+      procédure emailRecupèreContenu( pclEmail est un cEmail dynamique )
+      
+      _debutOperation()
+      
+      dbgAssertion(pclEmail.IDCompte=m_nIDCompte)
+      dbgAssertion(m_sReceptionType=RECEPTION_IMAP)
+      
+      si ouvreSessionIMAP() ALORS
+      	pclDossier est un cDossier dynamique = m_taListeDossier[pclEmail.IDDossier]
+      	EmailChangeDossier(m_sessionIMAP,pclDossier.Chemin)
+      	
+      	objEmail est un email
+      	EmailLitMessage(m_sessionIMAP,objEmail,pclEmail.UID)
+      	
+      	pclEmail.ContenuTexte		= objEmail.TexteBrut
+      	pclEmail.ContenuHTML		= objEmail.HTML
+      	pclEmail.HTML				= (objEmail.HTML<>"")
+      	pclEmail.ContenuEstSynchro	= Vrai
+      	pclEmail.EMLSource				= objEmail.Source
+      	pclEmail.sauvegarde()
+      
+      	renvoyer pclEmail
+      FIN
+      
+      renvoyer null
+      
+      fin:
+      _finOpération()
+     type : 458752
+   -
+     name : _debutOperation
+     procedure_id : 2303739755930226576
+     type_code : 12
+     code : |1+
+      procédure protegee _debutOperation()
+      
+      Ttrace("Attente de la section critique d'opération réseau")
+      
+      SectionCritiquedebut(SECTION_OP)
+      
+      TTrace("Entrée dans la section critique d'opération réseau")
+      
+      
+     type : 458752
+   -
+     name : _finOpération
+     procedure_id : 2303739837534690064
+     type_code : 12
+     code : |1-
+      procedure protegee _finOpération()
+      
+      TTrace("Sortie de la section critique d'opération réseau")
+      
+      SectionCritiqueFin(SECTION_OP)
+     type : 458752
+   -
+     name : emailEnvoi
+     procedure_id : 2303753616037694775
+     type_code : 12
+     code : |1-
+      procédure emailEnvoi( pclEmail est un cEmail dynamique )
+      
+      _debutOperation()
+      
+      // Variables
+      objSMTPSession		est un emailSessionSMTP
+      pclBrouillon		est un cDossier dynamique = getDossierBrouillon()
+      pclEnvoye			est un cDossier dynamique = getDossierEnvoye()
+      _pieceJointe		est un emailAttache
+      
+      // Objet Session SMTP
+      objSMTPSession.Nom				= m_sSMTPUtilisateur
+      objSMTPSession.MotDePasse		= m_sSMTPPassword
+      objSMTPSession.AdresseServeur	= m_sSMTPServeur
+      objSMTPSession.Port				= m_nSMTPPort
+      SELON m_sSMTPConnexion
+      	CAS cCompte::CONNEXION_NORMALE:
+      	// Rien à faire, aucune option
+      	CAS cCompte::CONNEXION_SSL:
+      		objSMTPSession.Option = optionSSL
+      	CAS cCompte::CONNEXION_TLS:
+      		objSMTPSession.Option = emailOptionSécuriséTLS
+      	AUTRE CAS
+      		dbgAssertion(Faux, "Valeur non gérée")		
+      FIN
+      SI m_bOAuthNécessaire=Vrai ALORS
+      	objSMTPSession.AuthToken = getToken()
+      FIN
+      
+      // Email à envoyer
+      objEmailEnvoi est un email
+      objEmailEnvoi.Sujet			= pclEmail.Sujet
+      objEmailEnvoi.Expediteur	= """" + m_sProprietaire + """ <" + cEmail::s_emailExtrait(pclEmail.Expediteur) + ">"
+      
+      // Contenu
+      objEmailEnvoi.HTML			= pclEmail.ContenuHTML
+      objEmailEnvoi.Message		= pclEmail.ContenuTexte
+      
+      
+      // Ajoute les destinataires
+      POUR TOUT ELEMENT sDestinataire DE pclEmail.Destinataire
+      	Ajoute(objEmailEnvoi.Destinataire, cEmail::s_emailExtrait(sDestinataire))
+      FIN
+      
+      // Ajoute les destinataires Cc
+      POUR TOUT ELEMENT sDestinataire DE pclEmail.DestinataireCc
+      	Ajoute(objEmailEnvoi.Cc, cEmail::s_emailExtrait(sDestinataire))
+      FIN
+      
+      // Ajoute les destinataires Cci
+      POUR TOUT ELEMENT sDestinataire DE pclEmail.DestinataireCci
+      	Ajoute(objEmailEnvoi.Cci, cEmail::s_emailExtrait(sDestinataire))
+      FIN
+      
+      // Ajoute les pièces jointes
+      POUR TOUT ELEMENT pclPJ DE pclEmail.getPiecesJointes()
+      	// Contenu
+      	_pieceJointe.Contenu			= pclPJ.Contenu
+      	_pieceJointe.ContentDescription	= pclPJ.ContentDescription
+      	_pieceJointe.ContentType		= pclPJ.ContentType
+      	_pieceJointe.Identifiant		= pclPJ.IDAttache
+      	
+      	// Nom du fichier
+      	_pieceJointe.Nom				= pclPJ.NomFichier
+      	
+      	// Ajoute
+      	Ajoute(objEmailEnvoi.Attache, _pieceJointe)
+      FIN
+      
+      // Ouverture session SMTP
+      SI EmailOuvreSession(objSMTPSession) = Vrai ALORS
+      	// Tentative envoi message
+      	SI EmailEnvoieMessage(objSMTPSession, objEmailEnvoi, emailOptionEncodeEntête+emailOptionRéférence) = Vrai ALORS
+      		// On peut enregistrer l'email comme un email envoyé
+      		pclEnvoye.emailAjoute(pclEmail)
+      	FIN
+      FIN
+      
+      FIN:
+      EmailJauge("")
+      EmailFermeSession(objSMTPSession)
+      _finOpération()
+     type : 458752
+   -
+     name : emailSupprime
+     procedure_id : 2304747487634115357
+     type_code : 12
+     code : |1+
+      procédure emailSupprime( nIDEmail est un entier sur 8 )
+      
+      pclEmail est un cEmail dynamique = getEmail(nIDEmail)
+      pclDossier est un cDossier dynamique = getDossier(pclEmail.IDDossier)
+      
+      // Si il était dans la corbeille ou que c'est un brouillon, on le détruit
+      SI pclDossier.Type _dans_ (cDossier::DOSSIER_CORBEILLE, cDossier::DOSSIER_BROUILLON) ALORS
+      	pclDossier.emailSupprime(nIDEmail)
+      	// En IMAP, il faut faire la suppression sur le serveur (sauf les brouillons)
+      	si m_sReceptionType=RECEPTION_IMAP _et_ pclDossier.Type=cDossier::DOSSIER_CORBEILLE ALORS
+      		_debutOperation()
+      		si ouvreSessionIMAP() ALORS
+      			EmailChangeDossier(m_sessionIMAP,pclDossier.Chemin)
+      			EmailSupprimeMessage(m_sessionIMAP,pclEmail.uid)
+      			EmailDétruit(m_sessionIMAP)
+      		FIN
+      		_finOpération()
+      	FIN
+      SINON
+      	// Sinon on va juste placer l'email dans le dossier corbeille du compte
+      	// Récupère le dossier corbeille
+      	pclCorbeille est un cDossier dynamique = getDossierCorbeille()
+      	si pclCorbeille<>null alors
+      		pclCorbeille.emailAjoute(pclEmail)
+      		// En IMAP, il faut déplacer le mail dans la corbeille
+      		SI m_sReceptionType=RECEPTION_IMAP ALORS
+      			_debutOperation()
+      			SI ouvreSessionIMAP() ALORS
+      				eTmp est un email
+      				EmailChangeDossier(m_sessionIMAP,pclDossier.Chemin)
+      				EmailLitMessage(m_sessionIMAP,eTmp,pclEmail.UID)
+      				EmailCopie(m_sessionIMAP,eTmp,pclCorbeille.Chemin)
+      				EmailSupprimeMessage(m_sessionIMAP,eTmp)
+      				EmailDétruit(m_sessionIMAP)
+      			FIN
+      			_finOpération()
+      		FIN
+      	fin
+      FIN
+      
+      
+      
+     type : 458752
+   -
+     name : creeDossiersSpeciaux
+     procedure_id : 1155913563587552011
+     type_code : 12
+     code : |1+
+      procédure creeDossiersSpeciaux()
+      
+      SI m_sReceptionType=RECEPTION_POP ALORS	
+      	// En IMAP, la INBOX arrive à la première synchro
+      	:dossierAjouteEnBase(<§$001d§>, "", cDossier::DOSSIER_ENTRANT)
+      FIN
+      
+      // Ces trois dossiers spéciaux ne sont pas synchronisés en IMAP
+      :dossierAjouteEnBase(<§$001e§>, "", cDossier::DOSSIER_BROUILLON,vrai)
+      :dossierAjouteEnBase(<§$001f§>, "", cDossier::DOSSIER_ENVOYE,vrai)
+      :dossierAjouteEnBase(<§$0020§>, "", cDossier::DOSSIER_CORBEILLE,vrai)
+     type : 458752
+   -
+     name : bFiltreSurCorps
+     procedure_id : 1155923978980369268
+     type_code : 12
+     code : |1-
+      procédure bFiltreSurCorps()
+      
+      pour tout pclFiltre de m_taListeFiltre
+      	si pclFiltre.Attribut=cFiltre.ATTRIBUT_CONTENU ALORS
+      		renvoyer vrai
+      	FIN
+      FIN
+      
+      renvoyer faux
+     type : 458752
+  properties :
+   -
+     name : IDCompte
+     identifier : 0x1b4b69b30143014d
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCÉDURE IDCompte() :  entier sur 8 
+         
+         RENVOYER m_nIDCompte
+        type : 1966080
+      -
+        code : |1-
+         PROCÉDURE IDCompte(Valeur est un entier sur 8 )
+         
+         m_nIDCompte = Valeur
+        type : 2031616
+     template_refs : []
+   -
+     name : PortReception
+     identifier : 0x1b4b69c1014437c8
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCÉDURE PortReception()
+         
+         RENVOYER m_nReceptionPort
+        type : 1966080
+      -
+        code : |1-
+         PROCÉDURE PortReception(Valeur)
+         
+         m_nReceptionPort = Valeur
+        type : 2031616
+     template_refs : []
+   -
+     name : PortSMTP
+     identifier : 0x1b4b69c90145569e
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCÉDURE PortSMTP()
+         
+         RENVOYER m_nSMTPPort
+        type : 1966080
+      -
+        code : |1-
+         PROCÉDURE PortSMTP(Valeur)
+         
+         m_nSMTPPort = Valeur
+        type : 2031616
+     template_refs : []
+   -
+     name : MotDePasseReception
+     identifier : 0x1b4b69cf014670e1
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCÉDURE MotDePasseReception()
+         
+         RENVOYER m_sReceptionPassword
+        type : 1966080
+      -
+        code : |1-
+         PROCÉDURE MotDePasseReception(Valeur)
+         
+         m_sReceptionPassword = Valeur
+        type : 2031616
+     template_refs : []
+   -
+     name : MotDePasseSMTP
+     identifier : 0x1b4b69d701478dd3
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCÉDURE MotDePasseSMTP()
+         
+         RENVOYER m_sSMTPPassword
+        type : 1966080
+      -
+        code : |1-
+         PROCÉDURE MotDePasseSMTP(Valeur)
+         
+         m_sSMTPPassword = Valeur
+        type : 2031616
+     template_refs : []
+   -
+     name : ServeurReception
+     identifier : 0x1b4b69de0148a9eb
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCÉDURE ServeurReception()
+         
+         RENVOYER m_sReceptionServeur
+        type : 1966080
+      -
+        code : |1-
+         PROCÉDURE ServeurReception(Valeur)
+         
+         m_sReceptionServeur = Valeur
+        type : 2031616
+     template_refs : []
+   -
+     name : ServeurSMTP
+     identifier : 0x1b4b69e40149c00a
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCÉDURE ServeurSMTP()
+         
+         RENVOYER m_sSMTPServeur
+        type : 1966080
+      -
+        code : |1-
+         PROCÉDURE ServeurSMTP(Valeur)
+         
+         m_sSMTPServeur = Valeur
+        type : 2031616
+     template_refs : []
+   -
+     name : UtilisateurReception
+     identifier : 0x1b4b69ed014ae584
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCÉDURE UtilisateurReception()
+         
+         RENVOYER m_sReceptionUtilisateur
+        type : 1966080
+      -
+        code : |1-
+         PROCÉDURE UtilisateurReception(Valeur)
+         
+         m_sReceptionUtilisateur = Valeur
+        type : 2031616
+     template_refs : []
+   -
+     name : UtilisateurSMTP
+     identifier : 0x1b4b69f3014bfccb
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCÉDURE UtilisateurSMTP()
+         
+         RENVOYER m_sSMTPUtilisateur
+        type : 1966080
+      -
+        code : |1-
+         PROCÉDURE UtilisateurSMTP(Valeur)
+         
+         m_sSMTPUtilisateur = Valeur
+        type : 2031616
+     template_refs : []
+   -
+     name : Nom
+     identifier : 0x1b4c385901bf35d5
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCÉDURE Nom()
+         
+         RENVOYER m_sLibelle
+        type : 1966080
+      -
+        code : |1-
+         PROCÉDURE Nom(Valeur)
+         
+         m_sLibelle = Valeur
+        type : 2031616
+     template_refs : []
+   -
+     name : AdresseEmail
+     identifier : 0x1b4c386401c05f93
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCÉDURE AdresseEmail()
+         
+         RENVOYER m_sEmail
+        type : 1966080
+      -
+        code : |1-
+         PROCÉDURE AdresseEmail(Valeur)
+         
+         m_sEmail = Valeur
+        type : 2031616
+     template_refs : []
+   -
+     name : Proprietaire
+     identifier : 0x1b4c396102493e2f
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCÉDURE Proprietaire()
+         
+         RENVOYER m_sProprietaire
+        type : 1966080
+      -
+        code : |1-
+         PROCÉDURE Proprietaire(Valeur)
+         
+         m_sProprietaire = Valeur
+        type : 2031616
+     template_refs : []
+   -
+     name : TypeReception
+     identifier : 0x1b4e0a8e041e462f
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCÉDURE TypeReception()
+         
+         RENVOYER m_sReceptionType
+        type : 1966080
+      -
+        code : |1-
+         PROCÉDURE TypeReception(Valeur)
+         
+         m_sReceptionType = Valeur
+        type : 2031616
+     template_refs : []
+   -
+     name : ConnexionReception
+     identifier : 0x1b5067b0043e8e22
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCÉDURE ConnexionReception()
+         
+         RENVOYER m_sReceptionConnexion
+        type : 1966080
+      -
+        code : |1-
+         PROCÉDURE ConnexionReception(Valeur)
+         
+         m_sReceptionConnexion = Valeur
+        type : 2031616
+     template_refs : []
+   -
+     name : ConnexionSMTP
+     identifier : 0x1b5067bb043fb88c
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCÉDURE ConnexionSMTP()
+         
+         RENVOYER m_sSMTPConnexion
+        type : 1966080
+      -
+        code : |1-
+         PROCÉDURE ConnexionSMTP(Valeur)
+         
+         m_sSMTPConnexion = Valeur
+        type : 2031616
+     template_refs : []
+   -
+     name : VerificationAuto
+     identifier : 0x1bfd4a6003bd0eac
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCÉDURE VerificationAuto()
+         
+         RENVOYER m_bVerificationAuto
+        type : 1966080
+      -
+        code : |1-
+         PROCÉDURE VerificationAuto(Valeur)
+         
+         m_bVerificationAuto = Valeur
+        type : 2031616
+     template_refs : []
+   -
+     name : VerificationDuree
+     identifier : 0x1c20ca330090ef9e
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCÉDURE VerificationDuree()
+         
+         RENVOYER m_nVerificationDuree
+        type : 1966080
+      -
+        code : |1-
+         PROCÉDURE VerificationDuree(Valeur)
+         
+         m_nVerificationDuree = Valeur
+        type : 2031616
+     template_refs : []
+   -
+     name : VerificationLancement
+     identifier : 0x1c230f410b314c9d
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCÉDURE VerificationLancement()
+         
+         RENVOYER :m_bVerificationLancement
+        type : 1966080
+      -
+        code : |1-
+         PROCÉDURE VerificationLancement(Valeur)
+         
+         :m_bVerificationLancement = Valeur
+        type : 2031616
+     template_refs : []
+   -
+     name : OAuthNécessaire
+     identifier : 0x1f9c2e29118d3235
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         procédure publique OAuthNécessaire() : booléen
+         
+         renvoyer m_bOAuthNécessaire
+        type : 1966080
+      -
+        code : |1-
+         procédure publique OAuthNécessaire(bValeur est un booléen)
+         
+         m_bOAuthNécessaire=bValeur
+        type : 2031616
+     template_refs : []
+   -
+     name : OAuth_ClientID
+     identifier : 0x1f9c2e3b118e776c
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         procédure publique OAuth_ClientID() : chaîne
+         
+         renvoyer m_sOAuthClientID
+        type : 1966080
+      -
+        code : |1-
+         procédure publique OAuth_ClientID(sValeur est une chaîne)
+         
+         m_sOAuthClientID=sValeur
+        type : 2031616
+     template_refs : []
+   -
+     name : OAuth_ClientSecret
+     identifier : 0x1f9c2e41118f917c
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         procédure publique OAuth_ClientSecret() : chaîne
+         
+         renvoyer m_sOAuthClientSecret
+        type : 1966080
+      -
+        code : |1-
+         procédure publique OAuth_ClientSecret(sValeur est une chaîne)
+         
+         m_sOAuthClientSecret=sValeur
+        type : 2031616
+     template_refs : []
+   -
+     name : OAuth_Scope
+     identifier : 0x1f9c2e481190aad0
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         procédure publique OAuth_Scope() : chaîne
+         
+         renvoyer m_sOAuthScope
+        type : 1966080
+      -
+        code : |1-
+         procédure publique OAuth_Scope(sValeur est une chaîne)
+         
+         m_sOAuthScope=sValeur
+        type : 2031616
+     template_refs : []
+   -
+     name : OAuth_URLAuth
+     identifier : 0x1f9c2e4e1191c492
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         procédure publique OAuth_URLAuth() : chaîne
+         
+         renvoyer m_sOAuthURLAuth
+        type : 1966080
+      -
+        code : |1-
+         procédure publique OAuth_URLAuth(sValeur est une chaîne)
+         
+         m_sOAuthURLAuth=sValeur
+        type : 2031616
+     template_refs : []
+   -
+     name : OAuth_URLRedirection
+     identifier : 0x1f9c2e541192d9df
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         procédure publique OAuth_URLRedirection() : chaîne
+         
+         renvoyer m_sOAuthURLRedirection
+        type : 1966080
+      -
+        code : |1-
+         procédure publique OAuth_URLRedirection(sValeur est une chaîne)
+         
+         m_sOAuthURLRedirection=sValeur
+        type : 2031616
+     template_refs : []
+   -
+     name : OAuth_URLToken
+     identifier : 0x1f9c2e591193eeed
+     type_code : 103
+     p_codes :
+      -
+        code : |1+
+         procédure publique OAuth_URLToken() : chaîne
+         
+         renvoyer m_sOAuthURLToken
+        type : 1966080
+      -
+        code : |1+
+         procédure publique OAuth_URLToken(sValeur est une chaîne)
+         
+         m_sOAuthURLToken=sValeur
+        type : 2031616
+     template_refs : []
+   -
+     name : OAuth_TypeRéponse
+     identifier : 0x1f9c2e641194187e
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         procédure publique OAuth_TypeRéponse() : chaine
+         
+         renvoyer m_sOAuthTypeRéponse
+        type : 1966080
+      -
+        code : |1-
+         procédure publique OAuth_TypeRéponse(sValeur est une chaine)
+         
+         m_sOAuthTypeRéponse = sValeur
+        type : 2031616
+     template_refs : []
+   -
+     name : MonToken
+     identifier : 0x1fc0cc9a02aab6a4
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         procédure publique MonToken() : AuthToken
+         
+         token est un AuthToken
+         QUAND EXCEPTION DANS
+         	Désérialise(token,m_bufOAuthToken,psdBinaire)
+         FAIRE
+         	
+         FIN
+         
+         renvoyer token
+        type : 1966080
+      -
+        code : |1+
+         procédure publique MonToken(Valeur est AuthToken)
+         
+         serialise(Valeur,m_bufOAuthToken,psdBinaire)
+        type : 2031616
+     template_refs : []
+   -
+     name : POPGardeSurServeur
+     identifier : 0x1ff5c2f801d5631f
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         procédure publique POPGardeSurServeur() : booléen
+         
+         renvoyer m_bPOPGardeSurServeur
+        type : 1966080
+      -
+        code : |1-
+         procédure publique POPGardeSurServeur(bValeur est un booléen)
+         
+         m_bPOPGardeSurServeur=bValeur
+        type : 2031616
+     template_refs : []
+   -
+     name : CallbackAvancement
+     identifier : 0x1ff831c41e193790
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         procédure publique CallbackAvancement() : procédure
+         
+         renvoyer m_pCallbackAvancement
+        type : 1966080
+      -
+        code : |1-
+         procédure publique CallbackAvancement(Valeur est procédure)
+         
+         m_pCallbackAvancement=Valeur
+        type : 2031616
+     template_refs : []
+  procedure_templates : []
+  property_templates : []
+ code_parameters :
+  internal_properties : CAAAAAgAAACVGQgYbalU7DKC3oH4ItDrjtcTHXXV/EuH8q0IbhyQlw==
+  original_name : CClasse1
+resources :
+ string_res :
+  identifier : 0x1b4b682f0129171e
+  internal_properties : CAAAAAgAAACm76HWfKGWp33VjXInA4cRlqArlgTTA862QGt72W2ld5Y=
+  strings :
+   -
+     text :
+      fr-FR : Reçus
+     index : 0
+   -
+     text :
+      fr-FR : Brouillon
+     index : 1
+   -
+     text :
+      fr-FR : Envoyés
+     index : 2
+   -
+     text :
+      fr-FR : Corbeille
+     index : 3
+   -
+     text :
+      fr-FR : Impossible de se connecter au serveur. Veuillez vérifier les informations du compte.
+     index : 4
+   -
+     text :
+      fr-FR : Lecture des emails
+     index : 5
+   -
+     text :
+      fr-FR : Connexion au serveur POP3 des emails
+     index : 6
+   -
+     text :
+      fr-FR : Connexion au serveur IMAP pour réceptionner les emails
+     index : 7
+   -
+     text :
+      fr-FR : Seul les dossiers personnels peuvent être supprimés
+     index : 8
+   -
+     text :
+      fr-FR : Connexion au serveur  pour réceptionner les emails
+     index : 9
+   -
+     text :
+      fr-FR : Un compte portant le même non existe déjà
+     index : 10
+   -
+     text :
+      fr-FR : Un compte utilisant cette adresse email existe déjà
+     index : 11
+   -
+     text :
+      fr-FR : Impossible de se connecter au serveur. Veuillez vérifier les informations du compte.
+     index : 12
+   -
+     text :
+      fr-FR : Impossible de se connecter au serveur. Veuillez vérifier les informations du compte.
+     index : 13
+   -
+     text :
+      fr-FR : Impossible de se connecter au serveur. Veuillez vérifier les informations du compte.
+     index : 14
+   -
+     text :
+      fr-FR : Impossible de se connecter au serveur. Veuillez vérifier les informations du compte.
+     index : 15
+   -
+     text :
+      fr-FR : Impossible de se connecter au serveur. Veuillez vérifier les informations du compte.
+     index : 16
+   -
+     text :
+      fr-FR : Impossible d'envoyer l'email.
+     index : 17
+   -
+     text :
+      fr-FR : Veuillez vérifier les informations du compte.
+     index : 18
+   -
+     text :
+      fr-FR : L'email a été sauvegardé dans le dossier Brouillon de votre compte
+     index : 19
+   -
+     text :
+      fr-FR : Impossible d'envoyer l'email.
+     index : 20
+   -
+     text :
+      fr-FR : Veuillez vérifier les informations du compte.
+     index : 21
+   -
+     text :
+      fr-FR : L'email a été sauvegardé dans le dossier Brouillon de votre compte
+     index : 22
+   -
+     text :
+      fr-FR : Brouillon
+     index : 23
+   -
+     text :
+      fr-FR : Corbeille
+     index : 24
+   -
+     text :
+      fr-FR : Envoyés
+     index : 25
+   -
+     text :
+      fr-FR : Brouillon
+     index : 26
+   -
+     text :
+      fr-FR : Brouillon
+     index : 27
+   -
+     text :
+      fr-FR : Brouillon
+     index : 28
+   -
+     text :
+      fr-FR : Reçus
+     index : 29
+   -
+     text :
+      fr-FR : Brouillon
+     index : 30
+   -
+     text :
+      fr-FR : Envoyés
+     index : 31
+   -
+     text :
+      fr-FR : Corbeille
+     index : 32
+custom_note :
+ internal_properties : CAAAAAgAAABtB9HWVzrXO2+4NDRVK0vmzaNKrCKqH1DBX30lMmGZ

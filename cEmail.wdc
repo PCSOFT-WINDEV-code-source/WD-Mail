@@ -1,0 +1,1096 @@
+#To edit and compare internal_properties, use WINDEV integrated tools.
+#Internal properties refer to the properties of controls in windows, reports, etc.
+info :
+ name : cEmail
+ major_version : 28
+ minor_version : 0
+ type : 4
+ description : ""
+ subtype : 0
+class :
+ identifier : 0x1b4b5a0b0046d9c0
+ internal_properties : CAAAAAgAAAB2/vstTMCJbS/hlxjFxirSqKvCUuv8YxgpWyl7S3iA
+ code_elements :
+  internal_properties : CAAAAAgAAAD9BW2quuXHXOEBlUDAXobPknOQGHOTik5kcMZZnRtN2HIZLZOsAKHSo2NFomdQ80hMOneruCJox7ozj/hirm0xDvzOYuJj1hj0Y3dcDqZDbNPjhFadi4pc9m+wXx44m+4D0GYdkIMJyPgdYgnRp98eVeYvC5rkZj60y7TfuoiaVX8jmpkfbuSq6gpJYgtxTVgWZvv1jURJVkgjiTj1sWgX4HmA6XfmC0sjTEU50IJs3rxBUdyQUH55tNxEQIU1T++K9aRz028uiLJkOqxa2AdYVR/awreZN2ljYPrupWyywoz7jm3oCjExneKfelOLJ+4DODDH
+  type_code : 10
+  p_codes :
+   -
+     internal_properties : CAAAAAgAAAC7/aL5yZbe9g8Mv3pkL1DpIz3svCgNw9tP8pOAqLVvb7G8TtizUHGN2EOjNKiG/V63Glrw4BSidA7tmA3gcB40fYEEC8UsGAjU3rIsVlJ4Cht5yOO6a4Z3cFh9VBdB9+RlhXchomvaItTmB1w=
+     code : |1+
+      
+      CONSTANTE
+      	// Différentes exceptions que la classe peut lever
+      	EXCEPTION_EMAIL_ENVOIE	= 1
+      	
+      	// Différents types de destinataires
+      	DESTINATAIRE_CLASSIQUE	= "#DESTINATAIRE#"
+      	DESTINATAIRE_CC			= "#CC#"
+      	DESTINATAIRE_CCI		= "#CCI#"
+      	
+      	// Différentes copies d'email
+      	MODE_CREATION			= "#CREATION#"
+      	MODE_COPIE				= "#COPIE#"
+      	MODE_TRANSFERT			= "#TRANSFER#"
+      	MODE_REPONDRE			= "#REPONDRE#"
+      	MODE_REPTOUS			= "#REPTOUS#"
+      	MODE_EDITION			= "#EDITION#"
+      FIN
+      
+      //
+      // Classe représentant un email
+      //
+      cEmail est une Classe <mapping=Emails>
+      	protegee
+      	<MAPPING>
+      	m_nIDEmail				est un entier sur 8 octets	<mapping=IDEmail, clé unique>
+      	m_sExpediteur			est une chaîne ANSI			<mapping=Expediteur>
+      	m_sDestinataire			est une chaîne ANSI			<mapping=Destinataire>
+      	m_sDestCc				est une chaîne ANSI			<mapping=DestCc>
+      	m_sDestCci				est une chaîne ANSI			<mapping=DestCci>
+      	m_sSujet				est une chaîne UNICODE		<mapping=Sujet>
+      	m_sContenuTexte			est une chaîne				<mapping=ContenuTexte>
+      	m_sContenuHTML			est une chaîne ANSI			<mapping=ContenuHTML>
+      	m_bHTML					est un booléen				<mapping=HTML>
+      	m_dhDate				est une dateheure			<mapping=Date>
+      	m_Lu					est un booléen				<mapping=Lu>
+      	m_nIDCompte				est un entier sur 8 octets	<mapping=IDCompte>
+      	m_nIDDossier			est un entier sur 8 octets	<mapping=IDDossier>
+      	m_sMessageID			est une chaîne ANSI			<mapping=MessageID>
+      	m_sEMLSource			est une chaîne ANSI			<mapping=EMLSource>
+      	m_bContenuEstSynchro	est un booléen				<mapping=ContenuEstSynchro>
+      	m_nUID					est un entier				<mapping=UID>
+      	<FIN>
+      // Membres privés
+      PRIVÉ
+      	// Informations sur l'email
+      	m_tabDestinataire	est un tableau de chaîne				// Liste des destinataires 
+      	m_tabDestCc			est un tableau de chaîne				// Liste des destinataires Cc 
+      	m_tabDestCci			est un tableau de chaîne				// Liste des destinataires Cci
+      	m_nNbPJ				est un entier							// Nombre de piece jointe
+      	m_tabPieceJointe		est un tableau de cPieceJointe dynamique
+      	m_nTaille est un entier sur 8
+      	
+      FIN
+      
+     type : 131072
+  procedures :
+   -
+     name : Constructeur
+     internal_properties : CAAAAAgAAABSfRcl6ABp0qVm2RJQrHfsv5ovx3UfQgTZtMWi/7XymI7cWGTzfk1PPK0iPUZlC9VztGzEynCv5sJeNH6y7AYSPXTJiWIUOmqTEPo1/eLjyTwuEdRjm1YR7FvhFh0/MXgAi8FMktaebbK/8FhnUBeWNYcuiptRIOMJGIq9xhJe8r9/oEmti8HAEl0qkBqi83xmW5zA1JVAJLTFnWKTB335TMTfqA==
+     procedure_id : 1966764665573202368
+     type_code : 27
+     code : |1+
+      PROCÉDURE Constructeur(LOCAL nIDEmail est un entier sur 8 = -1)
+      
+      // Sauvegarde contexte
+      nPositionEmails		est un entier					= HSauvePosition(Emails,"*",hSauveRubriques)
+      
+      // Variable
+      pclPieceJointe		est un cPieceJointe dynamique	= Null
+      
+      SI nIDEmail <> -1 ALORS
+      	HLitRecherchePremier(Emails,IDEmail,nIDEmail)
+      	
+      	si HTrouve(Emails) = faux alors retour 
+      	
+      	// Informations
+      	FichierVersMémoire(objet,emails)
+      	
+      	// Charge les destinataires
+      	POUR TOUT CHAÎNE sDestinataire DE Emails.Destinataire SEPAREE PAR RC
+      		SI sDestinataire <> "" ALORS Ajoute(:m_tabDestinataire, sDestinataire)
+      	FIN
+      	
+      	// Charge les destinataires Cc
+      	POUR TOUT CHAÎNE sDestinataire DE Emails.DestCc SEPAREE PAR RC
+      		SI sDestinataire <> "" ALORS Ajoute(:m_tabDestCc, sDestinataire)
+      	FIN
+      	
+      	// Charge les destinataires Cci
+      	POUR TOUT CHAÎNE sDestinataire DE Emails.DestCci SEPAREE PAR RC
+      		SI sDestinataire <> "" ALORS Ajoute(:m_tabDestCci, sDestinataire)
+      	FIN
+      	
+      	// Calcule la taille totale de l'email et le nombre de pièces jointes
+      	m_nTaille = taille(m_sEMLSource)
+      
+      	eTmp est un email
+      	eTmp.Source = m_sEMLSource
+      	EmailImporteSource(eTmp)
+      	
+      	POUR TOUT Attachement DE  eTmp.Attache
+      		pclPJ	est un cPieceJointe	= allouer un cPieceJointe()
+      		pclPJ.Contenu				= Attachement.Contenu
+      		pclPJ.NomFichier			= Attachement.Nom
+      		pclPJ.IDAttache				= Attachement.Identifiant
+      		pclPJ.ContentDescription	= Attachement.ContentDescription
+      		pclPJ.ContentType			= Attachement.ContentType
+      		pclPJ.TailleFichier			= Taille(Attachement.Contenu)
+      		
+      		// Ajoute à l'email
+      		ajoutePieceJointe(pclPJ)
+      	FIN
+      	
+      SINON
+      	// Nouvel email
+      	:m_nIDEmail  = -1
+      FIN
+      
+      FIN:
+      HRetourPosition(nPositionEmails)
+     type : 589824
+   -
+     name : Constructeur
+     procedure_id : 1966764665573202368
+     type_code : 27
+     code : |1+
+      procédure Constructeur(UnEmail est un Email)
+      
+      m_nIDEmail  = -1
+      m_sContenuhtml = UnEmail.HTML
+      m_sContenutexte = UnEmail.message
+      
+      POUR TOUT Attachement DE UnEmail.Attache
+      	
+      	pclPJ	est un cPieceJointe	= allouer un cPieceJointe()
+      	pclPJ.Contenu				= Attachement.Contenu
+      	pclPJ.NomFichier			= Attachement.Nom
+      	pclPJ.IDAttache				= Attachement.Identifiant
+      	pclPJ.ContentDescription	= Attachement.ContentDescription
+      	pclPJ.ContentType			= Attachement.ContentType
+      	pclPJ.TailleFichier			= taille(Attachement.Contenu)
+      	
+      	// Ajoute à l'email
+      	ajoutePieceJointe(pclPJ)
+      FIN
+      
+      
+     type : 589825
+   -
+     name : Destructeur
+     procedure_id : 1966764665573267904
+     type_code : 28
+     code : |1+
+      PROCÉDURE Destructeur()
+      
+     type : 655360
+   -
+     name : sauvegarde
+     internal_properties : CAAAAAgAAABKZW+TgCBt6v2OMRKkZBsI/2Iz2RU/csRZ9AVifzWy2M6cWOQzPk1PfC2iPYalC9XztCyESvBvJkKe9L6ybMZSfTTJiaLUOupTkPq1PaLjSbyucTRD+7axDPsBNr3fkdhgKyGscrZ+DVLfEHiH8Pf2lScO6vuxgAMpOKpd5rK+Up+fgCkNa6Hgsn3KMLrS44wQrVr2rvOW+q7zS7DFDUNzxLzHsA==
+     procedure_id : 1967073134437906997
+     type_code : 12
+     code : |1-
+      // Résumé : Sauvegarde l'email en base
+      // Syntaxe :
+      //[ <Résultat> = ] sauvegarde ()
+      //
+      // Paramètres :
+      //	Aucun
+      // Valeur de retour :
+      // 	entier sur 8 octets : // 	Aucune
+      
+      PROCÉDURE sauvegarde()
+      
+      // Sauvegarde contexte
+      nPosition			est un entier	= HSauvePosition(Emails,"*",hSauveRubriques)
+      
+      // Variables
+      sListeDestinataire	est une chaîne
+      sListeDestCc		est une chaîne
+      sListeDestCci		est une chaîne
+      
+      // Ajout ? Modification ?
+      SI :m_nIDEmail <> -1 ALORS
+      	// Positionne sur l'email
+      	HLitRecherchePremier(Emails,IDEmail,:m_nIDEmail)
+      	dbgAssertion(HTrouve(Emails),"Email introuvable")
+      SINON
+      	// Nouvel enregistrement
+      	HRAZ(Emails)
+      FIN
+      
+      // Affectations des valeurs
+      MémoireVersFichier(objet,emails)
+      
+      // Sauvegarde les destinataires
+      POUR TOUT ELEMENT sDestinataire DE :m_tabDestinataire
+      	SI sDestinataire <> "" ALORS sListeDestinataire += [RC] + sDestinataire		
+      FIN
+      Emails.Destinataire = sListeDestinataire
+      
+      // Sauvegarde les destinataires Cc
+      POUR TOUT ELEMENT sDestinataire DE :m_tabDestCc
+      	SI sDestinataire <> "" ALORS sListeDestCc += [RC] + sDestinataire		
+      FIN
+      Emails.DestCc = sListeDestCc
+      
+      // Sauvegarde les destinataires Cci
+      POUR TOUT ELEMENT sDestinataire DE :m_tabDestCci
+      	SI sDestinataire <> "" ALORS sListeDestCci += [RC] + sDestinataire		
+      FIN
+      Emails.DestCci = sListeDestCci
+      
+      // Modification ou ajout
+      HEnregistre(Emails)
+      :m_nIDEmail = Emails.IDEmail
+      
+      RENVOYER :m_nIDEmail
+      
+      FIN:
+      HRetourPosition(nPosition)
+     type : 458752
+   -
+     name : destinataireAjouteListe
+     internal_properties : CAAAAAgAAAAUNuCJKRhDimQhep7aXqRRMmKzAt3fB27vnlSdmdc2qtaDoxxUfwGZ1assOlvC0IqHZPJFWY6V/dCgB5AXzGwGNamPRWKb9C/Lnll5wVQsTq5mBfc8yzmVjK0Sb+wX3NYFEUnt/5gNCbpx0ZmAnlIy+h1K+RJH10Gf6Imm4SJfO7MCMSUtDAEfwQKSCrgtnJgUBcyBsQ==
+     procedure_id : 1967122895977677774
+     type_code : 12
+     code : |1+
+      // Résumé : Ajoute des destinataires à la liste existante à partir d'un tableau
+      // Syntaxe :
+      //destinataireAjouteListe (<tabListeDestinataire>, <nNbDestinataire>, <sTypeDestinataire>)
+      //
+      // Paramètres :
+      //	tabListeDestinataire : <indiquez ici le rôle de taListeDestinataire>
+      //	nNbDestinataire : <indiquez ici le rôle de nNbDestinataire>
+      //	sTypeDestinataire : <indiquez ici le rôle de typeDestinataire>
+      // Valeur de retour :
+      // 	Aucune
+      
+      PROCÉDURE destinataireAjouteListe(tabListeDestinataire, nNbDestinataire, sTypeDestinataire)
+      
+      // Variables
+      sListeDestinataire est une chaîne
+      tabDestinataires  est un tableau de chaîne
+      
+      // Vérifications
+      SI nNbDestinataire = 0 ALORS RETOUR
+      
+      // Parcours du tableau et ajoute dans la liste
+      POUR nIndice = 1 _À_ nNbDestinataire
+      	sListeDestinataire += [RC] + SansEspace(tabListeDestinataire[nIndice])	
+      FIN
+      
+      // Transforme en tableau
+      ChaîneVersTableau(sListeDestinataire, tabDestinataires, RC)
+      
+      // Définit la variable à utiliser
+      SELON sTypeDestinataire
+      	// Destinataires
+      	CAS ::DESTINATAIRE_CLASSIQUE:
+      		TableauAjoute(:m_tabDestinataire, tabDestinataires)
+      
+      	// Destinataires Cci
+      	CAS ::DESTINATAIRE_CCI:
+      		TableauAjoute(:m_tabDestCci, tabDestinataires)
+      		
+      	// Destinataires Cc
+      	CAS ::DESTINATAIRE_CC:
+      		TableauAjoute(:m_tabDestCc, tabDestinataires)
+      		
+      	AUTRE CAS:
+      		dbgAssertion(Faux, "Type de destinataire non géré")
+      FIN
+     type : 458752
+   -
+     name : copie
+     internal_properties : CAAAAAgAAAAT389HNGCNU0UiwUdKr74Sd9GCzOdLUTYSKTYthF2Jgz836bNAl+NZ5cT5F3yCH2NjwAOgfFs3MbRhSdwFD/i77IoPNWjZ1WMyJdQhWkuFTh0GP8JN/43BkNm+iw7uqcZNhHGMQuBalmiuHtT/J9OtZ3jFfm/M4rYYEQKtyC8IGqQXcOKqZ1Ft+Mn9/r0kq8lnNWrD0e077vHE/wdWw8SNI7L/ez2vL1etB6Bz1MyoTqjK47gIIk2Ffgl4MqieNitCiFlFSBDz8t5CDUgPrxJg6MixjKg=
+     procedure_id : 1967856708350771604
+     type_code : 12
+     code : |1-
+      // Résumé : Copie les informations dans l'email passé en paramètre
+      // Syntaxe :
+      //copie (<pclDestination> est cEmail dynamique, <sType> est chaîne)
+      //
+      // Paramètres :
+      //	pclDestination (cEmail dynamique) : <indiquez ici le rôle de pclEmail>
+      //	sType (chaîne) : <indiquez ici le rôle de sType>
+      // Valeur de retour :
+      
+      PROCÉDURE copie(pclDestination est un cEmail dynamique, sType est une chaîne)
+      
+      // Variables
+      pclCompte		est un cCompte dynamique		= Null
+      tabExpediteur	est un tableau de chaîne
+      pclNewPJ		est un cPieceJointe dynamique	= Null
+      
+      
+      // Copie les informations
+      pclDestination.IDDossier				= :m_nIDDossier
+      pclDestination.IDCompte					= :m_nIDCompte
+      pclDestination.Contenuhtml				= :m_sContenuHTML
+      pclDestination.Contenutexte				= :m_sContenuTexte
+      pclDestination.m_tabDestinataire		= TableauDistinct(:m_tabDestinataire)
+      pclDestination.m_tabDestCc				= TableauDistinct(:m_tabDestCc)
+      pclDestination.m_tabDestCci				= TableauDistinct(:m_tabDestCci)
+      pclDestination.Expediteur				= :m_sExpediteur
+      pclDestination.Sujet					= :m_sSujet
+      pclDestination.HTML						= :m_bHTML
+      pclDestination.DateHeureReception		= :m_dhDate
+      pclDestination.EMLSource				= :m_sEMLSource
+      
+      // Récupère le compte associé à l'email
+      pclCompte								= cCompte.s_GetCompte(pclDestination.IDCompte)
+      
+      // Selon le mode, l'email est modifié
+      SELON sType
+      	// Simple copie
+      	CAS MODE_CREATION, MODE_COPIE:
+      		// Rien à faire, simple copie
+      		
+      	// Simple réponse
+      	CAS MODE_REPONDRE:
+      		// Le destinataire est celui qui nous avait envoyé l'email
+      		Ajoute(tabExpediteur, pclDestination.Expediteur)
+      		pclDestination.Destinataire	= tabExpediteur
+      		pclDestination.Sujet		= ["Re: "] + pclDestination.Sujet
+      		
+      	// Réponse à tous
+      	CAS MODE_REPTOUS:
+      		
+      		// Il faut se retirer des destinataires puisqu'on devient l'expéditeur
+      		pclDestination.destinataireSupprime(pclCompte.AdresseEmail, cEmail::DESTINATAIRE_CLASSIQUE)
+      		pclDestination.destinataireSupprime(pclCompte.AdresseEmail, cEmail::DESTINATAIRE_CC)
+      		pclDestination.destinataireSupprime(pclCompte.AdresseEmail, cEmail::DESTINATAIRE_CCI)
+      		
+      		// Ajoute l'ancien expéditeur dans les destinataires
+      		Ajoute(tabExpediteur, pclDestination.Expediteur)
+      		pclDestination.destinataireAjouteListe(tabExpediteur, 1, cEmail::DESTINATAIRE_CLASSIQUE)
+      		
+      		// Modifie le sujet
+      		pclDestination.Sujet = ["Re: "] + pclDestination.Sujet
+      		
+      	// Transfère l'email à quelqu'un
+      	CAS MODE_TRANSFERT:
+      		// Pas de destinataire connu
+      		pclDestination.Destinataire	= tabExpediteur
+      		pclDestination.Sujet		= ["Fwd: "] + pclDestination.Sujet
+      	cas MODE_EDITION:
+      		// Il faut aussi copier l'ID pour faire une modif et pas un ajout dans le fichier
+      		pclDestination.m_nIDEmail = m_nIDEmail
+      	AUTRE CAS:
+      		dbgAssertion(Faux, "Mode non géré")
+      FIN
+      
+      // Copie les pièces jointes
+      POUR TOUT ELEMENT pclPJ DE :m_tabPieceJointe
+      	// Nouvelle pièce jointe
+      	pclNewPJ				= allouer un cPieceJointe()
+      	
+      	// Copie les informations
+      	pclNewPJ.Contenu		= pclPJ.Contenu
+      	pclNewPJ.NomFichier		= pclPJ.NomFichier
+      	pclNewPJ.TailleFichier	= pclPJ.TailleFichier
+      	
+      	// Ajoute la pièce jointe à l'email
+      	pclDestination.ajoutePieceJointe(pclNewPJ)
+      FIN
+     type : 458752
+   -
+     name : destinataireSupprime
+     procedure_id : 1967869988420202048
+     type_code : 12
+     code : |1+
+      // Résumé : Supprime un destinataire de la liste
+      // Syntaxe :
+      //destinataireSupprime (<sDestinataire>, <sTypeDestinataire>)
+      //
+      // Paramètres :
+      //	sDestinataire : <indiquez ici le rôle de sDestinataire>
+      //	sTypeDestinataire : <indiquez ici le rôle de sTypeDestinataire>
+      // Valeur de retour :
+      // 	Aucune
+      //// Exemple :
+      // Indiquez ici un exemple d'utilisation.
+      //
+      PROCÉDURE destinataireSupprime(sDestinataire, sTypeDestinataire)
+      
+      // Variable
+      bTrouve est un booléen = Faux
+      nIndice est un entier  = 0
+      
+      SELON sTypeDestinataire
+      	CAS ::DESTINATAIRE_CLASSIQUE:
+      		POUR TOUT ELEMENT sElement DE :m_tabDestinataire
+      			nIndice++
+      			SI ChaîneOccurrence(sElement,sDestinataire,SansCasse) > 0 ALORS
+      				bTrouve = Vrai
+      				SORTIR
+      			FIN
+      		FIN
+      		
+      		SI bTrouve ALORS
+      			TableauSupprime(:m_tabDestinataire, nIndice)
+      		FIN
+      		
+      	CAS ::DESTINATAIRE_CCI:
+      		POUR TOUT ELEMENT sElement DE :m_tabDestCci
+      			nIndice++
+      			SI ChaîneOccurrence(sElement,sDestinataire,SansCasse) > 0 ALORS
+      				bTrouve = Vrai
+      				SORTIR
+      			FIN
+      		FIN
+      		
+      		SI bTrouve ALORS
+      			TableauSupprime(:m_tabDestCci, nIndice)
+      		FIN
+      		
+      		
+      	CAS ::DESTINATAIRE_CC:
+      		POUR TOUT ELEMENT sElement DE :m_tabDestCc
+      			nIndice++
+      			SI ChaîneOccurrence(sElement,sDestinataire,SansCasse) > 0 ALORS
+      				bTrouve = Vrai
+      				SORTIR
+      			FIN
+      		FIN
+      		
+      		SI bTrouve ALORS
+      			TableauSupprime(:m_tabDestCc, nIndice)
+      		FIN
+      		
+      	AUTRE CAS:
+      		dbgAssertion(Faux,"Type de destinataire non géré")
+      FIN
+      
+      
+     type : 458752
+   -
+     name : s_emailExtrait
+     procedure_id : 1968137453120087058
+     type_code : 12
+     code : |1+
+      // Résumé : Extrait l'adresse email
+      // Syntaxe :
+      //[ <Résultat> = ] s_emailExtrait (<sContact> est chaîne)
+      //
+      // Paramètres :
+      //	sContact (chaîne UNICODE) : <indiquez ici le rôle de sContact>
+      // Valeur de retour :
+      // 	Type indéterminé :  // 	Aucune
+      //// Exemple :
+      // Indiquez ici un exemple d'utilisation.
+      //
+      PROCÉDURE GLOBALE s_emailExtrait(LOCAL sContact est une chaîne)
+      
+      nPosition@ est un entier = Position(sContact,"@",0)
+      nTailleMessage est un entier = Taille(sContact)
+      
+      // Dans les expressions régulières, il faut que le "-" soit systématiquement à la fin, sinon le moteur de regexp prend ca pour un intervalle
+      si nPosition@>0 alors
+      	nPositionDébutMail est un entier = nPosition@ -1
+      	TANTQUE nPositionDébutMail > 0
+      		SI PAS VérifieExpressionRégulière(sContact[[nPositionDébutMail]], "[a-zA-Z0-9._\+-]") ALORS
+      			nPositionDébutMail++
+      			SORTIR			
+      		FIN
+      		nPositionDébutMail--
+      	FIN
+      
+      	nPositionFinMail est un entier = nPosition@ +1
+      	TANTQUE nPositionFinMail <= nTailleMessage
+      		SI PAS VérifieExpressionRégulière(sContact[[nPositionFinMail]], "[a-zA-Z0-9._-]") ALORS
+      			nPositionFinMail--
+      			SORTIR			
+      		FIN
+      		nPositionFinMail++
+      	FIN
+      	
+      	nPositionDébutMail	= Max(1,nPositionDébutMail)
+      	nPositionFinMail	= Min(Taille(sContact), nPositionFinMail)
+      	sAdresse est une chaine = sContact[[ nPositionDébutMail A nPositionFinMail ]]
+      	
+      	SI sAdresse[[Taille(sAdresse)]] = "." ALORS
+      		sAdresse[[Taille(sAdresse)]] = ""
+      	FIN
+      	
+      	// Vérifie la validité de l'adresse extraite
+      	SI EmailVérifieAdresse(sAdresse,emailValideSyntaxe)=emailAdresseValide ALORS
+      		renvoyer SansEspace(sAdresse)
+      	FIN
+      	
+      	nPosition@ = Position(sContact,"@",nPosition@+1)		
+      FIN
+      
+      RENVOYER ""
+     type : 458752
+   -
+     name : ajoutePieceJointe
+     internal_properties : CAAAAAgAAABmt10XvPwtmj/RZpBycbU1MUeQgkatC0hBFyED5FvtCumk4wrIBiFjqnGM5o5I8Z9n1kWx30bSKbJz+wK5evvEByKCI57mQjaFqFW3U2VP8qsvDTz+c9VSEyHvbjKTVNKdzudge2zFTr1X2rw8OPw+CoYYxNRd1Rr27LaTOQb/bthS+qu2USBd8Y12pmnT/z7xQP4A5SRDpV6xLVwGr8vMYSkl
+     procedure_id : 1968208083910610237
+     type_code : 12
+     code : |1+
+      // Résumé : Ajoute une pièce jointe à l'email
+      // Syntaxe :
+      //ajoutePieceJointe (<pclPJ> est cPieceJointe dynamique)
+      //
+      // Paramètres :
+      //	pclPJ (cPieceJointe dynamique) : <indiquez ici le rôle de pclPJ>
+      // Valeur de retour :
+      // 	Aucune
+      //// Exemple :
+      // Indiquez ici un exemple d'utilisation.
+      //
+      PROCÉDURE ajoutePieceJointe(pclPJ est un cPieceJointe dynamique)
+      
+      // Affecte la PJ à l'email si l'email a déjà un ID
+      SI :m_nIDEmail <> -1 ALORS
+      	pclPJ.IDEmail = :m_nIDEmail
+      FIN
+      
+      // Une pièce jointe de plus
+      :m_nNbPJ++
+      
+      // Taille augmente
+      :m_nTaille += pclPJ.TailleFichier
+      
+      // Ajoute la pièce jointe dans la liste
+      :m_tabPieceJointe.ajoute(pclPJ)
+     type : 458752
+   -
+     name : getPiecesJointes
+     procedure_id : 1968224993208000859
+     type_code : 12
+     code : |1+
+      // Résumé : Retourne un tableau de pièces jointes associées à l'email
+      // Syntaxe :
+      //[ <Résultat> = ] getPiecesJointes ()
+      //
+      // Paramètres :
+      //	Aucun
+      // Valeur de retour :
+      // 	tableau : // 	Aucune
+      //// Exemple :
+      // Indiquez ici un exemple d'utilisation.
+      //
+      PROCÉDURE getPiecesJointes()
+      
+      RENVOYER :m_tabPieceJointe
+      
+     type : 458752
+   -
+     name : getPieceJointe
+     procedure_id : 1968227832182372530
+     type_code : 12
+     code : |1+
+      // Résumé : Retourne un pièce jointe particulière
+      // Syntaxe :
+      //[ <Résultat> = ] getPieceJointe (<nRangPJ> est entier sur 8 octets)
+      //
+      // Paramètres :
+      //	nRangPJ (entier sur 8 octets) : <indiquez ici le rôle de nIDPieceJointe>
+      // Valeur de retour :
+      // 	cPieceJointe dynamique : // 	Aucune
+      //// Exemple :
+      // Indiquez ici un exemple d'utilisation.
+      //
+      PROCÉDURE getPieceJointe(LOCAL nRangPJ est un entier sur 8)
+      
+      RENVOYER :m_tabPieceJointe[nRangPJ]
+      
+      
+      
+      
+     type : 458752
+   -
+     name : s_nomExtrait
+     procedure_id : 2027848588151690641
+     type_code : 12
+     code : |1+
+      // Résumé : Extrait le nom d'une adresse email si il est indiqué, sinon retourne l'adresse email
+      // Syntaxe :
+      //[ <Résultat> = ] s_nomExtrait (<sAdresseEmail>)
+      //
+      // Paramètres :
+      //	sAdresseEmail : <indiquez ici le rôle de sAdresseEmail>
+      // Valeur de retour :
+      // 	Type indéterminé : // 	Aucune
+      
+      PROCÉDURE GLOBAL s_nomExtrait(LOCAL sAdresseEmail)
+      
+      RENVOYER sAdresseEmail
+     type : 458752
+   -
+     name : chercheParUID
+     procedure_id : 2287687254955541938
+     type_code : 12
+     code : |1+
+      // Résumé : cherche un email suivant son ID d'email (pas celui de la base de données, mais celui du logiciel de messagerie)
+      // Syntaxe :
+      //[ <Résultat> = ] chercheParUID (<sIDUniqueEmail> est chaîne ANSI, <nIDDossier> est entier sur 8 octets)
+      //
+      // Paramètres :
+      //	sIDUniqueEmail (chaîne ANSI) : ID de l'email (membre ID d'une variable de type Email)
+      //	nIDDossier (entier sur 8 octets) : dossier dans lequel chercher
+      // Valeur de retour :
+      // 	Type indéterminé : renvoie vrai si email trouvé dans la base
+      
+      procédure GLOBAL chercheParUID( local sIDUniqueEmail est une chaine ansi, local nIDDossier est un entier sur 8 octets )
+      
+      si hlitrecherchepremier(Emails, IDDossierUID, [nIDDossier,sIDUniqueEmail] ) alors
+      	renvoyer emails.IDEmail
+      FIN
+      
+      renvoyer -1
+      
+     type : 458752
+   -
+     name : chercheParMessageID
+     procedure_id : 1155262343650510182
+     type_code : 12
+     code : |1-
+      PROCÉDURE GLOBAL chercheParMessageID( LOCAL sIDUniqueEmail est une chaîne ANSI, local nIDDossier est un entier sur 8 octets )
+      
+      SI HLitRecherchePremier(Emails, IDDossierMessageID1, [nIDDossier,sIDUniqueEmail] ) ALORS
+      	RENVOYER Emails.IDEmail
+      FIN
+      
+      RENVOYER -1
+     type : 458752
+   -
+     name : s_MessageIDVersNomFichier
+     procedure_id : 2296976818227020076
+     type_code : 12
+     code : |1+
+      procédure publique globale s_MessageIDVersNomFichier( local sMsgID est une chaine )
+      
+      sMsgID = Remplace(sMsgID,["<",">"],"")
+      
+      renvoyer Remplace(sMsgID,["/","\",":","*","?","""","|"],"_")
+     type : 458752
+   -
+     name : genereFichierTempPourAffichage
+     procedure_id : 2302606665933387882
+     type_code : 12
+     code : |1+
+      procédure genereFichierTempPourAffichage()
+      
+      // Création du répertoire de travail
+      sRepGeneration est une chaîne = ComplèteRep(ComplèteRep(COL_WDMail.gsRepertoireTemp)+s_MessageIDVersNomFichier(:m_sMessageID))
+      SI PAS fRépertoireExiste(sRepGeneration) ALORS 
+      	fRepCrée(sRepGeneration)
+      FIN
+      
+      // Construction de l'email
+      eTmp est un email
+      eTmp.Source = :m_sEMLSource
+      EmailimporteSource(eTmp)
+      
+      // Extraction des images utilisées dans le HTML
+      POUR TOUT ELEMENT _pieceJointe DE eTmp.Attache
+      	// Image incluses dans l'email ?
+      	SI ChaîneOccurrence(eTmp.HTML, "cid:" + _pieceJointe.Identifiant) > 0 ALORS
+      		// Sauvegarde la pièce jointe
+      		EmailSauveFichierAttaché(_pieceJointe, sRepGeneration+_pieceJointe.Nom)
+      		// Dans le HTML, on référence maintenant l'image par son chemin sur le disque
+      		eTmp.HTML = Remplace(eTmp.HTML, "cid:" + _pieceJointe.Identifiant, "file:///"+remplace(sRepGeneration,"\","/")+_pieceJointe.Nom)
+      	FIN
+      FIN
+      
+      // Sauvegarde le html de l'email dans un fichier .html sur le disque (nécessaire pour que le champ HTML trouve les images référencées)
+      sEmailHTML est une chaine = sRepGeneration+s_MessageIDVersNomFichier(:m_sMessageID)+".html"
+      fSauvebuffer(sEmailHTML, eTmp.HTML)
+      
+      renvoyer sEmailHTML
+     type : 458752
+   -
+     name : genereMessageID
+     procedure_id : 1155258907669515624
+     type_code : 12
+     code : |1+
+      procédure genereMessageID()
+      
+      si m_sMessageID="" alors
+      	m_sMessageID = "<"+DateHeureVersChaîne(dateheuresys(),maskDateEmailUTC)+"."+donneguid(guidBrut)+"@"+ExtraitChaîne(m_sExpediteur,2,"@")+">"
+      fin
+     type : 458752
+   -
+     name : changeEtatLu
+     procedure_id : 1155513160926272416
+     type_code : 12
+     code : |1-
+      procédure changeEtatLu( bNouvelEtatLu est un booléen )
+      
+      bAncienEtat est un booleen = m_Lu
+      m_Lu = bNouvelEtatLu
+      sauvegarde()
+      
+      renvoyer bAncienEtat
+     type : 458752
+  properties :
+   -
+     name : IDCompte
+     identifier : 0x1b4c72630158ead6
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCÉDURE IDCompte() : entier sur 8
+         
+         RENVOYER m_nIDCompte
+        type : 1966080
+      -
+        code : |1-
+         PROCÉDURE IDCompte(Valeur est un entier sur 8)
+         
+         m_nIDCompte = Valeur
+        type : 2031616
+     template_refs : []
+   -
+     name : IDDossier
+     identifier : 0x1b4c72680159fe85
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCÉDURE IDDossier() : entier sur 8
+         
+         RENVOYER m_nIDDossier
+        type : 1966080
+      -
+        code : |1-
+         PROCÉDURE IDDossier(Valeur est un entier sur 8)
+         
+         m_nIDDossier = Valeur
+        type : 2031616
+     template_refs : []
+   -
+     name : IDEmail
+     identifier : 0x1b4c726d015a114a
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCÉDURE IDEmail() : entier sur 8
+         
+         RENVOYER m_nIDEmail
+        type : 1966080
+      -
+        code : |1-
+         PROCÉDURE IDEmail(Valeur est un entier sur 8)
+         
+         m_nIDEmail = Valeur
+        type : 2031616
+     template_refs : []
+   -
+     name : ContenuHTML
+     identifier : 0x1b4c7272015b23e0
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCÉDURE ContenuHTML()
+         
+         RENVOYER m_sContenuHTML
+        type : 1966080
+      -
+        code : |1-
+         PROCÉDURE ContenuHTML(Valeur)
+         
+         m_sContenuHTML = Valeur
+        type : 2031616
+     template_refs : []
+   -
+     name : Destinataire
+     identifier : 0x1b4c7276015c34b1
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCÉDURE Destinataire()
+         
+         RENVOYER m_tabDestinataire
+        type : 1966080
+      -
+        code : |1-
+         PROCÉDURE Destinataire(Valeur)
+         
+         m_tabDestinataire = Valeur
+        type : 2031616
+     template_refs : []
+   -
+     name : Expediteur
+     identifier : 0x1b4c727b015d463e
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCÉDURE Expediteur()
+         
+         RENVOYER m_sExpediteur
+        type : 1966080
+      -
+        code : |1-
+         PROCÉDURE Expediteur(Valeur)
+         
+         m_sExpediteur = Valeur
+        type : 2031616
+     template_refs : []
+   -
+     name : Sujet
+     identifier : 0x1b4c727f015e57cb
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCÉDURE Sujet()
+         
+         RENVOYER m_sSujet
+        type : 1966080
+      -
+        code : |1-
+         PROCÉDURE Sujet(Valeur)
+         
+         m_sSujet = Valeur
+        type : 2031616
+     template_refs : []
+   -
+     name : HTML
+     identifier : 0x1b4c9ab9043179fe
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCÉDURE HTML()
+         
+         RENVOYER m_bHTML
+        type : 1966080
+      -
+        code : |1-
+         PROCÉDURE HTML(Valeur)
+         
+         m_bHTML = Valeur
+        type : 2031616
+     template_refs : []
+   -
+     name : DateHeureReception
+     identifier : 0x1b4cae840523c800
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCÉDURE DateHeureReception()
+         
+         RENVOYER m_dhDate
+        type : 1966080
+      -
+        code : |1-
+         PROCÉDURE DateHeureReception(Valeur)
+         
+         m_dhDate = Valeur
+        type : 2031616
+     template_refs : []
+   -
+     name : DestinataireCc
+     identifier : 0x1b4ef68700968f6c
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCÉDURE DestinataireCc()
+         
+         RENVOYER m_tabDestCc
+        type : 1966080
+      -
+        code : |1-
+         PROCÉDURE DestinataireCc(Valeur)
+         
+         m_tabDestCc = Valeur
+        type : 2031616
+     template_refs : []
+   -
+     name : DestinataireCci
+     identifier : 0x1b4ef6930097c145
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCÉDURE DestinataireCci()
+         
+         RENVOYER m_tabDestCci
+        type : 1966080
+      -
+        code : |1-
+         PROCÉDURE DestinataireCci(Valeur)
+         
+         m_tabDestCci = Valeur
+        type : 2031616
+     template_refs : []
+   -
+     name : NbPieceJointe
+     identifier : 0x1b4f5ed308cff509
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCÉDURE NbPieceJointe()
+         
+         RENVOYER m_nNbPJ
+        type : 1966080
+      -
+        code : |1+
+         PROCÉDURE PRIVÉ NbPieceJointe(Valeur <utile>)
+        type : 2031616
+     template_refs : []
+   -
+     name : Lu
+     identifier : 0x1b4f6168003a0e63
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCÉDURE Lu()
+         
+         RENVOYER m_Lu
+        type : 1966080
+      -
+        code : |1-
+         
+        type : 2031616
+     template_refs : []
+   -
+     name : TailleTotale
+     identifier : 0x1b4f65f80080de30
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCÉDURE TailleTotale()
+         
+         RENVOYER m_nTaille
+        type : 1966080
+      -
+        code : |1+
+         PROCÉDURE PRIVÉ TailleTotale(Valeur <utile>)
+        type : 2031616
+     template_refs : []
+   -
+     name : MessageID
+     identifier : 0x1fbf81650d08e7dc
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         procédure publique MessageID() : chaîne ansi
+         
+         renvoyer m_sMessageID
+        type : 1966080
+      -
+        code : |1-
+         procédure publique MessageID(sValeur est une chaîne ansi)
+         
+         m_sMessageID=sValeur
+        type : 2031616
+     template_refs : []
+   -
+     name : ContenuTexte
+     identifier : 0x1ff3578a043bb7d1
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         procédure publique ContenuTexte() : chaîne
+         
+         renvoyer m_sContenuTexte
+        type : 1966080
+      -
+        code : |1-
+         procédure publique ContenuTexte(sValeur est une chaîne)
+         
+         m_sContenuTexte=sValeur
+        type : 2031616
+     template_refs : []
+   -
+     name : EMLSource
+     identifier : 0x1ff47baf1703e9a1
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         procédure publique EMLSource() : chaîne ANSI
+         
+         renvoyer m_sEMLSource
+        type : 1966080
+      -
+        code : |1-
+         procédure publique EMLSource(sValeur est une chaîne ANSI)
+         
+         m_sEMLSource=sValeur
+        type : 2031616
+     template_refs : []
+   -
+     name : ContenuEstSynchro
+     identifier : 0x1ff8158641afe706
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         procédure publique ContenuEstSynchro() : booléen
+         
+         renvoyer m_bContenuEstSynchro
+        type : 1966080
+      -
+        code : |1-
+         procédure publique ContenuEstSynchro(bValeur est un booléen)
+         
+         m_bContenuEstSynchro=bValeur
+        type : 2031616
+     template_refs : []
+   -
+     name : UID
+     identifier : 0x1ff81aaa4d70fca0
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         procédure publique UID() : entier
+         
+         renvoyer m_nUID
+        type : 1966080
+      -
+        code : |1-
+         procédure publique UID(nValeur est un entier)
+         
+         m_nUID=nValeur
+        type : 2031616
+     template_refs : []
+  procedure_templates : []
+  property_templates : []
+ code_parameters :
+  internal_properties : CAAAAAgAAACVGQgYbalU7DKC3oH4ItDrjtcTHXXV/EuH8q0IbhyQlw==
+  original_name : CClasse1
+resources :
+ string_res :
+  identifier : 0x1b4b5a0b0043d9c0
+  internal_properties : CAAAAAgAAACm76HWfKGWp33VjXInA4cRlqArlgTTA862QGt72W2ld5Y=
+  strings :
+   -
+     text :
+      fr-FR : Impossible d'envoyer l'email.
+     index : 0
+   -
+     text :
+      fr-FR : Impossible d'envoyer l'email.
+     index : 1
+   -
+     text :
+      fr-FR : Veuillez vérifier les informations du compte.
+     index : 2
+   -
+     text :
+      fr-FR : Veuillez vérifier les informations du compte.
+     index : 3
+   -
+     text :
+      fr-FR : L'email a été sauvegardé dans le dossier Brouillon de votre compte
+     index : 4
+   -
+     text :
+      fr-FR : L'email a été sauvegardé dans le dossier Brouillon de votre compte
+     index : 5
+   -
+     text :
+      fr-FR : <Contenu non disponible>
+     index : 6
+custom_note :
+ internal_properties : CAAAAAgAAABtB9HWVzrXO2+4NDRVK0vmzaNKrCKqH1DBX30lMmGZ

@@ -1,0 +1,446 @@
+#To edit and compare internal_properties, use WINDEV integrated tools.
+#Internal properties refer to the properties of controls in windows, reports, etc.
+info :
+ name : cFiltre
+ major_version : 28
+ minor_version : 0
+ type : 4
+ description : ""
+ subtype : 0
+class :
+ identifier : 0x1b5470ef00389056
+ internal_properties : CAAAAAgAAAB2/vstTMCJbS/hlxjFxirSqKvCUuv8YxgpWyl7S3iA
+ code_elements :
+  type_code : 10
+  p_codes :
+   -
+     code : |1+
+      
+      CONSTANTE
+      	// Attributs de filtre
+      	ATTRIBUT_SUJET        = "#SUJET#"
+      	ATTRIBUT_CONTENU      = "#CONTENU#"
+      	ATTRIBUT_DESTINATAIRE = "#DESTINATAIRE#"
+      	ATTRIBUT_EXPEDITEUR   = "#EXPEDITEUR#"
+      	
+      	// Condition de filtre
+      	CONDITION_CONTIENT      = "#CONTIENT#"
+      	CONDITION_NECONTIENTPAS = "#NECONTIENTPAS#"
+      	CONDITION_EGAL          = "#EGAL#"
+      	CONDITION_COMMENCE      = "#COMMENCEPAR#"
+      	CONDITION_TERMINE       = "#TERMINEPAR#"
+      	
+      	// Actions possibles
+      	ACTION_DEPLACE   = "#DEPLACERVERS#"
+      	ACTION_COPIE     = "#COPIEDANS#"
+      	ACTION_MARQUELU  = "#MARQUERCOMMELU#"
+      	ACTION_SUPPRIMER = "#SUPPRIMER#"
+      FIN
+      
+      //
+      // Classe représentant un filtre
+      //
+      cFiltre est une Classe <mapping=Filtre>
+      protegee	
+      	<MAPPING>
+      	m_nIDFiltre		est un entier sur 8 octets	<mapping=IDFiltre, clé unique>
+      	m_nIDCompte		est un entier sur 8 octets	<mapping=IDCompte>
+      	m_sNom			est une chaîne UNICODE		<mapping=Nom>
+      	m_bEstActif		est un booléen				<mapping=EstActif>
+      	m_sAction		est une chaîne ANSI			<mapping=Action>
+      	m_sValeur		est une chaîne UNICODE		<mapping=Valeur>
+      	m_nNumOrdre		est un entier				<mapping=NumOrdre>
+      	m_sAttribut		est une chaîne ANSI			<mapping=Attribut>
+      	m_sCondition	est une chaîne ANSI			<mapping=Condition>
+      	m_nIDDossier	est un entier sur 8 octets	<mapping=IDDossier>
+      	<FIN>
+      FIN
+     type : 131072
+  procedures :
+   -
+     name : Constructeur
+     procedure_id : 1969323108871016534
+     type_code : 27
+     code : |1+
+      PROCÉDURE Constructeur(nIDFiltre est un entier sur 8 = -1)
+      
+      // Sauvegarde contexte
+      nPosition est un entier = HSauvePosition(Filtre , "*", hSauveRubriques)
+      
+      :m_nIDFiltre = nIDFiltre
+      
+      // Chargement du filtre
+      SI nIDFiltre <> -1 ALORS
+      	HLitRecherchePremier(Filtre, IDFiltre, nIDFiltre)
+      	dbgAssertion(HTrouve(Filtre), "Filtre inexistant")
+      	
+      	// Affectation des valeurs
+      	FichierVersMémoire(objet,Filtre)
+      SINON
+      	// Valeurs par défaut
+      	:m_bestActif     = Vrai
+      	:m_sAction    = ACTION_DEPLACE
+      	:m_sAttribut  = ATTRIBUT_SUJET
+      	:m_sCondition = CONDITION_CONTIENT
+      FIN
+      
+      FIN:
+      	HRetourPosition(nPosition)
+     type : 589824
+   -
+     name : Destructeur
+     procedure_id : 1969323108871082070
+     type_code : 28
+     code : |1+
+      PROCÉDURE Destructeur()
+      
+     type : 655360
+   -
+     name : sauvegarde
+     procedure_id : 1969324307167039259
+     type_code : 12
+     code : |1+
+      // Résumé : Sauvegarde le filtre
+      // Syntaxe :
+      //[ <Résultat> = ] sauvegarde ()
+      //
+      // Paramètres :
+      //	Aucun
+      // Valeur de retour :
+      // 	entier sur 8 octets : ID du filtre
+      //
+      PROCÉDURE sauvegarde()
+      
+      // Sauvegarde contexte
+      nPosition est un entier = HSauvePosition(Filtre, "*", hSauveRubriques)
+      
+      // Ajout ou modification ?
+      SI :m_nIDFiltre <> -1 ALORS
+      	HLitRecherchePremier(Filtre,IDFiltre,:m_nIDFiltre)
+      	dbgAssertion(HTrouve(Filtre),"Filtre n'existe plus en base")
+      SINON
+      	HRAZ(Filtre)
+      FIN
+      
+      // Affectation des valeurs
+      MémoireVersFichier(objet,filtre)
+      
+      // Sauvegarde
+      HEnregistre(Filtre)
+      :m_nIDFiltre = Filtre.IDFiltre
+      
+      RENVOYER :m_nIDFiltre
+      
+      FIN:
+      	HRetourPosition(nPosition)
+     type : 458752
+   -
+     name : verifieCondition
+     procedure_id : 1969689362220496269
+     type_code : 12
+     code : |1+
+      // Résumé : Vérifie si le filtre s'applique au mail
+      // Syntaxe :
+      //[ <Résultat> = ] verifieCondition (<pclEmail> est cEmail dynamique)
+      //
+      // Paramètres :
+      //	pclEmail (cEmail dynamique) : email à vérifier
+      // Valeur de retour :
+      // 	booléen
+      //
+      PROCÉDURE verifieCondition(pclEmail est un cEmail dynamique)
+      
+      // Variables
+      sValeurMembre est une chaîne
+      bVerifie      est un booléen = Faux
+      
+      // Récupère la valeur à tester
+      SELON :m_sAttribut
+      	CAS ATTRIBUT_SUJET:
+      		sValeurMembre = pclEmail.Sujet
+      			
+      	CAS ATTRIBUT_CONTENU:
+      		sValeurMembre = pclEmail.ContenuTexte+rc+HTMLVersTexte(pclEmail.ContenuHTML)
+      		
+      	CAS ATTRIBUT_DESTINATAIRE:
+      		sValeurMembre = TableauVersChaîne(pclEmail.Destinataire,RC)
+      		sValeurMembre += [RC] + TableauVersChaîne(pclEmail.DestinataireCc, RC)
+      		sValeurMembre += [RC] + TableauVersChaîne(pclEmail.DestinataireCci, RC)
+      		
+      	CAS ATTRIBUT_EXPEDITEUR:
+      		sValeurMembre = pclEmail.Expediteur
+      		
+      	AUTRE CAS:
+      		dbgAssertion(Faux, "Type d'attribut non géré")
+      FIN
+      
+      // Vérifie la condition sur la valeur récupéré
+      SELON :m_sCondition
+      	CAS CONDITION_CONTIENT:
+      		SI ChaîneOccurrence(sValeurMembre,:m_sValeur,SansCasse) > 0 ALORS bVerifie = Vrai
+      		
+      	CAS CONDITION_NECONTIENTPAS:
+      		SI ChaîneOccurrence(sValeurMembre,:m_sValeur,SansCasse) = 0 ALORS bVerifie = Vrai
+      		
+      	CAS CONDITION_EGAL:
+      		SI sValeurMembre~=:m_sValeur ALORS bVerifie = Vrai
+      		
+      	CAS CONDITION_COMMENCE:
+      		SI sValeurMembre[~:m_sValeur ALORS bVerifie = Vrai
+      		
+      	CAS CONDITION_TERMINE:
+      		SI sValeurMembre~]:m_sValeur ALORS bVerifie = Vrai
+      		
+      	AUTRE CAS:
+      		dbgAssertion(Faux, "Type de condition non géré")
+      FIN
+      
+      RENVOYER bVerifie
+      
+     type : 458752
+   -
+     name : appliqueAction
+     internal_properties : CAAAAAgAAABhOJwTAi+fJdhSnR+ANZz4Klg8Lr9siI8csFYJfykZzMjetWxTpbj4qzu0d70+tq0PTZHYaKAZoHcV87H9rD7l143VIA+0Fa9l/g3cGMunIZFw/rS+tvbuL8oOCsSHOXKFB3vcfElsIhs8K0dT0ankUl0Zp+MYZohmHWvYGhGu6du8rsl42Y93FsmqqbE2mRZqy1ll5mRXg27Wqj9oQwSjWCH4kYomdFKppkf12ll7z02pKYd/1pH3mYIPszUCKQfAyUhTt/lK8+dS3g==
+     procedure_id : 1969690650710723180
+     type_code : 12
+     code : |1-
+      // Résumé : Applique l'action du filtre à l'email
+      // Syntaxe :
+      //[ <Résultat> = ] appliqueAction (<pclEmail> est cEmail dynamique, <pclCompte> est cCompte dynamique)
+      //
+      // Paramètres :
+      //	pclEmail (cEmail dynamique) : email à traiter
+      //	pclCompte (cCompte dynamique) : <indiquez ici le rôle de pclCompte>
+      // Valeur de retour :
+      // 	booléen : vrai s'il faut continuer d'appliquer les autres filtres à cet email
+      //
+      PROCÉDURE appliqueAction(pclEmail est un cEmail dynamique, pclCompte est un cCompte dynamique)
+      
+      // Variables
+      pclCopie   est un cEmail dynamique = Null
+      pclDossier est un cDossier dynamique = Null
+      bContinuer est un booléen = Vrai
+      
+      // Initialisation
+      pclDossier = pclCompte.getDossier(:m_nIDDossier)
+      
+      // Applique l'action
+      SELON :m_sAction
+      	CAS ACTION_DEPLACE:
+      		// Deplace l'email de dossier
+      		pclCompte.emailDeplace(pclEmail,pclDossier)
+      		
+      	CAS ACTION_COPIE:
+      		// Effectue une copie de l'email dans un dossier
+      		pclCopie = allouer un cEmail()
+      		pclEmail.copie(pclCopie, cEmail::MODE_COPIE)
+      		
+      		// Ajoute dans le dossier de destination
+      		pclDossier.emailAjoute(pclCopie)
+      		
+      	CAS ACTION_MARQUELU:
+      		// Marque l'email comme étant lu
+      		pclEmail.changeEtatLu(vrai)
+      		
+      	CAS ACTION_SUPPRIMER:
+      		// Supprime l'email directement du dossier ou il se trouve actuellement
+      		pclDossier = pclCompte.getDossier(pclEmail.IDDossier)
+      		pclDossier.emailSupprime(pclEmail.IDEmail)
+      		bContinuer = Faux // Inutile de continuer à appliquer des filtres sur cet email, l'email n'existe plus
+      		
+      	AUTRE CAS:
+      		dbgAssertion(Faux,"Type d'action non géré")
+      FIN
+      
+      RENVOYER bContinuer
+     type : 458752
+  properties :
+   -
+     name : EstActif
+     identifier : 0x1b5474e5007708b1
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCÉDURE EstActif()
+         
+         RENVOYER m_bestActif
+        type : 1966080
+      -
+        code : |1-
+         PROCÉDURE EstActif(Valeur)
+         
+         m_bestActif = Valeur
+        type : 2031616
+     template_refs : []
+   -
+     name : Nom
+     identifier : 0x1b5474ed007e2842
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCÉDURE Nom()
+         
+         RENVOYER m_sNom
+        type : 1966080
+      -
+        code : |1-
+         PROCÉDURE Nom(Valeur)
+         
+         m_sNom = Valeur
+        type : 2031616
+     template_refs : []
+   -
+     name : Ordre
+     identifier : 0x1b5475e20089e3a4
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCÉDURE Ordre()
+         
+         RENVOYER m_nnumOrdre
+        type : 1966080
+      -
+        code : |1-
+         PROCÉDURE Ordre(Valeur)
+         
+         m_nnumOrdre = Valeur
+        type : 2031616
+     template_refs : []
+   -
+     name : IDCompte
+     identifier : 0x1b54782600aabef5
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCÉDURE IDCompte() : entier sur 8
+         
+         RENVOYER m_nIDCompte
+        type : 1966080
+      -
+        code : |1-
+         PROCÉDURE IDCompte(Valeur est un entier sur 8)
+         
+         m_nIDCompte = Valeur
+        type : 2031616
+     template_refs : []
+   -
+     name : Attribut
+     identifier : 0x1b5490dd00344610
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCÉDURE Attribut()
+         
+         RENVOYER m_sAttribut
+        type : 1966080
+      -
+        code : |1-
+         PROCÉDURE Attribut(Valeur)
+         
+         m_sAttribut = Valeur
+        type : 2031616
+     template_refs : []
+   -
+     name : Condition
+     identifier : 0x1b5490e3003560a2
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCÉDURE Condition()
+         
+         RENVOYER m_sCondition
+        type : 1966080
+      -
+        code : |1-
+         PROCÉDURE Condition(Valeur)
+         
+         m_sCondition = Valeur
+        type : 2031616
+     template_refs : []
+   -
+     name : Action
+     identifier : 0x1b5490ef00368e94
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCÉDURE Action()
+         
+         RENVOYER m_sAction
+        type : 1966080
+      -
+        code : |1-
+         PROCÉDURE Action(Valeur)
+         
+         m_sAction = Valeur
+        type : 2031616
+     template_refs : []
+   -
+     name : ValeurCondition
+     identifier : 0x1b5490fa0037b94c
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCÉDURE ValeurCondition()
+         
+         RENVOYER m_sValeur
+        type : 1966080
+      -
+        code : |1-
+         PROCÉDURE ValeurCondition(Valeur)
+         
+         m_sValeur = Valeur
+        type : 2031616
+     template_refs : []
+   -
+     name : IDDossier
+     identifier : 0x1b549f6d030f27a9
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCÉDURE IDDossier() : entier sur 8
+         
+         RENVOYER m_nIDDossier
+        type : 1966080
+      -
+        code : |1-
+         PROCÉDURE IDDossier(Valeur est un entier sur 8)
+         
+         m_nIDDossier = Valeur
+        type : 2031616
+     template_refs : []
+   -
+     name : IDFiltre
+     identifier : 0x1b549fc1033b727e
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCÉDURE IDFiltre() : entier sur 8
+         
+         RENVOYER m_nIDFiltre
+        type : 1966080
+      -
+        code : |1+
+         PROCÉDURE PRIVÉ IDFiltre(Valeur <utile>)
+        type : 2031616
+     template_refs : []
+  procedure_templates : []
+  property_templates : []
+ code_parameters :
+  internal_properties : CAAAAAgAAACVGQgYbalU7DKC3oH4ItDrjtcTHXXV/EuH8q0IbhyQlw==
+  original_name : CClasse1
+resources :
+ string_res :
+  identifier : 0x1f98210c0055e843
+  internal_properties : CAAAAAgAAACm76HWfKGWp33VjXInA4cRlqArlgTTA862QGt72W2ld5Y=
+custom_note :
+ internal_properties : CAAAAAgAAABtB9HWVzrXO2+4NDRVK0vmzaNKrCKqH1DBX30lMmGZ

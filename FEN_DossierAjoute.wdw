@@ -1,0 +1,288 @@
+#To edit and compare internal_properties, use WINDEV integrated tools.
+#Internal properties refer to the properties of controls in windows, reports, etc.
+info :
+ name : FEN_DossierAjoute
+ major_version : 28
+ minor_version : 0
+ type : 2
+ description : ""
+ subtype : 0
+window :
+ name : FEN_DossierAjoute
+ identifier : 0x2b4c58d26b380cf4
+ internal_properties : CAAAAAgAAABewlU9ukXfnDLqXZTROd3Xss9h0KmBxDszfZQS9Viv/iM8wQk/YYh8i405Z2kApOzdhYYh2CXsiLJGdai8oxEF9AYPw4vIVps+mV0zyO6zz8bIyJXzR4wh2OqYA9cJNxccz1H5XjQqkJeEYcN5vdCwc1ZiNeOuYx7Ju37G9CSSAY75mJIN/OEMbv8IeWP9sbxwzv3eUIt3znp3jrOIqzu4URBNA16oIUkjx9D4MkV+wp8B5teBrgPPC2nqvWh8qA3mwubU4k5odAAeyvioKAQ+gQY5G+4NwUIhEzyyVPEEK4Uj8WvlD4rUOYjV3H6D7AZ2PUg+vPDTDcGSvF+C4X9T/HTK0HmyZp4SyXC15wxzSm+FXi3Fj6PYx+fG9K0lN5Gfq35Br1kWS3n/mFBc4qcnAl+N3QQ8cZOcDf4xRUHdOiWeTz3aHriCzQSjHJJK98jO8N8MU6uhsNESFahu/WTVOvAvWyjOZNWeQ2X0y6E41VN5bwS3mSkPX7ZjKUvLwQhO/yUK720+FjfPVu5D4bGsrNdJxGaUhFzPdZScZKiyPqCiPBqtmnIkGDuu/vlZEceh7u5Wd9WBE1cBINUzVxHr6RfpakLOwHBeH15eYc3BHTkXroB/ExgYjv0vqgJJTI7+3yyoVU015L4MQ6oSPhjMVwPXNz873x3tWbaWEMq+x3LCXlyx59FTmJ24VGFarQMEwEqaTRfAk/BcrTffnxPI0tPmQy77WPS3jM9TJXCSsZwvJ9V/m6uCZrb7cbseKqiuj9ArzKOJCrLdFQ+ONOEKkIJSfzk1GpjjSEe5azWUKtkjM4AOwriPaqavHRn6TXzTCOX0fjsqYHHo1UgB8J8CrB5CotjLTG7c4UDhzUoW1k4MFlqeUV+GftLtMeXH8ZC0WJKMNseTAHyQDtA5W/931GmT9jaZByMgjxWX7xykfIYEU9IEkvhINcZixPCv3gUzxw==
+ properties :
+  width : 480
+  height : 220
+  widthClient : 478
+  heightClient : 218
+ controls :
+  -
+    name : SAI_DOSSIER_NOM
+    identifier : 0x2b4c58e96bee656f
+    internal_properties : CAAAAAgAAADt2eWPOShhURTm8mO8eqesRy54Jwa0FEGZe0E9LPS/fkN9otZf/hTRK9tiO15FZpZBod53MsLL8bYhPujHQKPMc0YOsrXAe/1WpBhh3s8g99o4kJZG6Tkwxslrua8JlAZbGCmPDY0uH36kTeu1kFEeUJANEvSQ8l3FT6G+njggCn8xi4Hibh0mBvMsk+U035NmJhkIfAiSqyD0LAG6pFu+ssrYjLbwJ1sy+MLan7roilioiBu+NrWC1KIw/RJVCdsVUBtckAkPM37CV/t0cL4loh4ZOAf5rIX8tjGRlET8eS6LCVEjYnjV608ty3WiPfTJfqzBaLU4E7S3e2U322KEC90NJNwfOog2/OVWTf2UlG9zjRilSuRvh1cMPxXOLnth4C+RMeqABVJmc6DI0IYX8bX9gI3vuUkD2ilq51qyGiozAtKKaYu6WRgsicd56F8hRK55g2QG9gIYuo12i80hJ5ZKtiDZt0r587BaejDiCN+FxwvY+C8T3SsJFmmQ9rVJTbeWzCnKOrqwAD9z7lcAeQ9090jzR1D2zraQxZCFphT0U+MhqoBD7aVKaIZ/+OyjHKX1tnYkARNT1+0GHBzq/RAuO0laviyxr2jWvqcaCixfOdafV6zeHEZkdzIIWt4utJHHULnSNW51+g8phAr/jUELbqF6x9vC7jYu0dLqyjyhRVOafR29Yby5m92PZGR2ZPoiSNqEONspZTUuaE9cDXCeSIuxXKNM2GiSrYRb4Mm7ufKUqrrjswXScHXjrlt2aNXuYYfw8ItgTuwApFnc2E7Yi4klBJ4Xv3huhQ3/i+HrNwmuZ971fQSm9dsbwSnMvpEAvR/V/3cDZrHDCJIr5seC5eXwTB8hsSZRSUPFkwdhok2hTnH059HWSxPOdIG39L9hIPxO29ADI+L8dEb7QAnVeH2EEYfAQzwk9J0nu5N+5JljnZUOfL5CM06O8G0PiPYXm6UtT/186MVn7fbE/Aiz8/8BZmiGCAGVXOft3MKXMi+AMeDiOhUtvVjObri2agg9Mec6L9UiRDsiVXtP/Mxcnmn7vXbq3b+4Gd4LstyF3UsfWlV1ipqqYGmhlH6IkJUhphTy0OBtsVbo3ILvLbcnRrx36lcwuLMLf5+9Cgcq1nkVe5d71DGEiPTIGWMg53x4BPZFwz0NIWPktsd79HWq+pA1P9nTt/6Jb+w2/e8cLTQw0dBiKtxk
+    properties :
+     x : 24
+     y : 101
+     width : 426
+     height : 38
+    type : 2
+    code_elements :
+     type_code : 3
+     p_codes :
+      -
+        type : 276
+        enabled : false
+      -
+        type : 277
+        enabled : false
+      -
+        type : 278
+        enabled : false
+  -
+    name : BTN_ANNULER
+    identifier : 0x2b4c593779b197d5
+    internal_properties : CAAAAAgAAABLRRa9Tc4tfBipr1TTsGrUFKoRzQ8PzkR+HrSHPLn9H9JHxxM7+pce2X5ME2imVlC/EWf2R9bYD3s4XDKZ4imgNGFhLGEXioUJN14d3CvgJAsJ0BeYYaw7vrwTp/bA9SVdzXK4+8+/mKHrhVGXJ6IbCrUiYpqahfPRa+BHRGPRf2ijNbQIThMavDMOuQXFYcg5SZX08FPlMJMMCiJh+VCu899cRCiQ/CLoaSIvK/5+Q01YiXWyJEcdzSId7nOEGkwyepAIk7kFbP27YU/yO4l75RbrWQ1DhK/KTkKYvdrV/jvMuGtLB5SPRCARHOdK1a0P1BXex84bHM/sSswk4Qoiy+yYM+FfvQg/yuwZ5KmrNUG8pRFn6IgY0cmnobVD3Jo7vnoq1RiHQsg9azZfjDWyW5Rfg3Qgjahc1g1XFvwnIRHSHijnMOG9nRtjokV5Znf5CKWo2xg8/N4P8rk6l4TyciSXAD8Kvw7GRTY7LgFOTfLD5CZLwEpTY2/RmulRU4eo0LXQXWOb3551SdpFnP8Yvx7YhbVjllm0Vv8kLojbD1wC0lEYRazo3KTMyOzFSpaAuplEyAg3ZHhVOOHIQ9EdbVfKxf3GSvK3fMuKCT5jlP1n+Hsz+uxkBQnI1nkR0UtKTx0UGc+y4Gm/HqnaYrxWbS0nKN35LPDx2cXSojT/KrSbHdYNyzNwu8j++B7xmuIDv3VinPQTges0RyoAl/DlRKGgwodXQfLlG3uzj3JGntOaTBK8u6Xt4ItmYkgoPE4kJ9N937BncdsFlD3Fh81+rw==
+    properties :
+     x : 290
+     y : 172
+     width : 80
+     height : 24
+    type : 4
+    code_elements :
+     type_code : 4
+     p_codes :
+      -
+        code : |1-
+         
+         Ferme(FEN_DossierAjoute)
+        type : 18
+      -
+        type : 161
+        enabled : false
+  -
+    name : LIB_Nom_du_dossier
+    identifier : 0x2fa2e30c04c45486
+    internal_properties : CAAAAAgAAAC6bdTCpm24Gm68HgV23IWgbkbBifs/iuRhapoFFmBr0iESVzn6JsH32T6VhCEP1k6CU3SwRxry6ldCIbtZkiYoU0Ui9Ve3VKht6R1gAgr2niDrkw8JXKJ/hcvdz3eYq4IKhbb0HWvqmprbmIpGUPGX3t+aXZeBeki2v0AlOVt7Mv2X5OXt/CI7cpUUi1l+Sm2FH/tUPV+utQcDcZvMva66qfNLmUBzHV5n+77+xdMBNs4g9Ny/Jixy9Qvh3I7W0ZMk+zJFwipYbdAoar2ZdBZSzFIkx+Iz4UJ4GQ8GrakVz9jLPnxlnRW1M+2zvdFXIYwRB0RVqJYbboUXTqQaHgYqW9ArLZ8IiYGrUfmMj6RQjnpk1l2oiwl920+oUxZxDVEiOcUJYICrdHRArzDNC6utxmiP776JxWA8bRHE+NiFPI5EOiOGq0R/T90rw3sNwDLP4B1y6rnmt/hBtv+8papvxCWAEDrr/8reKJiRiE0vMOTxf0kZyGhkMXd+t5Z6+eCPrbE=
+    properties :
+     x : 24
+     y : 77
+     width : 147
+     height : 24
+    type : 3
+    code_elements :
+     type_code : 2
+     p_codes : []
+  -
+    name : LIB_Titre
+    identifier : 0x2fdc71f205ee9986
+    internal_properties : CAAAAAgAAADTvETFXMXsRJhfE9E5tzDaqe32YJj6ch3Hw0PW8/MSYphwA9fxuxGgljQ8l2aSy2Bm8xBiwnEOEN5A0mgzo3SAeMvg4iRU5r13Bclr7GM9T7CBs8ghy0zKMknzdT7UWY98iI1CpEft6AZRLoG9JnUuOgLGDLNEPX+J8AATi0tVoG5yZoIzLfmzZ7LJzR5yJZfpI4RYNwf/sOlnqq9xsTTPSz46+vyjFOMQiQuMUoyMTUr1Seh+5/mnWvUWSXsjwYjhkSbS0UGWHKFk6hU6QJ9xiukiV4s57UxtOmkwty2SzZDeubvw1TQXrpaLksiAvDVQk5VFzSq5NzHeWg+HW7/lkC6oV04LiLw4+3znzn1GIIKvKrvdzWQ+xLY/Ja/gd0YK53BSF4HSD196nMDeDXHrzNEpJqxNVsLszioYddGAQsEYofUj7t8gbgQOGgeBl2HEo0ymnKyRleO6JfKrKYYNP+UKMI6fl0mzaUyCLbqh55Azy1IdVL1BLs2gZfrEE0skgQOtyg0eSc3yu2koi0s1OU/xI5Mi/1jLJDT8RbwSbovlyjCTgrk1cPXZR0Bn
+    properties :
+     x : 24
+     y : 24
+     width : 416
+     height : 26
+    type : 3
+    code_elements :
+     internal_properties : CAAAAAgAAADwQixijGoLwCRg7+i0ZmhuWm+FROWeDBuxL8Q5xPqikBhjb9WVFyJ0WeuikF4XPZ+6Qq/M3lMFINaZ6OvHfb2YFdqX2nrjU41Onyh/OfcvT4LnGyYYBP5cyU0/4XCabHHom3vMSHQ7SwsK0DAPzSggLpNteg==
+     type_code : 2
+     p_codes :
+      -
+        code : |1+
+         moimeme = MaFenêtre..titre
+        type : 14
+  -
+    name : BTN_MDL_Annuler
+    identifier : 0x2fdc71f205f09996
+    internal_properties : CAAAAAgAAAAGZ0BMxGt/K19GePOBWZ2USWj9rRwEUucaREp0PS5Jwg7b1Ngd/CnB3LXqWaN14Hh6XYYXgWn94BaVPMu5+0TURc1hywN/Vy6LS7fNnHkAiVCu73yO0l2AaWM1klfszBTdor1JX4FkvSQqZs6H76fWFwr8DLCGjtCUxKCTEJkrW34B0IBac08/f3BWBIf3Nn5qMNV8CqUHaMxkvLbOVWmro1Sh6b0OXbRmuv8nXKfRrpmVeG88k+7DD8dSLrs/6EMWzNwv8Vf9naZbo3NcQ4+2Uz5AtAxoQz9WG/Wc9RYcSn4Lb65clF7JW4FJt2Hc3P59hJjLvHELhMuLk/yKfwkbiHEOBIOMd7sdFD2MA1XuUdnpW64pR2JJh+LfeZ5d4UIcjouCKRMOoVGieYPxQZCWqUbA8nTSrvYiK+EmBgoebupsP8MRqryKWGpwn8c60Z5yd8rEy4/xENjuO/gwdbrBHDp2mYLVrKeJHiSGMXPimJ/nPQHv3PVc5YE3qpT00ewqEGqvy8chNR0pAAe0sTZhLgVYAvwPEUsxK+2DU8kiki/LFT5gkDCTQKvNKwmGJkTmDVoaFHRuzf9y2AWE8LBNJ2ZvExDeO4fDZNg4Ew6qnpGpbd9Uvw5Qf/R6vlgOl8th8B+WWsathAspY4ZgLizk0W+ZO01+kLK6WKnG+vonsXf4bt0DXfo7T8qe+4QPf3fkV5KDx4Fh1z/CTYcfOVEuz4NIu9pCk7HD+MbE9nJahOoJOS0MPwXjpME3OvY3EHxgLu1hjfvmB8qHgvrFf18PDjdubiXls1PjL714BaiC+QXukQTItY6WDSLuGwnhppu0GJXbV7ikSkxqYndQAXmnZ9mJn7Xt3HkBK14DN0Q0lgNgMkN3pxUnhmpPFXgnXTNNzeCd4FvOZMZDD34JfTHLgdPN/DmnHbmHG+VpbeSuZXHDYaeKMnaQebPhz6HK1hxQ4pA64bxHum7FOGspMa3L8wt3561+j7ljq/zluHejtXt52vSGW6uEiOocddLMbC6z3LJRPT1z3e1Lwwl9ho6D49nuKJ9ipAtcHHUzJs5JHvsP
+    properties :
+     x : 446
+     width : 32
+     height : 32
+    type : 4
+    code_elements :
+     internal_properties : CAAAAAgAAAB09IG0n+lIYFtukrKvJXTTzmFWulAaCzwxBtnNhWFoMtj17Vhqmjyb1ApoGT18/J0Rdmrn0RN8UiFyfm5+pDt5wTe769DYJ9co9AMWtgvEQSE/dMHnZTZ3r78osw==
+     type_code : 4
+     p_codes :
+      -
+        code : |1-
+         ferme()
+        type : 18
+      -
+        type : 161
+        enabled : false
+  -
+    name : BTN_MDL_Valider
+    identifier : 0x2fdc71f205f29996
+    internal_properties : CAAAAAgAAAAfPo0ZYp2xQ36Lrn6O7NyJmUlkwfMrs7QRZNCyxdCSpxN4J4nMz5WXNuNeDYe+ZcVNTXDTs0xejdBJtPSBRIxxR2ZzXO3aX7dkGUVEDW+dYovXmc5cmhTAnyKKdJEB2yRJX761NA6a7aLpVA7nJ4RPxKYOZeL4+GJ3iYPYCCsbB9xTUxzlwqO/q4K3gxY33dVmsIrM1JLSE986sdtDsKohcxSTWdbAHDviSiiDo7l29DVZ3CRca/wZSikr09ny4W+mCejWNErUd9R3Rii5XhximXkP2lPMnWIgp2fpmKxr+FGAGFUZSxqRSRQ7FyXt0lEkIA8TG3Ge/JV3tulps6BmWyibif72Qgs4XVubvhGAb8E0SMfxokgOmv4Pmitb/tk/RW826SPzWEfMXAXbN/hiVCg6qo37+gFJn1guwR9f3iDfjscgcvdyBH7VPL10JzB1qjD+WpeLmouH//5ZRgH8WAksxWicgBb4iQKww39lxvM4+e2MkdvVsKjpBQ0Eq5Vf/lBI3Hu/nAjPoq6fbHIztoPhdYmdNg64ianuwCTJrdJEJg/Kl+DwPGc2iDySIN43RM9bfb9FX0sIOCBSdnV9R5K+BPeGExJyGC+0W/FJ8St25W2NmLZ7sdCrSN91Nzne4jy5VkZni6+RN3lWpjAp2CCqhIaka8V8V8FB2mdTiIIRrl2RqiSOEr2lWpw6KcJJVxz4gAOWyWIQKGEy6EgtUx/Ll4EjiBp82ykUIowx/69ZMVZxrOJhNmoFLTbMXYBWvVc8RnJ0Jxx/zY831kkpx3WZ57cXouUhDzb/DBo7By1aMyCkEd3oXW/6hAXHz+YpEE+2roWd7tfIjW/GBQtjHktIifb8HZctGnyaZsdTGHXP3Qd0lDpMLC1dDFqSBPY2i7++xaUHPQwVdJz8o3nEN2K8ScUCnfeYXtsq6O/Kk8kbX4LKOv1QF6SF5oE9JkJWaMF70S9OlYl+8dkLf69Ms8ypdMgLn3f0hRZc6c/DpTyB+/+usa8Q4GWyKvpVnpF0yLJ3W9+beXyGmwLs/igJn6oG9y22yyupN5JEbrl1eOHeMpIkRKzphsHp+V2XCSpJHRf+73Bsnnh4Txe6YlSeNtjpfxQBZaCkwIQtuEDklnInUxiFvBAV
+    properties :
+     x : 376
+     y : 172
+     width : 80
+     height : 24
+    type : 4
+    code_elements :
+     internal_properties : CAAAAAgAAACEJPHkj/l4sKu+woJfdaSDXpEGasDqu4xBlslddfHYoqilXQjaaqzrZOpoGf18zO0hJvpXYYPswlEirj4ONKvpUUdLW2BIl0dYpLOmBtv0cfEPRPG3VSZnX+/Yww==
+     type_code : 4
+     p_codes :
+      -
+        code : |1-
+         //Exécute le traitement défini dans le modèle
+         ExécuteAncêtre
+        type : 14
+      -
+        code : |1-
+         //Exécute le traitement défini dans le modèle
+         ExécuteAncêtre
+         
+         
+         SI SAI_DOSSIER_NOM ~= "" ALORS
+         	Erreur(<§$0009§>)
+         	RepriseSaisie(SAI_DOSSIER_NOM)
+         FIN
+         
+         // Ajoute le dossier au compte
+         pclDossierParent est un cDossier dynamique = allouer un cDossier(gnIDDossierParent)
+         gpclCompte.dossierCrée(SAI_DOSSIER_NOM, pclDossierParent.Chemin)
+         
+         Ferme(FEN_DossierAjoute, Vrai)
+         
+         CAS EXCEPTION:
+         Erreur(ExceptionInfo(errMessage))
+        type : 18
+      -
+        type : 161
+        enabled : false
+     templates :
+      -
+        name : BTN_MDL_Valider
+        identifier : 0x1543d14009bfa185
+        code_elements :
+         internal_properties : CAAAAAgAAACkjWvBv8Uy4Hpb8EODvKGI+kyMR5jYB0rYDwG0/YQLjUbW5x9NdzJEAsuYBOij5xDTtVUXzsNH1D+5mwFeYRbA6fdVj7O0czHp2FGJVQ9lWZMO6SgcGsi61CseQbiZK7L4cm0M2QS1jcefZe63EA==
+         type_code : 4
+         p_codes :
+          -
+            type : 161
+            enabled : false
+ menu :
+  name : _Menu
+  identifier : 0x2b4c58d26b3a0cf4
+  internal_properties : CAAAAAgAAADEQZFQR9rrTrE/3JH+nnZFFLWJrzggXO8WmgNKQ381MwFTpmP8CHiwUAPcXI8YcHvUMAriDkiPZeem61+ASNDByqMUPosus2pqXsv6ske8FWJysUUVgROTGTuV+/CG9ZpKRAv1GcGe971SerGAl8EpYDKVUADFoG0rcB0ThwMn+hzaj9v7LHID+LjHp9jUepiQggFqaBbzB5OJ2IDAK6bWLZ6m6NDu1QpOViQzMMfaXLTDCIHyPWzdwcNvlS0UQNYpABo3d/q8t7ubIeTVz5VWUx07yc12apIQaCd2M2Q=
+  options : []
+ languages :
+  - fr-FR
+ popup_menus : []
+ message_bar :
+  internal_properties : CAAAAAgAAAAjFWXItEk/EPvcbGR+hALkgRfdOpVtIn+yZNxHnmSRFJegE/AnD2HbGAaMfhGCqfzkryHG9FVhjtF+iQYkZ59QBQ88Okhh0vjCoVhOagox2hvIqrJnU30QK15/ZA==
+ actionbar : {}
+ code_elements :
+  internal_properties : CAAAAAgAAACWh1IIXRJXbz7tMTSG9/rY0pti5ovRpxg+wsnZTt508crT+UxtNXGimJVs8SyvuCC7jydrwiWN8zH+dyFO0Ptf57jhwIwRlF1H4fQnh9i1Q2z3l72wwurbpo3fhJ/4lHgyTZuYrskM
+  type_code : 1
+  p_codes :
+   -
+     code : |1+
+      PROCÉDURE FEN_DossierAjoute(gpclCompte est un cCompte dynamique, LOCAL gnIDDossierParent est un entier = cDossier::DOSSIER_AUCUN_PARENT)
+      
+   -
+     code : |1-
+      
+      // Initialisation
+      MoiMême..ValeurRenvoyée = Faux
+     type : 34
+   -
+     type : 180
+     enabled : false
+   -
+     type : 230
+     enabled : false
+   -
+     code : |1+
+      
+      
+     type : 2
+   -
+     code : |1+
+      
+      
+     type : 11
+   -
+     code : |1+
+      
+      
+     type : 12
+   -
+     code : |1+
+      
+      
+     type : 17
+   -
+     code : |1+
+      
+      
+     type : 13
+  templates :
+   -
+     name : FEN_DossierAjoute
+     identifier : 0x1543d14009bea185
+     code_elements :
+      internal_properties : CAAAAAgAAAAcjHl8VyEQWAOmutpHDaz7Jkn+MviC42RJblEFLdnwCkCNhWCi0sQT/MIu181sxOV/noLfqbsk+hm69rbG7HNxGc9DU3hwv2+wTOtuzuPsaclnLJkfLf6/52dAWw==
+      type_code : 1
+      p_codes :
+       -
+         type : 180
+         enabled : false
+       -
+         type : 230
+         enabled : false
+ code_parameters :
+  internal_properties : CAAAAAgAAAAvFg5VRKsZU/4RW1gMJDrgf/VCO2j0MXkwO1NDKsm2YEcHXJGsNVW2bkED1HfICMM+NfB6pxrYO/g3CfANwIKEmwtjF4lKt6IR6zt9g4Z7JyroJIAIp2rjEKMSR0HKx2uukSMCnZJJgC1MzmOsey+v8TRB3arel5F71F0ptW1MnDx6yKSA
+  original_name : Modele1
+resources :
+ string_res :
+  identifier : 0x1b4c58c903fee816
+  internal_properties : CAAAAAgAAABoikQ7y2Np7bxTQJDfeAAdyZe93nMAzLHDLPoa1xpCn8ejZr9uU8BWyWdau+eMwMBWNrCGmHSz
+  strings :
+   -
+     text :
+      fr-FR : Vous devez saisir un nom de dossier
+     index : 0
+   -
+     text :
+      fr-FR : Vous devez saisir un nom de dossier
+     index : 1
+   -
+     text :
+      fr-FR : Vous devez saisir un nom de dossier
+     index : 2
+   -
+     text :
+      fr-FR : Vous devez saisir un nom de dossier
+     index : 3
+   -
+     text :
+      fr-FR : Vous devez saisir un nom de dossier
+     index : 4
+   -
+     text :
+      fr-FR : Vous devez saisir un nom de dossier
+     index : 5
+   -
+     text :
+      fr-FR : Vous devez saisir un nom de dossier
+     index : 6
+   -
+     text :
+      fr-FR : Vous devez saisir un nom de dossier
+     index : 7
+   -
+     text :
+      fr-FR : Vous devez saisir un nom de dossier
+     index : 8
+   -
+     text :
+      fr-FR : Vous devez saisir un nom de dossier
+     index : 9
+custom_note :
+ internal_properties : CAAAAAgAAAC68/W0/adbG0nFCRhrE42B5HRnbDzVHaz86sSQyxlBk7I=
+rad :
+ internal_properties : CAAAAAgAAABoAN7PLpwJW3EiA7WVZdCA5EwrCA1rvutcDHooMWKe

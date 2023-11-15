@@ -1,0 +1,2183 @@
+#To edit and compare internal_properties, use WINDEV integrated tools.
+#Internal properties refer to the properties of controls in windows, reports, etc.
+info :
+ name : FEN_Principale
+ major_version : 28
+ minor_version : 0
+ type : 2
+ description : ""
+ subtype : 0
+window :
+ name : FEN_Principale
+ identifier : 0x2b4b3dd572cfa739
+ internal_properties : CAAAAAgAAACd8kUIFTDIgFf+MPBa3wpDmKQR7wP0o/+27EPEgRygZUN55UvLeM+nrBZXjS3dClyn+z9R00pYPxkfTWYaETQmNOivW0uLpstezXrtdpLV2Yffhswt4L/YR6NubbH01eSEIdDuZX5sOViCfnqWMBxbDs5SxaMeME5/P6t1HVjsxJX7E2cCKo1/rnr+HqEhLXran2y6+p3Wu8SkDQBerMnV/Jxvn8HDKCj2nRla5Z2Fzr+TAsUe3b40hcwMbVnKL66WcthhJ27kNTzJDj3t/79ZaRDIIGibUhyfTyEKC+i4OQpTxkhAgtrr+2MV2NHBuxTaSJCiUGXbARYwqayzcXcUrPuih6VUb5aSght+jCDvZ+jRrT1/mS1JVcOvVQxcrPjTBS4lr2Cfu+MUJ0DjfyEIEiitYIj3Zx4BUWf3e6R7SEP24dlmCf8ge8CZ8jgXBkBgXoFcoQ+hzwX1/01986ZDMllNlzXQuutUIgPivyw2gzN9p7i1WyADbFUVXoC1dfoMawOQM7e8J3PtPaf22vbiWN1vpt13RSU9wTcoGGCv+RO/hxrmm/dmQNl2AYTaofRJqslMCE2pdvd9MYhQOc7WqsR+EgFXQA5I8iT9uBcUxdnv37WORRMsmGtXBl4iOdZKH+i9zHEfVmuLcwKS9XWiH3etIDcBWbJz6FKnYLfgW9lOs8K6oYjjRDnqdTwHxrSBso1GeqPwDyT2wqlpsHkssCa9a96Ve32pi2EGPsJZt9fo+uN+6T44Btnxo0BWDFiFuVYa53Q5INyB3ZkdowhtgXbZNn2BfV+89EWHYcrc41hTaLkb1L6ru8cJR8/is1oSKw4ApeMxQdyazA0BNaA/P1dT4v/K3nkg56qzDG5/zTfEZcosK6N+i7y1IgxNwnWQWZQHuhSfQhBtyQD4KwaB8XE3L5JTHQ9YgThAAbMJY1YCi2J43Oa2I5Sc
+ properties :
+  width : 1024
+  height : 768
+  widthClient : 1022
+  heightClient : 714
+ controls :
+  -
+    name : IMG_ENTRANT
+    identifier : 0x2b4b5a1cac4a2060
+    internal_properties : CAAAAAgAAACYmqUROfid99HjE0TTVho+1ZUtOM2O3kiiBNaR4KRv5MeK7uq45Wd8NKPBzYOdiQxOWlsQVQ7Cl0N+hfpBzZtIEjVZKuFamxpbdXDAM1uH4J3YuXQ2iIH5AgzSJOPqs6zTRElbZjOPqmZGklqr1g4EXJPJdRaiZeXWiPfqCW6VsfEsnvLacunhAoNLVzvB0uUswE1TwXsw6Bei5Nt2gaRN+WpsAd4Ni2pZcXb1xoCaXFdEWDIdJihgrPcK/tq28jMrdcms8428VOLMIz+O9IdQ0fW4rmlZ3cadl8MKWFDC9I3k6WlDJ3aLlmRcnSOa7LNTE+q7CNewn5TrqTiele6o4HPvWk3RwFC94m76NgKQPaoPnqApQzCY6u52awyFdNYp84igR2PLR5RHYuFJjHbxbLqxdcWZmL5Y47NYKiSnt/xxF2WmbBSR/r5O3HiaH/6quZAiPFFJDDZiRTqxZfexyIrHTTUfezJ0ON3L7DQNkwYzL00fsRavBWKZkMdP1xIOaYLhXy8dGPD5VBjWbJ4VlKXkdaB69FMf1EuG7TSExXunnsayYKi1DrEMkj40xIhXrCrIaT8RjpKOkRp3PqWgCCt6M5hSEi+G9RpOqTJGwzzz6tOLj49TaPmn5NlhNv2spdl+PV0ljDiSlNWaKeILFvS6fKjaZBMvKsRKGMY/fegKILOUaEEazc9jgmUj3mYtb2dimpNK7yZugMH/oho3W1CfwJzPv/ODheuCsJUTvsS2RUCvdqKjG0PmjdP29VkodqGpXPy8zqbwDQocUfQT8S2+h8zcXugkHF9zQCqn2FOMfuRiYjTRq7JZcyY65wj/vr6dYNIT+tONsbWkX11INVFLSLdRD8rBV6IiPNcPGQhIoziLdO6wu1zWg5EbxZaySSQ8FKbC678ci1AmjRMkGiHmAqnui44=
+    properties :
+     x : -324
+     y : 73
+     width : 16
+     height : 16
+    type : 8
+    code_elements :
+     type_code : 8
+     p_codes : []
+  -
+    name : IMG_COMPTE
+    identifier : 0x2b4b5a41b23db34c
+    internal_properties : CAAAAAgAAACjAfqODUCDOEtVguLnv5h6ZA7zUgdEzKBWsPmkGGyLk8tZFKXnH2KJmLPxLV8hHUf88sV1G2NBzAPfsDyRLteJvwwB4yKLgfOEXAcAMY+ECuXI1s4Wsmbyw87yAoENUlkKz7QiqhBXBnOql06VZf3lHpAL3/KI9JCskkQoTEUarGzTe9qjj6Czli0kK3ZoNRqcqVkIrBs1ChQBZlUNcMy1LeEov/jg2rGSXJtZa0AlQx/9MRwMDZ7FxasB5kJCqvoBF9aI7ZkXwGhwkLAbeDUZJuxmVhPxgQnIJcI1IWTHcZc1lwGsOCdH39cw8j1OA7Ne4Ox09ZN2+EU4fo0rPW2PF32vcJNpNrs1/wVBAik2RDV0IOZrhRKhGOxAa6FRlhmeMc3Z3YSTp/T7sc48H7W4FBYhZuAKoSX8klfjUdoibsNV6bFilknG3VMuJk6DqpBICpSG+pp1K4UIc0H3UTwVF37LzT/aSxIK25GG2wfZQ+Hf/nCu7kzSILxjLYdkNg1YU/W7k+ImH2q+KKS6ZOIjf7LZyD26mvuy1UP/x2hWKvtVPSlvjsL20eYqNHrtWMYiJrWgK6B+fDXGnAPkJ8kHkI9igVd2O698ngASa5lyXQqGc5q/2JmmOUkcRi8BM2ada0krTguBYtJ5h0NCcdR80uyTW/d5tJ278OQoPpUat0V3ipZDteJx87qGxbGkBKayINbCS6Z4AAsMiS6mKLh39uDuYoq1o9D+zb4HVpKcD+mWzLFkNGFmk5fWOp4yvqO1BhSVLnbr3pt1bIvYskJRnXQNaa5ZqmbUoZnDiA9DwV/inYOy1bYoSs6HA1VUidg5S0oJYfzTqkhoIXcSQZ1uQ17ob8njICRbD0aJc5to4U+OztqMXVTyK4p+6zI/mR2QEEJw5vs/Ezh/m2AulQ==
+    properties :
+     x : -324
+     y : 52
+     width : 16
+     height : 16
+    type : 8
+    code_elements :
+     type_code : 8
+     p_codes : []
+  -
+    name : IMG_BROUILLON
+    identifier : 0x2b4b5aa7b85b41d5
+    internal_properties : CAAAAAgAAAAigtvnMlprbwI/Mgjr5yvKdJBwpKMsN9mNOMpWFUZzsIc//bLo+vj33kLjdf8aUak2tlz+gCRXPU/Uv/L1q5ojFl009QqP87waHNUhDgSyY7Q/6WTFBTY+wh7Y2BtD+Oewc6eIOIZh6MdBQw6jDOpPG03L53rlP4Z0DWzLRL5cfXqkOQhW413S8qeElF/YIRgSbVD4aPmP/bElFgq3TdqbZLsx2dDsCeJ63eLuiKjyIWn0OgdAZBupnE5e48jM3fFGhfqYjp+l2Ymg9+3t3R0U790+zy1G96qkGQBX2nQd9yI9zL22dT9SXfO40VCgK1DWpWK0TuuOaUOHMl8YxZve2i+z1+XDVztcXuoofH4GxJV0czazjOAg0J7ALhikAbBglS0LP7mHzXJgbIShZI7QncAHYov5cIOrKr5rF0iy4EH6azByJy0Mm7I5KpEfndqTsErCzSulglobW7rDThIbqKoVhMrjwVA0Efbi6UcIc7AQePz8P5qJckFcNxgT+Th1G27QI42hP8zPehTb2E+evlcNViU/RKR87FM380+KsxxhxuuIZgI7H0rzbu480vA6BG2ScDpSs2KJSEREFCjkOmSsNMGTOH9xmYkj0uXXOPpOzst2V77JKfjqxE8krawsxmhAkPIX9kv+zA4swdLVoUwTzqvuESuCGqqoAx00rKr9Ws5sgvvcUH9mBsMoSEhOcUd3+8Fb0P/Io1f7Vak/PxHDnzuLdtLP66iPN1IzQNg+MjoUpwyf1vHXo1XG+ngdqgXVZx1SwkBuXKebTyK9WfGx6XosZLaDNjNQf6j3n64461xDr3Lv/gJMVre4+iYWvl+kRQ033Fhh4BwVaTTljJscY2GRYs4sC0J2rgaeZhBPlGRmqNW+QhyvTjA7AZjDt1nMS4269MF1h9Ub1CpQKAQVd4R+uQ==
+    properties :
+     x : -324
+     y : 94
+     width : 16
+     height : 16
+    type : 8
+    code_elements :
+     type_code : 8
+     p_codes : []
+  -
+    name : IMG_ENVOYE
+    identifier : 0x2b4b5ac5be40b6d5
+    internal_properties : CAAAAAgAAAB1x/JWKqa2KngChghujisbNi6ImyS+3nCx+BwVaJZUT2dkWF5PLhfOvLaC7U2JJTa1DG4MiTcqi+ERy3HFBMuW+zU6sSEMcw04i51NV2g3HlnE1+w2wDbKtviP8yZnL2E9X4sCcUzSUTo5XEBEfZU05Kw7F08H/jhDQGGOPHSe23uIKiNO8/0TPF5mdKkoq4JpdOvWzmAqbacWsSiczU+jTxYnHK9uxDMl+gVMRGUGv5J7Jnw2hgy+3nJsKRubKa583GoHBydd7CdyL2BNHv+SJwTKdmj8AFfSU3mT8QoRsl6j0IuWBd6vEfGHotP9qvjei2Z+rLEkakKYkKhxdiDq7AiW6IB3PyvURD8BkipoekYHvV+8CHVbFc7kiGs/ykXQTJDFDYTEzkqnBn9GeLA5cicFY7kZrWK1f0VS7y+4LlF3Bv/kaRa6ieO2A+9ary/4/jSvzB2mthKKO8Hdc5GQ65qmIwJsmBoRBmYPJb410rsfB1FuWt03M5FxzhJe33mNzx8NBRKibyvM6lBMS9LLhyv/7zs+k7XPnYs485h+fry4cqNr3Ri1Q/utRpqpi60hsnSN/lUP92qtPlkZgoIEe6kTv/29G8EgYNDEoAMI8ELAh0xOOqnJlu0Jq2XlzAPPtWNVQlGdaaxzv1ADsqZWKQ2jNeMt8C+j0vuJUqxX9gJR1dYlB3aS0HOI0sHLYtfZ1c340JVSE76y4q6blK4qdvEgEkBlKJsQds116MgWH45IE9Tnbc5Sjf08EpKi9/sKtKHcT2D5WTodnDveExrrqR7MvWDMELFvVXar55FzZqOTn7Np/J5q11IyEMq4cAs1zJ7vh1RX2VvxKVceIowqlviPPeW2euSfTFR7QTuya6Ch46KGsi4fcMSK39kxTVu+bGquyIAxySsPUOKuxJUcYOQ=
+    properties :
+     x : -324
+     y : 115
+     width : 16
+     height : 16
+    type : 8
+    code_elements :
+     type_code : 8
+     p_codes : []
+  -
+    name : IMG_SUPPRIME
+    identifier : 0x2b4b5aedc46d50d2
+    internal_properties : CAAAAAgAAAD7n+vnLIIxp9XDJdlp6J6/Vwbrbs7jw94mwsihMnxqz39FbTgHb5cfucofvZjMOEKyEfmjcihYic+34pgb9zHZkQAcjZwY33AmA+cOQ/fdsmMa7NCdFGOYoDvrlE5dkxg+Oy+9F8aqRUJyy2Gr4iYfLzULrt/Q0kvhMIPCFDB5Xe2KU6xIYYDF28kGRsyqYP/3dCQFqPNw4/Fvm0TMNUhDqnC8sNqb7omGTjo7OIZ9jTW7dPjT4F0Ry7w5vVBB9BPlYEMrQCXFMZB6Uwx7k2YmIn6ahBF9jHf1J3+6s/QhznoV97flh/7B+ycKqD+DZpnBFs9qhbi1JQih+CvE+Z/c+R6m+9MYrPkfzaVeTzWhc1CV4DwB0pKsKB/Lh8JO9fCDFC4ZJepq8s1SFUdKJt3elzmcxbN98Uzq2oq/NkZtsCH3uIKxhOlu3yd9kvxfTjLE80eoN1OiuSs4/2SwLl18cvIu6LI9xTrmj0PNoLQYROVyT1fZQMqWKtxBQ45lHfljp1JAOyIEyl7AXIu9Yx0wb5WFs7HAZEZ0olDcrx1e+43CVsmAEVmRkH599x1rOBkJLUl0R7Z5f6xlmPECQedXRTUZCB3zk9Nvt6RZuHr1tD+BtVluvVcXujTCw/TkeP828hh1yxJS6ry3qTjEBi4V7H3Yf2A0/EUPtZEu9Lsfh+YMDaCML7XTmDXwE16S2TeS4+XXzwyPyQfUm05g09aqfWPZHU0WSsbsSZmvsQWdzp0dJdnt8ZFVOXxOa58hIFzEnxDKSkNpOj9FX1nz5J7fPsJGQKXK9zhCIYJmY9/lUWcl/McylZ+hKacFPCu36NjlyQ4HlBUyylW0X2gvsqhzt5ojpO/1cpRlFiHgLMkDz/Nhi4vZX6WQt3nQOPKtsWjM1IAFzvOzaFjrUeRWxlUK5NjHO2TSh5FL
+    properties :
+     x : -324
+     y : 136
+     width : 16
+     height : 16
+    type : 8
+    code_elements :
+     type_code : 8
+     p_codes : []
+  -
+    name : IMG_PERSONNEL
+    identifier : 0x2b4c37a357f56c9e
+    internal_properties : CAAAAAgAAADGgVxGiRizlJY7lYIAEXxG8fsgZ7Y+RHXWHsy244NAA/e4ExPyFblsmB6ngBHQ9iM0vx0oVyyRQQs5VptnXFvoqGQ+6Q1Y/wkqTBhBCEJAqZ4Fg11UcDjRo7Ct2YlZtxEYXaL85eMlX/hvdfvS/7IaxrsB7QFWc0P7vQ8JaR/A0aGsKoCptTfkvibUY2AbjiS1icx0vbcqCd3d4BYRfNP/eUYOJFHG6nGnI4aYD0WEhHpV9QRTX78UWt8840whdTvKnv5TomfsSnEp6cfKTFMSHtUJo/vIZcYz6dFffxNDpsq/6WaW7t2uTSUTXhzC9AemY1TmmQrVCbPxx4kqct8XsMCEEVpWqOfi+oLs+7i6t5T5yRPsegIPgvK24ZMuIcUokwPGpbBXkuk+zcps7qZN1NjxeoKYqdHL66xGgAP9/mM/BrxDr9VfvgQDN4C1k9Vf25WbrbVNDjSoMupAAL+Y/RB5J2vl2E69Akn5i+t77JraBiGtRf+xjCw9EvoC7D/hP82KGPKdX3Jo+0XkeCxW0RHyEwJUMa/4Pgm0Lkp9lY0elxNbO7B0mlpOGy72kXFZ36L0AqDm+OZbFSMhflJbYc2IYpa1EKDVV8u9tYkWKtM9kZBOAFV0ZHQS/YF6ikJJTQdYh0+iUhuCVVWrkswC7Bv68no1zOwbOStPIhQSgfj33WqtWyt5QRZwUZcX6WqJYG62NOOLU2mL9rkJvvICatjns7x7uIf8s/MumWGLyWc6fP3Q6Qg4kAn+WHjXc8IneEJ8gTsgEaoRADtsR0vxs40UXVmutf4Pqs8tFcPD46Y01HpOml3ZWiINax/HfUcQHkDnvWNd3auYqEp8QSqMF878FvIi/mYSNqbmjQQ/D6v9Q5v8l/W44ASUMBHGReWHLez+6A5OmfoUtauMLLHVz/L9wdm+jePkDA==
+    properties :
+     x : -324
+     y : 157
+     width : 16
+     height : 16
+    type : 8
+    code_elements :
+     type_code : 8
+     p_codes : []
+  -
+    name : ONG_WDMail
+    identifier : 0x2fdcaddd03dea8d6
+    internal_properties : CAAAAAgAAACOpxz1WhjQfBUingpFZQLZqSQYpefE5Kcfk/Eee7bZ5POMabnPP8CCbbgCwGpaKgndcxBjdtnxWTn80mtXkz0rQIxOd1IVXPXp8qwxOIa2IuDYBgBeNvt/VyTeMYTCL2YMnVuu7of12AdimOqDcXpYuRRppseF6ORyYjVQQUPP33SLA5/N1tMHdGzwVHGELIFD9er4aMRxWaQ2tUmnb5fdzm4BFKlYvVrA5ZPd6iPu91jwBELF/R2Okx8zgSeINDrq3I5FZuzYCk6vmzQ9Mlen0vVSRB3zUNjykFuIQebQewGNY7XpgY+6/BRD472vFS/fzqUsqE9GNufdYYiS2T11LG4WEiqAETFZYX/XkuUMIjUg57OftQ8sifmksk0Jb1s+33toFjQdYG1opwp5nV1N9G6PXO8WdGy0DY6nlLufYjyIwtcwJsFOVQOLvgXcz6b0AtpsufVNhiOg2rfzjC52bGwzQBGGfKQyjhoA7blfUdCVZpDID9Ys9Y7Sp4oBnmITAucFXEKEj19A+xHgBKhh4sgGAfDIs/bKulF/a+g82gc9L6mU1ijvSjeI/GFYW0FTot2HSe0FUwFNVq+3FtPwyv5F8AWmjijB7Azn6TSgLyYi6g68sT1AVB6hy14xBbiAZ8+kKi3hplqbBN+pHK3XWnioQvdXGE1bhM2+k8ghE8JOXQzRC4zlYUGdGEu4g1a8YLiRT7rOnKqFeEsmuI3vwsKLxNraZNV5mbQjbcTlVRQBdn5lkvjW5u6V/yr9OQK29agM/quZKBtSwU/cRrb2RRWDfxjF33DOHaTaZPTLjSksHMz4HSgORHoBu3FfF1s9WlC1QONMijEJB1lObsXddiEc4araqQvK6n00VSP40wRgiqrXQF5RkngCntCbfK6/OvwTV1QnlkbHKK9Lu1HAOO7kzjXfZ4dD8ptgUdwNiXHjbBN2YBwNpqIQBjuzHNJt7YPMYSN5t7pNu2Po/F0TNlAQr8tKCoWKSnwNl1S5u2o=
+    properties :
+     y : 3
+     width : 1022
+     height : 688
+    tabs :
+     -
+       internal_properties : CAAAAAgAAADzh92ffN7zo4CHIItpg3/W5/CXdToRYaxqt2ELUxvZS+UkGnPYnfavj3jM5e6FykT2F9YOPG68xSo0776Y4g/nMOfCpQPkpo2Tqw7KjOYAgxfs+HoFPbHhVA4BVfwj54PI610Kv51GIcy3GqAySPRppfMjVDaVNd3Fzws0bXGph3FgwdmZwbq7
+       controls :
+        -
+          name : TABLEH_COMPTES
+          identifier : 0x2b4b44bcbdc5a1dd
+          internal_properties : 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
+          properties :
+           y : 6
+           width : 200
+           height : 651
+          columns :
+           -
+             name : COL_COMPTE
+             identifier : 0x2b4b44bcbdc6a1ec
+             internal_properties : CAAAAAgAAACOwnOKEvEaexAhovCiINhBWOKUB9HtqxjY/1Gs99Y953iCsRKuB0AKz98oYW3K3Jb4O8Uizy3pcFSr0fqNBxftJruY5qGwq7Ff5m6UDC2AWFN4m+6ilmOfmeCIrzCvhYy26SW2pWPZ2z9kGdSOllp64XAYKcEOSXtyY7uapZyCDLNyV2B9TUcz+ofWp9+mDzBxMyl5iaSK87xovekdrnfxccMD9A==
+             type : 2
+             content :
+              internal_properties : CAAAAAgAAAAwV95SMC4HS84YYs7Bac+5TuUDO21qMA6YOeu2CcGPHwicwjxJIqd84+5hpjF72i1ox69JAY9x4X6cidN1ld94RjQ/aTm/Ci0tiWo7PS4V6yLk+SMZHtwTBeddAVJvGzk242pGRKloPVM9MvuiP45hC66pyfdF7pxlLgRF3IdH7TaqWrTHJmDkO4LiU/DPQVdJIzRyin1Vw60enOvqtitqdluFjLscCAkush+BLJK+6SKdwwQR+LBPyN4RFK5L2E3/WsLJFp7xOkd7nsI4koFCXXIjQmiMHCNJG1r0PocjgeEMBnNGWCAHabvKQfVYzE3wvQMzyH5TJmrZCVNdxzPsni2Y9cQYWG6ZO47ZheCPXp0zWQDS4lZDrzVktbv0BDp4zP4lvsW/Jcqt/LLWQiATWqCmaIjWmnw9T2zOa2n0CHOIa+htZK2dX9jNz0VYijwlFXUVxnUlQDn2tqcqllOgS81rKxT8vtl+2CqTqlvHoY+b8akL6CwHjTXkrZAfEQbWdnlUgbQ0DpCmoL/QqpKokGQEPOewwve2++stzO1a7rEz719mU0Gf/FUimgcMJepiJ5tOEivsZCXwtjGC34J/6KaSjhzR5OO5ePRhDAr84JKAnXRUzd0bo9zaUHvN4d6iB+frLxzlo5PBU6m8+LLedBEykEO+3DaEXXdl1k2+MBTCKc5qM+GRYlSzNjzDZ+NoZVEfALXQ3e/sfZX4vHTbPL+f18BUNw8W13tQT2j+sNAcJR7UqZtyQLPb3tc4+95PkDUghfakA1bQWRmmy8Ro3i9T8jVifvHTRtIXgvDdB/Gvb3scSibpBS2HuyQZ/bg0+DbCVCc22CwAWx5p5jxg9Mow9i1eZobaQVWHNFohfbL3Wwqh6Az86BNzBJ27Y+IrKiV4mcaf8r1UpVSbSJs+NLMdGuJNeAHaPqRIhmajdcZEutzLAMjreDkx
+              type : 2
+             code_elements :
+              internal_properties : CAAAAAgAAACVbIAZKIyLUtOx/TRl3LdawH8KiRIbZVPHIi3CQG0ZQWORAsfR1LV9KK1m6uVL3Trxd5kjIU0MB2uWkg==
+              type_code : 3
+              p_codes :
+               -
+                 type : 276
+                 enabled : false
+               -
+                 type : 277
+                 enabled : false
+               -
+                 type : 278
+                 enabled : false
+           -
+             name : COL_IDCOMPTE
+             identifier : 0x2b4c5c0da38ab093
+             internal_properties : CAAAAAgAAACiHIGcAMJdBDZrRpjp+JGuwTkXvGy50MBa9zZGnNvVAv9xsiqVJLQYOq15kjXZEn+iM05zY1rss3PdUzlayBV6Bfm3i9p8hppn7UhgKbrnu+L1uLtbQ/yF2Q1I5jZUyEyEv4jGzqOwqMUYZoTI0dAZfb4AVVm901P3NetgMheLLpCsQtd/jY3WyG8/jekeDrXzqNMmxAgDGxHUhvE6LG7GkTv+jKR36FB5g6pxD7waf5+r
+             type : 2
+             content :
+              internal_properties : CAAAAAgAAAAKz0Xjb8VSHBttdTr2KHwAra9BieFrTVlURwwjFThmMcX4ZnZCm2cOzEGGgu/bz8z1277dCYy08/P3dWYXt9+w7sIDeTUIFYPl/zzFhyx2SIGpMH+SDqVDUeYFGBj9sHFGYxPwAWyP9HG5wfIzSmK0cA2OibIW1WYJvAAOYdLaGv1Y8GhW+IL5yhspHEEeWtBzP7WVhW8yMU5X2dq3j/bl8mcsuojGAAiSN+jGitRRjc6ZW6oBbNHiinH8yhdXa10udFTvlAE/EXxc//xB8eU+B89WlAiuSRq/MHHRRT4Yy77lYEyoIK8m53XUOB/BJa0OKAM3MzhLpUMgd1zXuGGL61KjghB1KLxL2s/w5GYu11jhcDfkpB4Csa7kdJy1LL6+DyAOBMidZHzJwRikMNTP1Yps6VE1ap33tkF81pAv0e2uDjk9EO3bmGdpzmhPD4fi0XDFm6nFKFXsrn4OjkaJ/3CMP/Xid/3Bzrb5FF1YqkrVWBE4r6U2ZCbAi+HW0AB6qAYgPusdNSNbBpM/Y1s0ot6dqOrtVVJdTLU9gTiZTvPlOJuNAjLUQbAemN5xvjx2w9yGn5q992AdtLPFVs2r2gIJcKkC0xQGO+qVp3cJYsrQRqKlqPLgjA+oospQLMo0e1RXJmFwbt6yC/3j110KntMthBZLz11nCtuZ7XiVqAbW+NIN6PzwxSGdoGvEJN/q7yJ3R2BVpiQTw8dzQemP0ruagQtJYnIlQPlStOl/YqjcYERtegoz+SqVviK5wDKZcs6+Rt1NXB/Lb8V7yAHY7BtgRHizDTzev2h/97Ve91/70KtXDwF2ruR399tacqBCJpu89RzBo4tJAxBAPV8AVr5nmkwhg+n5Ep/7awmoN35JNMpyI/GVwUJnblDKCvR3CGa26uPSYfxU7H+8HZ0PLokuzG98Fnmx+QqZ2cg5IcI88VV54wPQMfrGQqo4m8t9NfAbZg1pwpMPryoAkEv2/JfFm6s=
+              type : 2
+             code_elements :
+              internal_properties : CAAAAAgAAACnh8CzzGLhwG6r2eO0EpMBNXah9x0fwnHa9aS/J5rxqI2QIUXPD1nxcJAsKQ5wZdfKsDOJkIiTqXmd9xcw3Q9ITCOZbH/LLA==
+              type_code : 3
+              p_codes :
+               -
+                 type : 276
+                 enabled : false
+               -
+                 type : 277
+                 enabled : false
+               -
+                 type : 278
+                 enabled : false
+           -
+             name : COL_IDDOSSIER
+             identifier : 0x2b4c5f0f27bf6947
+             internal_properties : CAAAAAgAAACT4/KVCwYdxPQvGIpllFPUl0mBJnXqwd93OQ8TSdhI/UrO+dHeipZi0ZQx5lm7tgZhfgKS8PcU1WaWslyDYWuzFkBEaH1XCStG8H+bMKkETIcU0UzCKqqBKmBhxXnB5UftJGFtAWj7EXpp6wen8rlwnpOZTVNDHVXTu1CqYj8H5GvISu8DgqhlJgamHugPnzSAzYhhjwV2nAzbwf4bO9th2qI303GirZO+Rusw1McRcO56
+             type : 2
+             content :
+              internal_properties : CAAAAAgAAAAKz0Xjb8VSHBttdTr2KHwAra9BieFrTVlURwwjFThmMcX4ZnZCm2cOzEGGgu/bz8z1277dCYy08/P3dWYXt9+w7sIDeTUIFYPl/zzFhyx2SIGpMH+SDqVDUeYFGBj9sHFGYxPwAWyP9HG5wfIzSmK0cA2OibIW1WYJvAAOYdLaGv1Y8GhW+IL5yhspHEEeWtBzP7WVhW8yMU5X2dq3j/bl8mcsuojGAAiSN+jGitRRjc6ZW6oBbNHiinH8yhdXa10udFTvlAE/EXxc//xB8eU+B89WlAiuSRq/MHHRRT4Yy77lYEyoIK8m53XUOB/BJa0OKAM3MzhLpUMgd1zXuGGL61KjghB1KLxL2s/w5GYu11jhcDfkpB4Csa7kdJy1LL6+DyAOBMidZHzJwRikMNTP1Yps6VE1ap33tkF81pAv0e2uDjk9EO3bmGdpzmhPD4fi0XDFm6nFKFXsrn4OjkaJ/3CMP/Xid/3Bzrb5FF1YqkrVWBE4r6U2ZCbAi+HW0AB6qAYgPusdNSNbBpM/Y1s0ot6dqOrtVVJdTLU9gTiZTvPlOJuNAjLUQbAemN5xvjx2w9yGn5q992AdtLPFVs2r2gIJcKkC0xQGO+qVp3cJYsrQRqKlqPLgjA+oospQLMo0e1RXJmFwbt6yC/3j110KntMthBZLz11nCtuZ7XiVqAbW+NIN6PzwxSGdoGvEJN/q7yJ3R2BVpiQTw8dzQemP0ruagQtJYnIlQPlStOl/YqjcYERtegoz+SqVviK5wDKZcs6+Rt1NXB/Lb8V7yAHY7BtgRHizDTzev2h/97Ve91/70KtXDwF2ruR399tacqBCJpu89RzBo4tJAxBAPV8AVr5nmkwhg+n5Ep/7awmoN35JNMpyI/GVwUJnblDKCvR3CGa26uPSYfxU7H+8HZ0PLokuzG98Fnmx+QqZ2cg5IcI88VV54wPQMfrGQqo4m8t9NfAbZg1pwpMPryoAkEv2/JfFm6s=
+              type : 2
+             code_elements :
+              internal_properties : CAAAAAgAAADkdzZ/cLvlj2k94g3TG572PKkg1cRNV9JGTmQXujrOQp5cfbxak5IV8qhfj3aO1DgtlL4kT19GpGrMf4aNEemuAOhm
+              type_code : 3
+              p_codes :
+               -
+                 type : 276
+                 enabled : false
+               -
+                 type : 277
+                 enabled : false
+               -
+                 type : 278
+                 enabled : false
+           -
+             name : COL_RACINE
+             identifier : 0x2b4df67e6eb0e76c
+             internal_properties : CAAAAAgAAADVr5ftNTDxTdsbnBZGOu3kyV7Y3m/9D4K4iiwpM9BGy9i3ldoZ4Q8o/dVbstYMciv56zBRnO4Hlf6ZH1R10CWpFg6DDZNeb5z0Y3YUFMz4qIGS9cMNSyv+SNFQs+Q3F8BrEPatoWFUTevB+2VOb/8eoZ9jbam+v41fPTHPRQV6nvTHpRMSvNGMPl0uIDZ5LXdEhcBtLZCr/IhiAUdzweMS1gVIZYkpwFE=
+             type : 5
+             content :
+              internal_properties : CAAAAAgAAAA6K2jLBHvdJLjpke/7dqCOStpazPUt+NEMq5X8ebAaBq5SoW+SR70q0QV1jrXY+F+8tkDUX0hGCWgyuLNC6my4fNrieqDyKvUgX7KRHFtRPwBhhlL/sBsiMTzIdScpCOueaXbp9VcYl6ctffhA/K7jPOLrYmLSXIrx1K/aXJwswdU/cXgI49uHWoebjWJQZklS/sVsqAIlUCHRA1WpH/MSMHdaEFEL//Gagrfa7mVMq10eSheqoI89cCUu1AE6dzxy9a9RL0tNBxA50SbGPX9TQcCxBOEEiDPsibXhLpjP4pc60UT0xmjldRhVFXbzWSZCAd1ttUUOKB3NaUzVkBe5E4UxiyS8ININqRmUaWMAU2Smp++xS02jYPBA/S601uxuBXJJ/TwABSN7Q+kmyXfI8Xj8KHXcxfiUEaUTuEFD1dkeAeHtlLoRPwROXB3RQaO5S+YVaUoQkd20pf4+TUd4stGJPSpd7Ah2An9ByJuNwE4LVi/PG6iDT9LIbCa3urMmJehheWDcsuDJAFJihVAIkUgpYefeLh5Z0G96HyNF+dYAewGscOsM0t45hhr9WxwiWcaDGaizqwkmDTdOYadSddwf7XiIxxZH6+tT0U7l1m+EhijKAHeN1tQvu+ZQdmaZyMGiOxsktPlFxewacBbAq+6wLjqksp4cSPWPbu/E/x0OReCvAlnRwjJnD4jo0JRdL0a51t1K8JLSzik2W91L3YjDHmRSAQLOyuc14ReIKXwKV8nE5W0IvyW7JldYRr4+cL0f3A1Ot3OQgrCpDg==
+              options :
+               -
+                 internal_properties : CAAAAAgAAADZvWx7N04Ani6QsNIAD7/3Hg/t7SCF2bx2IaVjkjXz3Ke1ob84s1r5eL5hgzRFaLoEGE/s4cUC
+              type : 5
+             code_elements :
+              internal_properties : CAAAAAgAAADdDojB5TfSqYWTpguTKD6nMXmIPSiGXJYGn1qRik2RZWm4LBdfpvi7W1Jq6XHHlh3vmPYPaEj9QmMEH7fe+PLx5Jg5GRqx
+              type_code : 5
+              p_codes : []
+           -
+             name : COL_NB_NON_LUS
+             identifier : 0x2ff6e3b01a92370f
+             internal_properties : CAAAAAgAAADAxJe5NR1CUHbMW+7Mv839BSsACkc7GTtN6BjJyHQEzPz5LcGktjVsktPCngBmyJNEsq7ulrqrLtonXxeQpJmNoI77NXdzKhRHWGug3eC/2j5HhgQZXuKapgvDG/KvbueI+MJtgFIiGZRlMDoO2CUbNqR2ZB05ckFkYRIO5yjqCiLteWzViWiCQWvs8U5q37uHdfxRymQD4swzgeyJ8VQ5R5gAr21oDwjSnclZ43HFSg==
+             type : 2
+             content :
+              internal_properties : CAAAAAgAAABIsZ7Nb3K5W0/36K2IFMdJ3icqs2MRkt0K0GG1SJN1J2mz3jiidWLWuyqwXb01e/Lik1wWkmRNkTYI46VWM0Av1rPKUR/jL0CBLgbR7yLtz6lPhsOYwOQGxXFvoyktDqs868iaUACeQkwNEKb6uaGAQ8LYJ89gd2fnv2pYwsFlKv1+HBPtS+1Ozhy9NDgdZ/R9ddK+ce7/5XjDZe1EL9NRGqgDjhxQmxaRIknNRZ/fPwlE6tnPfDoLuGfYjgSYDBuQKWU/PrFucoQJXhQTZFRC7DctI1WwP1gj/18dr/SB2UehiYurTjCIf6IjxmjxdS7SHy5yEGp2jjCjdbXSW/oQtIWpSOPK9K+KAF5x124I/q0KF3RxJw15jJAaNZTvzP4p+SYTy+txeBeQ9yoQN7jBgtyrobnuVX+xx07FOXwGDT29NAr8/QZV8urxJSz8VfDER0Y9UJ3pF5t/z5gx0yRPn3Uu8f4KWR3Yqv/HaTBxLogZKizZKkYFY/gADGRJS82FOLRt0VbmXEYDpILOlpIpjdbv2akUItM+gP/IQJ8cIQhVgkzEiaeVEu5OvRc+X8HJO9rhGDnySrvrmAJA6dSIfcids4JNPMH/UeJONsJY3QNW4pe8c1uZWbnIw8uVje/fMfgmMWZfrS2epTr8jnD/oRsviePa7KyyakFEmteIU3/axuMO9+GBjhftL/ZLq5IrI+x0bEFArdstP8oAzjY6U8lO+DBO+ctePhEHVWjSGyemcIkGoaecGnZvnctIT+PkkvyvcbQ6m4px80bonxzH2Y1gfW3AvE3Tl6KAJHi5bOaHooiW1LB1VV6LgpyDL6NzbIsB0B8qPAQ9CW+/lhijJ6JJyfOeksqKYLfeIDqtBGGZhuU3jIzyDqzvh6nXm7vo1BgxX04jFH+kp27E5z/jdn7xeNPmmCtbeJutBVGK/0xG5avZ3WuWwwSc0LA4Y8etcczIOr0/fukfFJcz
+              type : 2
+             code_elements :
+              internal_properties : CAAAAAgAAACjhB63JZiCbeyaZFWzUHj9Wl1wPThCgNYa434pCiFhUbVEZLltvDZ5GSiQv6+dXF+9/mxBLlvMHzI96HIoOcVeKErHi5Q/
+              type_code : 3
+              p_codes :
+               -
+                 type : 276
+                 enabled : false
+               -
+                 type : 277
+                 enabled : false
+               -
+                 type : 278
+                 enabled : false
+          type : 35
+          controls : []
+          code_elements :
+           type_code : 89
+           p_codes :
+            -
+              type : 35
+              enabled : false
+            -
+              type : 22
+              enabled : false
+            -
+              type : 24
+              enabled : false
+            -
+              type : 23
+              enabled : false
+            -
+              type : 25
+              enabled : false
+            -
+              code : |1-
+               
+               // Action selon la sélection
+               selectionTableHierarchique(vrai)
+              type : 33
+            -
+              type : 230
+              enabled : false
+            -
+              code : |1-
+               
+               // Touche supprimé relâchée ?
+               SI TABLEH_COMPTES <> -1 ALORS
+               	SI  _EVE.wParam = 46 ALORS // VK_DELETE
+               		// Suppression
+               		suppressionTableHierarchique()
+               	FIN
+               FIN
+              type : 65793
+        -
+          name : SPLIT_SéparateurGauche
+          identifier : 0x2b4b46f6f89653dd
+          internal_properties : CAAAAAgAAADVqeUSMRm+7o5iv9q3iTvnt5XyLx8iTGB2ry0LG6dBku9+O4YRWmxZ5AE0HScFZt9nkGLq7RyZaRcEDmFQUuCd2b+jOF2ssRLlvL+nPjxPMC15WYiWGLiiqiToiPlo/TPTHYK78BWs9nHaaye+uX//1HwBELoweddvOTDhJGFrDCjgrLhpNUxmA0D4/hgE7JbwYhYGRnPuuC5Up5zj3lLLdyquRY5RgZwNa9PRfBd6I8VC1IuieYUrgQD8f99sW4AdkdOliLPS4CItFjuC4TzcyDksh53UrSn8XSujwASL0aKOBIRWDAnRY6H2lmDqKXB3nX9dRZPjypDJon/JSftmKdZfwYwKaGnc2tWsUZsbHvnEB/fbUNxDdyhY3X3i2USBeVVhX07m7RvgURaqZaNSi9lLS05N0v8p0fbCJsrdMC28+DuunnNRq3ijFR/+PV8OGVFSJWnxl30=
+          properties :
+           x : 200
+           y : 6
+           width : 1
+           height : 672
+          type : 28
+          code_elements :
+           type_code : 61
+           p_codes : []
+        -
+          name : SPLIT_SéparateurDroite
+          identifier : 0x2b4f5d69f9be7639
+          internal_properties : CAAAAAgAAACvL+BlXaalKmBb9Mj2K7bpn7XWm/GHr089oDtx9soMlVtye1k/9SbBOyHBOMq+tu+7C/ehNZcjq0UsTh7sO96pG2JyP642i2k6FW6MVhOjPTYW4BkumCdzhnYVuN3ZMKxYAIH0LCGiTnubrB1ic8NA1zSajt8K+fIDwvIpRP+0xv4Zz5QyN5SURvBjR/jXsstyskhnGWKcaZjvE6jTbhC7kH1hysXF2JDpes5HXz9gRKFtm2rBqDjPIPALS5EfMw7k/lH/7Q5bJeEdvFM2Cfo7t1ZV8LLB9EvTKrEze6n9MPHHTiKON/L/zVkyaeh9Oqt0RMQ+n1qE6zTXql+DoD6H5OAH7royrSlyLOdjs/NsWIGqmmkBJGdzMX48UGROSGJXZaS6sfhGuwUKK1Sl/iOYAGu+bDhogn3Y/9OCzHSfkfPxnsSH4Sp1jnCu61UedZIF0o5volpH42yepg==
+          properties :
+           x : 586
+           y : 6
+           width : 1
+           height : 672
+          type : 28
+          code_elements :
+           type_code : 61
+           p_codes : []
+        -
+          name : CFI_Message
+          identifier : 0x2faa9df732e42d94
+          internal_properties : CAAAAAgAAAAsUmb5ECFBFlOYLYlX6/wlhu5HNAF4Us9xrZgNBcMblDglCIQhmCWnj+18BXmsXd2dJ26WscraYw5VbGhojXsw7hgVkNKDjWsrUcMhIYBqcNUa9lnhSGG3Jp/cMBaT4m116HW8vOE/yoJ3o9ZNgc/iyxqlFk77aEqnEU9vgB+vUYsYannRP45pGU0aD04OIFh0HuiT5iXJkN8sL6fAvotXTD703B3boU0Nskg+YHYGxMnBUY1mBiI/xOAJHcMpjUhh21HDgUYbTcLcDSjvvO83mosqMNtRhWJT1oTRrqgE0C83ggx0t9JgKS2sp6X/BLf8mMWftz/yWCiRbzU0saA02Y9T4K3OyOsaEJLQnZLtrMmyOldmzcjM9MWfAQnDKbKHqyntAk6Grk5MnoOArEk7+iI/0EpXSQ0rb0z4VzmxNQSaWR1W8REXP99MEo+BzmeYrqb/dksvzR4GPFZfAVY+KfTTToXPfPGAzBpWZU4kiRp4AwOpUYuV2agX1Ee4D0Vieuhtxyj2Ai5ebaZ/cogXK/mYHhFgDlbBNwaCvNWIYX1vH5Q/BQQgDGW9+Y+ZBrIOZ/611JKGZAI=
+          properties :
+           x : 587
+           y : 6
+           width : 435
+           height : 650
+          controls : []
+          type : 31
+          code_elements :
+           type_code : 73
+           p_codes :
+            -
+              type : 33
+              enabled : false
+        -
+          name : LIB_Messages
+          identifier : 0x2ff34c4e0913d562
+          internal_properties : CAAAAAgAAABk/LPIA9siDzIfNzF4tVQ6CtdvVV0UAphIfKUcmvjhR+IWN0AblL5qhA+BX0jszGnx7VOyhjqB7lLEkasjUpUe0bfbEYtdu743dCrMcyJtbVc3dJRfxN3iIZoZunAYYasZzsbvxr592lUxH2rQWUx3922qdzpt5wwuxj0mfrKNabUP/KxPvls6Q8jNMIw2OjNVcF18sWD8tDK9/EzNNTyNGY01e5M5WyFsI6QXphwg6Ywpt7xIXrWEZM/pjNTfcTuVw2tk5PlmSY1YXUvtrkCtCoCkGM7s5krnx85frpx7qxWcY0OaTJIzKZi46gVcElvvTGX7mSUW9UerurfanQP47YnC9Y0t4AwzLA7ZuUJtBjEP+DT0V8O0CtTkR7+FOGyxkI9IFkIFvpyTHGhIz7W/IiYZmDZ57yPS0UxYZi+L0+074/9d5E2uBHHK8lFr09vM52ieFlKqPPu/fOjjzEKqUze53Kx+NK4Uq9eZogcSXwtijGOBko8ftDU/CdKIYE6rWCv83MADRHaVqdPXsA==
+          properties :
+           x : 206
+           y : 5
+           width : 375
+           height : 25
+          type : 3
+          code_elements :
+           type_code : 2
+           p_codes : []
+        -
+          name : TABLE_EMAIL
+          identifier : 0x2ff34c4e0930d581
+          internal_properties : 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
+          properties :
+           x : 206
+           y : 30
+           width : 374
+           height : 626
+          columns :
+           -
+             name : COL_PIECEJOINTE
+             identifier : 0x2ff34c4e0931d581
+             internal_properties : CAAAAAgAAABJXFveKiglzgkZnoBXEVpWBE/NRdlE1iu6kS+iyigcsOWQTP3mKk6IUsTJxl5YICvAX4TRwWPzaxeQNzOeu2/RfGBhd/geAIeLtNn95vhAGJ4dKKK4ifiDZ1mWGDG5Y3wyry9xWTRa6b0XkrVFJmP7lRsCcB2prYZeUDNpfoT+
+             type : 8
+             content :
+              internal_properties : CAAAAAgAAADWw/xRHsLS7s6k2eDDL/LJxe6UdpwbGGuaSPdYqU2FwNVBsEpfClcCXEzoouVIPXu9DTV+wQGYdIiFfQF7vuqQ9y8kFczkCO01g3TkXVaU/v2JEvx+K/2t7O0uqeeaxrjRKxk0FOSZY48hpTTApjO/970ABFZTgKfNzJQD09fmMt3IZwXird7CrE3Dh6DY/KN7RkAepqHXPDUpECvqCBP0O9Bg3jeuVVsFCdWeqIQIfwLO97Ac3aK3nw2pBtWu9OdSNwemIkWYo5tyjUjTL+dQ0UKP0DsWNIjFs64cfYr6LxRWbD1tiprU1iRSxBPbphvDm4ENS7Waxv5x0oxJAWx/P1J00fNprrDz69Lj+4iMIagxNi19sOSrxmXGQ+pCEQQ7JIwq9tSJDbQiDFERGkx8mDNbnDJTx5p+Nm5d2CHl4dfFirkE0w6MpbJGSypq+/FWNze6iWRqri3KZxK7jC2CMIdjqN0lD7ydZ3lRGC73kdNDEwRSr2jB7uUHHyoJE9hbrTyzD6lTHVHiQtslvkS1OHHwxhNIsWJe2VU=
+              type : 8
+             code_elements :
+              internal_properties : CAAAAAgAAACukSnPXEzCHjWetMUL0EhcoA8WKzSuIRJWTCKobkmD21uQO0rvvfsTi/EIsHluIs10IbNeBqLu8YhtzVrNxXyV0Yr3hmG6OBWvtQGKa5RFevF/Pi2lYIzU9mfv
+              type_code : 8
+              p_codes :
+               -
+                 type : 17
+                 enabled : false
+           -
+             name : COL_SUJET
+             identifier : 0x2ff34c4e0932d581
+             internal_properties : CAAAAAgAAADe0h6jYYx2Dvqzg9MDvWq6uMkkvEFb/Odrg+1Udpph1beTC4bZJS7cr+7/wJusIQIQvP7RY1WaeiPjjxy2PF0a/vV4VjvajHuh0J4izzOi+a1Rf5cbPZLXJM+UgpUKFabgMnA1SRrKES2HQC767TklmqCSZo/LZeiPgOvc4+MPWWGEHZwkRciPx3tHXkP5lNbDLQuJTE+xNja5Kuhc8blK
+             type : 40
+             content :
+              internal_properties : CAAAAAgAAADuf8d/2xmKL7wKkQthysi2U6prAfgurVv3aGfzl274eucvzUtgmH6uXqDDpzeiUvF4i0VH+iUuvAojYfLyVi/JvBp8Mn45EQfO1jkdlJ7U+UoP3MjXZpslpcViTmK2E09/viz0ZFqY9V3KykS7t3eTbwUZwLI2FtqpHF7Jf7bioiBirdol9mvVmKBQnxWvhB3OLReZx17mV6FAzc7sfV36A2s310TTvD+oAdhM6BdTXxWsnMUx8OSex49HAW/agB3wiUcTSueSzgRP8QZdk2cXETFCYpzX6IbqUajbWmcUkqIT09iwPjWDOUonkYO2iE0SIqHAph7lsXRSb4ITyNtnZPs9fqlX0CSwd5rxYZW3/kUGWeqnrYFStBy0QPXgnIWxGyhzFqIS8dHUEMJBId0+g2pSvGUoFKpsi3NQr2sijBjper6ybJd1F0hJrqvYoN+lRwQMxz3oUIyw9c8OS+ygO3ava/ECr/riJOXDcJWj9YdAoT7eFW72rhp8DdQURRLnpYAK5zlgCPqlokrlisvCrXkTT91pcXdNkNkPoHYc6KCsRS/TAEL4VOn8PH1a
+              properties : {}
+              controls :
+               -
+                 name : LIB_Expéditeur
+                 identifier : 0x2ff34c4e0933d581
+                 internal_properties : CAAAAAgAAABmDUdsOPu0Iftbk7kog82uQ1M5cdFHlTcG3deRIXmDEeLdJ8VFLhvPNz8b6eL7Ua2uADjcUgmRwD2fF3EIYD2beId+fRBjt1QNN3UlhSm9giMO1Hu28cDLr1SCN4NgPNhrdSTyPc/z9DXaH9sOsZ0b5Vj0cd5tw1b/BnPiwtB7yQYPPu/hilh34Yn/rO9by7Fvt8H4GK4yw+kQX1NELc5kpltxqdX45Uoqt2eML1rOgbYZViWu9OsvEALjOwkelRwvbyvSi9rrPqdFW7/xLKkX8wGUv4bzM+7hpZl2t3wrPTHBSiWIrcD35Y5U+4yVysgxqKrmfOhWNKt6Wfa9Z0Aa57yxKJBVoBHv5ewvFgLKvwtZLmg1Qn/ORJtuAQ+baJgeNzQBTkHzQD3SDnPXUsFCWJomHid0K3t+OtxT1zG+fe9IloNU41niCiagpi0wsWbPUjY5M69nmvnjuqjZXPjIG/HwjW+biyHLBsbEut15rF/t2arO7u9Nhf3XUN0/bGOXcdY1qB/gGcqen9BgOTo/JwnF
+                 properties :
+                  x : 20
+                  y : 8
+                  width : 276
+                  height : 23
+                 type : 3
+                 code_elements :
+                  type_code : 2
+                  p_codes : []
+               -
+                 name : LIB_Sujet
+                 identifier : 0x2ff34c4e0934d581
+                 internal_properties : CAAAAAgAAAAbEYMT/pPFR+YFhT8677ZzlDlexsEb29GQlnnTL5/oyITKo3ODJa/6zzRxFG9baub5TpHx4RdyL76h/vkm8VkWN4QjkqmcD+bLJw1Pdtges/naApBajM88vCgqtyetrZZKeZnd+yxk+NHL9alT5epbcr8QWt1+3GIm+Q/+3AwnrhXBEWsj0IuiiUZAEVB8e+0fEyyWhsFzPfLwm0Qf8lnbQTEWESnfkwMNVgxF/Qp9Ua0HQaEBQZHuCJcVM833yr6mXWsmV1ROHSFZJWiFnU9+VpLgQzZSUZ5G3i9EQjbDEoglfUZEdE9ntIDlCOUdxKpKnnA2y9U4QA7M6tBv65ZyuIExHixN+tE0Vg1keQzF2KKikI9f4cVIm2+xUeHer2SLsX+SnvYXn1XjLwBn9t2z7wIa10Qba74dp60EW/hmRaYfu/hjWOyCum1tTGthZSzK71z5NAbBCCdb8pK5lWhjvQM7LeCRRQGYYQtcGd7os5mqbo48SEjGSldB8iDba9APjuGmuCS6K6e736rZgXjieOfhNTKNhsLZolKrSvtm063ZDUILaS8h6r5uu/rHJ7onFBg=
+                 properties :
+                  x : 20
+                  y : 30
+                  width : 266
+                  height : 21
+                 type : 3
+                 code_elements :
+                  type_code : 2
+                  p_codes : []
+               -
+                 name : IMG_Lu
+                 identifier : 0x2ff34c4e0935d581
+                 internal_properties : CAAAAAgAAAAnA9vDQ8mT7W9xT3+ZD4uag1DGB0bpemFctzG9fT2V+2QC+Alt//VBKLQuqeiJeDjj+GJNq2QNEjLW2VKT/5GlgiXNjM1qZqR6z6xqiT4ARmVhwmUUGY2ChjA+GX73tsaYQh/neGZsvwmVa0gHbekVCy6RQ/7QVuI6ZwMXyA4C0vx6ERU5ERSK+lLpPziJpOAwgqwDNHngovpd3MbTxCwhs9GXXe3Y/VbSWsiA0u+VisS5h1mvnpoxdjQOD3nGVacRGyahUD7goLbexkMRV8Lj0eutap2S8AZD6XykZD6Mfsk1XNIf1d8STiluMqO0QZegwPaDA3zU7q+jxtcaNOV8uT7DR/ubx+Y/YA1vJa08sS1SKu4vN2EFrQEkQLSMsdTAnSB1GjgsGZxlEwATN/LOoiK60JlpB468tvaCtw36x+3NRDoLipTb0zS2D6h1bLCnHOL9XANPuXsYHdXPVJ6/FutfOliZbdLb4E42d7ewxK98qFcG7J30jtcqxRzgoQw+NO3h3dNZrsew/JaYjqkh11x2jh2ICnu0DTEldF9SspP7dabVheLIhHKS5GxtLidjE4PY3JMbgpOk7prlsJISCMVVQmngTsXBsnAifRFUjkMeaTNLOljR6PAunXQr+Q+T6R7R+7EDwgOKlKtkeoSDUVnmqIrZeLUtIKPm8aFF6zR54JbIRPlNFGUF33flZjpp22K7MWplHXmVmDCeGWYvqCHVGM1YmJMdJR1Ic4VFE7WZSMpT1nxtWWC0eIA9rIjODfY1gTIbro54mgAxMu8wF1VbJGp5Pn2W38ulzgduBmapwI06XYico42ZM+MxwptsvWOHWQ8hg9epBBzTwAimgrtsekf0Tu/qKCQ=
+                 properties :
+                  x : 4
+                  y : 14
+                  width : 10
+                  height : 10
+                 type : 8
+                 code_elements :
+                  type_code : 8
+                  p_codes : []
+              type : 40
+             controls : []
+             code_elements :
+              internal_properties : CAAAAAgAAAARRVyOO8HBaGi53sc69LUXOmZmSTg4nQ3ikC7A3juB1G64nm7PXykT2XCcbfpGcE6GnvwmA+NCCyoa/+yifn4gSbBMRpl+IRF0y8rzKCSTb3EL3e76i80jKQ==
+              type_code : 34
+              p_codes :
+               -
+                 enabled : false
+               -
+                 type : 234
+                 enabled : false
+               -
+                 type : 43
+                 enabled : false
+               -
+                 type : 42
+                 enabled : false
+           -
+             name : COL_ADRESSE
+             identifier : 0x2ff34c4e0936d581
+             internal_properties : CAAAAAgAAACh7JmgamZcJhfnrobCpUStd+P02cwzPzhuKAboxO8LNniPHj5lRzl6umnjB/EFMelBhMTLVyIPBHjZIjNdAzjyFfvqkG00wAds5boE7gb1Wza/QgX58obWUdf3O/SPbjT/9/TUAGLun0EB7PjT/9gDmgfzYA3oPJP3aEW9q43CFDU4UU3fFrYf+D1JP4K3lZBOpUP7cAnYQ2k=
+             type : 2
+             content :
+              internal_properties : CAAAAAgAAAD5JXpNo/9MF0FRZoHcoZWp4G6ju4nGaX++NjBOQyCKhLb8ueT7GoNoAEGHulwMlJwmxNnW2w4I2lWV9fw3ROPcEU68dAyY91zhMFQj77+KWGWO1vY6LFADm2jrhqG8LDXZwlsc8dHgwjkY6HO5WpxWZz6fR6x2p5I8fOOHr6FIkS7qspfQFTUAQe9ou5QPRADbN7aGfbCvBqeOWEv+FZaZpu+K2iKLMlT2uJPxc+CeYQwOnz5lNr1irPTJ3Rp2Zn18GH7DOEUrk3U1OuY3pDisBI5xP+KdadK+Ps1cRIOPW953l3ip9JwLV81DVnJyEk2tWUE6RIF3l6qVn7k//wOjMpGiT/aWAPBdmimVSUT6ob9vmqx5kngwMjstYinOo+iSG4PrxPL6iFjCiRdvzkFF8zwVjd35sYVn3tR4UVtMm3k3sKeZ8eTzA8ihjsJBSy8Ugx6Nl2wfTpvXXCOEH9RT0zJ34N/C2UHnT57ZnwkE2IatNcta0LdX/EIgIRsntN+ryAcmTK7X/BsvIl/r8HXxQVjonra2ORmP0ntFj+n7qYzvUadbj0Jjy5bMXFjodK+b630uoWMRzJydiDGFm9sqmyBQYhctic0mB3aflV6FMy1qX+5TKVTFzp0OfOC1HqWxgSs/Uqq2t3zEEU0Xyo13LbkSVhDaXWpRSEG76Y0vWzvEnVC9j7SXR48nzHfFgkxZq019IxH1pZx/l6l/RAugxXEPGROYwHVRkFmWMta5kckOc1RpqShcOV65VMTq/r90WDM4zJjjdQcXbx0lPSmvBWc7WlROJUW2g4hBkQJaPuTn24+5EitBUjzrFwfDKHFFSN6q+aXVJBNNE0JY1KdBebLEAnSO1Xuatk3LDaxAs0BupfY/IUCHqF09qOBr/6gro1RG0OOr77BjKpx2FMt+fy/QpKn05jYtHYJjN09U1svrm8RlnWLIjhgjvA==
+              type : 2
+             code_elements :
+              internal_properties : CAAAAAgAAACE5czlnewXlH/jkB5F8+s00vQAkygjPNAQBSEZV36PCBVm2LX3ELFa9K9UqcdAfI7ESq0vO4/JIVyXfUji/9qSF8Tv14/0yKNq+3w6TAKb2+dvSBoJWRrcxQYmLhItTbylXMm+
+              type_code : 3
+              p_codes :
+               -
+                 type : 276
+                 enabled : false
+               -
+                 type : 277
+                 enabled : false
+               -
+                 type : 278
+                 enabled : false
+           -
+             name : COL_DATE
+             identifier : 0x2ff34c4e0937d581
+             internal_properties : CAAAAAgAAABOMhvlvL4QkcGej9XelwbHt+dqxd1KXyF3Zj6I5et7I1XJy2yGcPsflgpSP1snBjl4UIxBlYcl8KcHCiAn66p8tEUOqKnJQhSlHSAvPtm4TGIHeBeyOx+D2C6ztUYhMqKfCBSsHK3zEqPJOmnUZk1zVrEepoEqPhQxV4mlWAPAqLPBTd/TdiN60u2oTnXBDTrKrQfyhqMromOnggfeHT02E+bTIJfPdHxAsUDkz/6JevDTateyXO0zqj29sTy1Zm3r1w3u0UTHRg==
+             type : 2
+             content :
+              internal_properties : CAAAAAgAAAAxvTkb+fH79OvZAQrepJzqYMsWfyJ+PaMlBGASyLhZeog0W/VLr95jLzgmbaquTs6//kSYaE6Grs1OI4kLVhRkuqljuYdZJewa96o1IqVae6NyIltKFpBYQQVPcgSfWIuaHeVgwbHGgbN5nA9JmA9zFLBcWESGBdpwUPWeQAyUn4MzmPg9fVA2ybDGdv6Ezo2qz1XlbZPfAw3H4bA0xEAp8SLP1AOS31cHcUdvPIIfAqctKa0z13dV8qWWSnbitO55rjgNiwVaAwDkazWSLbAyVs+vH4JWmaZTam7aZWK8Et3QaQVNC85kNpLaOTR8Cr26XwfukzuqU3lyRFTptXYQcXazMwI9yk3LyaA3ZTia7vDDY7+/we0beGSDuiFCCR9aBchGbQAp0Ro0Um9WVlc9Z0Ns7UIjNFnCnNYk5819v77yMTu3Sz+qM5R6tqln9WCeGUUtmQir8ahHCh4Ks8BWZs3OXrsCiY1sy5BbzbIcoOJ2eSAklK0avpwgmh8VE2So6M2aN5oeeC4cGGc4VGjSBkocNrkyYBWQzWFVJJcwwNtlmeHoKxl3pME6Jgvmy8xsQ79AVPewnhPaRmd410r3QNhSbIrN2M9lqLa5pJB+ZnAIFWp6R0N/51hCVMdtSUZqSbunY6qXzfF3S3fCwGr2IO0apDeU5j6sDefR+i9cQt4+QTj8P/Wb0DKjRgwNlS0Gc09/4IOipWds+6lEQOjfHH/5A+x8PxlUSTHm1cTihND8KyQSZy2GlBtDiAn4A6avGrGuC96MYdhW/bOI6yQYGsHF4k2UrKHrRparjsaPFYuhUWFinGSdGQHLXzDnrz5SmE4gAlNafo7uZwodXvzgQJBQmM9O5jGv0QNF+pDNKmeYEVogs4336xov4KHHTi3IucjakXHQN1sEe6+sk+UUp37CqJXPlh3q2VC9IDI2NUelvV4FNkKk9F3JHDTKeIXk4LJtNn97Fq2nsb6oH2BMaimjCH6qS8V+IXiaRhTb9Plh4YcPAuQPNtgQ
+              type : 2
+             code_elements :
+              internal_properties : CAAAAAgAAACVbIAZKIyLUtOx/TRl3LdawH8KiRIbZVPHIi3CQG0ZQWORAsfR1LV9KK1m6uVL3Trxd5kjIU0MB2uWkg==
+              type_code : 3
+              p_codes :
+               -
+                 type : 276
+                 enabled : false
+               -
+                 type : 277
+                 enabled : false
+               -
+                 type : 278
+                 enabled : false
+           -
+             name : COL_DateEnClair
+             identifier : 0x2ff34c4e0938d581
+             internal_properties : CAAAAAgAAADWhWKVr3PADci5UT8ivHwQSDPhEK/SBarlohsiBrMxLUim29X3RPikWRNIRgpBquE5Hm17wkfl3+Z7GdtVKqdqTi7Kt76aE5VL+hboCVi9E0eN3+ToFfPzuYP2bG3FHvx2O8tGmTKXtTxGdo39ybMzDYkr3rY8h7zdwc2Ywn8CpfnbUw==
+             type : 2
+             content :
+              internal_properties : CAAAAAgAAAA0VHDLCurnT9O23o2Xu2fm7Wy0Xa6GyOSuQHvEhrxzx4BaBztXqJ/Qf74ldKsZ+gf6sfyPdRj0MuMaXwsY/xTAdo4bPVvgoQ2CNDKDzvbkuWLN+vzt2VryPiOHQHMPCyBX6FTbMV3c05F8FMdAWA3+EzIuxIUaIE9+/rNjdTesIeafae409tAfh15cm2+q8RZEYc9vZN7Wok+SOUiRdEYCwadLDJwBp+Q65iowaNpe2o8J4e7GmWiG5Z5Y9C4AGqMhXgTyE0RvbbEtjadcAr7gkA5B5GiTQ8n3lTpH+AYOwukhSAEGuxDMioQWjBEHZkgsDdk/zD9Be6i5mo4qoI7g9vtlVg8v0auci+2A2fkZU2gJGYa1qpo95gzPXFKWSBzmAmegMPsqHdly+97CMYdrLVYnvzQsXEg2CMREADz9xDmTSvZU1cL+XweQWfz69jCVhp5145pyBJaKrrUZLODIYo53Sk1H2ivpBXkxnne4sL9EH5JNcBMHoJJp+TprkmVA1zEJDwTn4DlB0e9aNEczwmdqC01i23c93MJfkDcP4Zlqga7O75DNZ3ZfhtFi2v04roNHAhebatiVGUeWuz00ICeSm4oDWTnUuQkN1kqPZWpJk9mac85rKKvjvhfhZoEqUC0mc5jofZJ2fGUamodR9lTqf7sg7+hZHMQ3QvWPJzJZN9Mgk9Rbh8N4bgb5HFb0UEcGmBPzl7aFNn36uJvcAlRHQFoGINn5dNg6gwKzq+K9bQPA9RxcGyzs3g0Q3sOnmYl7z3aJR9XB8nls59OpXHwNWy3AKX2W58EHDHo6wi1qG3zueKkD5OrWOXzBJtf8cRItYPeHUknXgiC9oglD5u3ae/m8Le6/+L4dEGCivBTIV7OZBKu0CYqMyMOHZke5YWvp2fQwpKQM7IuwDxLjhdv5MIWDX/52MZxPwqesjv430zX8uQI8dgPDO4fg
+              type : 2
+             code_elements :
+              internal_properties : CAAAAAgAAACVbIAZKIyLUtOx/TRl3LdawH8KiRIbZVPHIi3CQG0ZQWORAsfR1LV9KK1m6uVL3Trxd5kjIU0MB2uWkg==
+              type_code : 3
+              p_codes :
+               -
+                 type : 276
+                 enabled : false
+               -
+                 type : 277
+                 enabled : false
+               -
+                 type : 278
+                 enabled : false
+           -
+             name : COL_HEURE
+             identifier : 0x2ff34c4e0939d581
+             internal_properties : CAAAAAgAAABBjv8fvH3Dcwx2BD8AttK2xO0F8lpN1fnmdWCLDtZDpNaA770H5fMnpEn1VDYKveZdjoZUp+mSgXeU6Qnrko9I6JawCHqeFhI0jGaHfkHLZZEyyWZO+rGUYKxw9yo8InJkHKEtLB2ocDYmkaQUbLEYpqL+PZmlYtAcmumOPqZpKI26NyqOXUiLEjRkJof+b3DnY+N4VgVS
+             type : 2
+             content :
+              internal_properties : CAAAAAgAAADl8OIHamqFa6ZlqFEa93rXCppIOD2Nmx3YRaSnDd6kWAYo8P82uVxowpNKughh+pB/VHGvVqz4B0tSiafEd8EjsjMtrfHGrGlfyblXWRxycDjbRTtC99lPxxb12XgINK3Si7NsfSRLvFXpRdZXbj6YlNXmte6G8b5N5CzC3c6OLsnYEETq6A6JpotFiLUq7oxXx00JyXeW2YLPjZYzM6qhtg9cLozmXDieJ/QihvjdKcqhWz4VZGVaVhk4buNbN+FCZCx76MmDWSjsY5BFbWmiS48GENzGDdqjOO1dsQLM77J1cNjkaGNWox3wHBN9mcEyCAPjf7jfJceoK2iDLJ3nF6qDZpQdhLz3KkusoLp6g+SRiIswdJJSbZ7w0DBpwJqaP9DCIOAJHIBpJeSgZJCT2Zps1f09Bu3Txi2oIhRTVWEmntXJYBEDrGeNWuzL83u2sfAZ/0mxQNnEYmqiqvqdU6icGwmqw8Vt1iqlkDlEtraFgium3Wd0/kAW9R9UWhJ8IugyJMFni01VLE3Fib0WtGjHgvDDv8APDuPXH3bbGA3/yh0LgMRSw5LcevxfUOaw/e6IvVjvrSpHCsUrXA+FBDQ7Qscg9Tp43Si35RXzJCyqePRz5iSWtqkuDHCmlrwWZb7xhO9yZIj8wQfp3U8E6KWXHnwhCRs5/OmzyyYvQqBgWhTTDpYGL1tTctki/qnU0ezhvdbPDB7tKVnBD5vB9OW0y5knNFgf2n/UGt/JPOIeInYreBwx+zyjsCCH8kRbNFAA7Av/ouklVV8hTrsSVg2a3r4R7xrgwXZx5aNgWdH1Yh3dbeNUSN5tWWnorGqceJ2uCwIrCS0r0fpOW/kiqBDBNKKXzc6ASJslre1ueHcwoJxB6gau6nuPOhh+Ub3+56/47hjJem6VwTngXwWtq1YygaJzhDGOxK3a0HvvdQKDrg4LIgxl8h/ZJUNZMMLS72OvnXqN2ODwul56CNvgpjpgcMA=
+              type : 2
+             code_elements :
+              internal_properties : CAAAAAgAAAA8HVGAPDYohCPHzQLtnstH2xGGMlDWlHfLXzWy0arF5WwerV2l68qspVvggr3m+P63bxH6FhbtLwDw74D/LRIZplxZvFdPqOHaWHsUyVZTxmyOSc3qnHSF4i3xwRcvq61X3/LpIF+m
+              type_code : 3
+              p_codes :
+               -
+                 type : 276
+                 enabled : false
+               -
+                 type : 277
+                 enabled : false
+               -
+                 type : 278
+                 enabled : false
+           -
+             name : COL_IDEMAIL
+             identifier : 0x2ff34c4e093ad581
+             internal_properties : CAAAAAgAAABxp63uGTM6ss5ZV9rJZVwStwX3lmmVpCnYZJHooJLedo/CKwnC48Zm67nfNST6lq7W3jBcwUTcUE1/21wtVuhmnhW8iVRGgC8s8+bIXLyqzIofJxJN1lNcyvUhBWP1uQCDbnlg/FTVbZFqLqCsmIZwg3HqgHWjHru9Nym2ZiFWuJp+B/OotscGsdv0/muIGO7Lt5OyBgTSdxdonlrgww==
+             type : 2
+             content :
+              internal_properties : CAAAAAgAAACySRhyatnGz5cWOYfcXEruC2LHxoC36ionKjTeU0FfbQHJi8Wj1XEwVoyMwh4+RBDyBBM3NN+u6MpOPx8KlyO2UsyAuiW6GpDfaOZcY1uOPczq6zYO6aU6++oiPs3MT1iBJDtrrcDLGYRWgC7OF1kK2CUCMnJb6BnsftdPVjBNNmmrZp1mPlNAtma1WDNEJ6GYn0rBTHeft/sxp+RhZHleKy8sQ6I2lmJtOEgaAiamFKpKe7JvkHmFyfDmgl5fZtpIYxRP8M/itZqYGUXPEZHstu48+jojC52vnqDZEVQwsmjIEFAeWlKI9GmLrieg+dwPsU6GWASxEdWCfhnCyyb90cxZerewB6DbjKCA2INCTBpCKte4Nhx0o4vMPj4LGFaYvZyTlT7RHlkO6yo5ALEP15VZp6C61kvUkBPFYdAz8iSPRuhWL7jL0aWY+v8EHCLnpkTc8VdZfFUtyLNtf3BYroaq7U8f4NoAn3uTcS3P4RQPfchgUxh2A/FdMwu2K5i1iD1zpk1gtw5y/6tZJ3C2k/z8m8zXcK5WgZRvkzbU+KxhM2L/ijWU8q0J4kzNUUrV74kbzaAMiWk6Qw879hjtj9qIr4NgvC6PAH3XJ+kM/En80XmfCH0svybhjraa6fLh04Na6K/JiEuDdjW7z6zI7U+oNyyVOgl+HYhRz0Y2JOfyJSOdIn0u5ITmJkncNYlVBaewR4hY5pOOjIkfj6rBNUtropn9J/po1+5u0sV2zMO6Fxu70hnv2J1yrpx9tTDoHoFhwLPMrAiQdhe5yvjw9/NBXVLNnpyfxMNj2bHPsfhhz4qZp/4yh3nyB3PeazaXSM5fT/56q9BS6lZWA6hID6rCYXZjil7l6W4FBZ13ZJ6S09NjrB2CGX5kimgqnMMz8SBZ7jZGKL9i5fYewHOx4M2370ulwTGFyz27OY+BgGoHxZfxZ3aCvlb8W4KD/VPxa0/YbwS82QxUdQSSMqb1HtCTpkVO
+              type : 2
+             code_elements :
+              internal_properties : CAAAAAgAAACtsgDZpaEKzFfWQrIZm9p79P7jB1JGL1GTFzcRHAXQLUHa5orzOfGm0pTGI9U3pmguGqyUI22uu3rqAit2TJw5rLNnVYDFc2RshIcWRJTIE7Dgg4LOAPdgT6c=
+              type_code : 3
+              p_codes :
+               -
+                 type : 276
+                 enabled : false
+               -
+                 type : 277
+                 enabled : false
+               -
+                 type : 278
+                 enabled : false
+           -
+             name : COL_LU
+             identifier : 0x2ff34c4e093bd581
+             internal_properties : CAAAAAgAAAD5e5GORzUIPAF0PjflNgVU5WJj3EdWhGKQkLUsWB35817/qjzZpY+9K7HaoVZ2JOevFJe0qH0Emulyibxtia8ppKMYp1dM8HbyL7RYcV3jR9/CHZ2vNKXIsG67q5w+9n0wgA609HXUT2tFJBzI8rBx52RKigxSNOg6/LdD5U2JG5z9erM4f4Hu8+4WfEFk/g==
+             type : 5
+             content :
+              internal_properties : CAAAAAgAAADvwAU22rJZRtRHRSbob/zUHQVJKQx+CLeG2dZCITETrYevR6baMDOkmnVNACKjLTNGZeA2LtwVhEwRS+LwY3GdPMrdcibTJOAqv3zN43Op8JNKsOVEcCoJzZ8MefvsFateDrHMEsT//AOWFwYLNhuQmylq06wMdSZp9VWUF2ChCDwXwIxFnk81DnwudpX8rc1y26AtByW2zwReiHO6rLMu5ElVmC/Fp5kiP0DR2kQiJsgsIoP1YjcfCHL4MSjy7+LNzVOCYBpKgbqChNjtPRK4AIjdbsMBwpNcwWhhlzOXsMs/KjlAyMVcGAJOHyrWZ5RcZQKD0phwv1doiM7XTNqMXFXiw1q3itEL6D1FmpAPID4ruNkr8nkjaToBbXROycrQXl8rRKzLmMdiZVBnxRvrpcF5NcNoFTHigN8CkUWZdrvlDOTtXKAirU9OEyZheyxxGL9yw0gQ4AvRn5XfeaezDMbCmkZVzteQKUkAJQXF16YM4yCxPejKC6tMqR3H6Jr+orHKzxRKiyoknmUXXXbfBake+iXeKFPxxyPHUsG5cBqrwsBSovvN6FdtoSvFd/dcukvYRwLVcqkn0aQ91zPbO7f+dHj2N89sj0gjGrQFKwW1JNJr/n/3CNoEJ7wG7inuXFPWJm6j1sXmKaETjJsVID+dlyj7ZJ5jwtMCuGbhIUqZkDPBbPjjuWoKFHsSt4oROm2zGr5mHYJhBN/adCLkuSPayXMZicmMSqorcTasRPYjjE3hWnZTsBtmgoIceZ0jASkvBtl7o1AEO6Wk6BY=
+              options :
+               -
+                 internal_properties : CAAAAAgAAADZvWx7N04Ani6QsNIAD7/3Hg/t7SCF2bx2IaVjkjXz3Ke1ob84s1r5eL5hgzRFaLoEGE/s4cUC
+              type : 5
+             code_elements :
+              internal_properties : CAAAAAgAAACVbIAZKIyLUtOx/TRl3LdawH8KiRIbZVPHIi3CQG0ZQWORAsfR1LV9KK1m6uVL3Trxd5kjIU0MB2uWkg==
+              type_code : 5
+              p_codes : []
+           -
+             name : COL_CONTENU
+             identifier : 0x2ff34c4e093cd581
+             internal_properties : CAAAAAgAAABk4dIwWWTEFgOLbeDPXzM3PR+oDG/+TuiXDMvlzz8mR3RZZFk7Ee7m2qOI2MX/C3Pic9TDir6J1rBvuDBMPXZz87SEvjjqZiK8sqCUl9qukHo19MnJR5jhrX1BVu15az1ZVUwMJOeqgNVpCG5Ei49+EPtu1ngkEOoKmhHVYWsGqQ5T4EC0MOnmCTdny2DtWoHWZv5dcyB3
+             type : 2
+             content :
+              internal_properties : CAAAAAgAAACj9zayhdm4Q3NIM1f5Q/UJgE6DG4kGCX/+dtCuY8DqJNacWcS7WqOoQAGn2jys9HxGpHn2m86oWtXVlRyX5MM88e7clIxYl9zhcPSDT1/q+MWuNpa6LPCDm+gLJkHcDBW5ort8MRGAAnnYSFOZevw2R94/J2w2h5L8PAOnz8Eosc6KknfQlVVAQW/IW/QvpOA7l1Ym/fCPhueO+Cse9Tb5xo8qeqILktR2OHNRUwB+Qazuf56lNl2ibDRpvXoWRt2c+F5jeIXLk/X1GgbXRJiM5O6RnyLdiRI+vu28JCNvu/7XN1hpNHxL100j9tJSMi0NOWFahMFX16oVv1kf3yODknHCr3ZWoDBdGkm1KSSagR/Pukz5kthw8jsNgomuw4gyu6OLhHIayJjCqXdPLmFlE5y1rZ25UcUn3nQYsTvs+5nX0AfZscQzw8jBriLhq4/0o77t1+w/zhtXPMMkPzQzs5IXQN8C6bEXn24pz/kUKBadRdtqwEfH7NJwsQtXhC87uNf2HF6nLEv/su8bIEXBUUi4rsZmScn/okvVP9mLOdyf4Xerf1JTe6YcLIjYBP/rG00+sdPhfMwtGEG1yyv6a1Bgsmed2f0WFwavhU6VAz1aL76j2aS1fq0eDBDlbrVB8buPotoGZyyUYV0H+t3HPaniZiAK7ZqBmBGL2b1/60s0bWBN/wQH9983nCe1khypWx0Ns0FFFYxPJ3kvtJswFSFfqaNIUOXB4GmmIkbJoZk+AyS5GThMKa4JJLQazs8ESEPIXEizZTcnfy3V7fm/VRcLamR+dTUmE9hRgTKqzjSX69+JAvvxAky7Z3dz+AEV+G56SVUllIPdo5IIhHeRyWKU0sQ+5WsKBt2b/dyQQxCedYbPkZC3mK2NuJDbD3g7E2SWoNN7H+AzuixmhFvOz98gNLnktibdLVLzp/8i5cDnhstimAmhoup1Yg==
+              type : 2
+             code_elements :
+              internal_properties : CAAAAAgAAACVbIAZKIyLUtOx/TRl3LdawH8KiRIbZVPHIi3CQG0ZQWORAsfR1LV9KK1m6uVL3Trxd5kjIU0MB2uWkg==
+              type_code : 3
+              p_codes :
+               -
+                 type : 276
+                 enabled : false
+               -
+                 type : 277
+                 enabled : false
+               -
+                 type : 278
+                 enabled : false
+          type : 9
+          controls : []
+          code_elements :
+           type_code : 9
+           p_codes :
+            -
+              code : |1+
+               global
+               	gnLigneSelection est un entier
+              type : 14
+            -
+              type : 35
+              enabled : false
+            -
+              internal_properties : CAAAAAgAAADol5RywxWuaNN+k7ZCZyTfi5j5JVxFvKbhm88znacG1z/Y/PmdJeeP3ipL8TXCtxTH+Ff365ExqEsE5uFLVI+HjNdOW65iL0RBfbZ0QYTlqRJJWBE54WGvQ5Hj4ogzKh1G7a+jqkECC1ixWQ==
+              code : |1+
+               
+               // Affichage en gras si l'email n'est pas lu
+               SI TABLE_EMAIL.COL_LU = Faux ALORS
+               	TABLE_EMAIL.COL_ADRESSE[TABLE_EMAIL]..PoliceGras = Vrai
+               	TABLE_EMAIL.COL_SUJET[TABLE_EMAIL]..PoliceGras   = Vrai
+               	TABLE_EMAIL.COL_DATE[TABLE_EMAIL]..PoliceGras    = Vrai
+               FIN
+               
+               // Sujet ?
+               SI TABLE_EMAIL.COL_SUJET ~= "" ALORS
+               	TABLE_EMAIL.COL_SUJET = SansEspace(HTMLVersTexte(TABLE_EMAIL.COL_CONTENU))
+               FIN
+              type : 21
+            -
+              type : 22
+              enabled : false
+            -
+              type : 24
+              enabled : false
+            -
+              type : 23
+              enabled : false
+            -
+              type : 25
+              enabled : false
+            -
+              code : |1+
+               
+               gnLigneSelection = TABLE_EMAIL
+               
+               // Arrête les timers en cours
+               arreteTimers()
+               
+               // Relance le timer de "affichage/double clic"
+               timersys(timerDoubleClic,500ms,TIMER_SYS_DOUBLE_CLIC)
+               
+               // Relance le timer "passer en lu" sauf pour les brouillons
+               pclCompte est un cCompte dynamique = cCompte::s_GetCompte(TABLEH_COMPTES.COL_IDCOMPTE)
+               pclDossier est un cDossier dynamique = pclCompte.getDossier(TABLEH_COMPTES.COL_IDDOSSIER)
+               si pclDossier<>null _et_ pclDossier.Type<>cDossier.DOSSIER_BROUILLON alors
+               	timersys(timerPasseEnLu,3s,TIMER_SYS_PASSE_LU)
+               fin
+               
+              type : 33
+            -
+              type : 230
+              enabled : false
+            -
+              type : 241
+              enabled : false
+            -
+              type : 263
+              enabled : false
+            -
+              type : 262
+              enabled : false
+            -
+              type : 222
+              enabled : false
+            -
+              type : 223
+              enabled : false
+            -
+              type : 224
+              enabled : false
+            -
+              code : |1+
+               
+               // C'est un double clic : arrête le timer d'affichage
+               fintimersys(TIMER_SYS_DOUBLE_CLIC)
+               
+               // Si on est dans le dossier "Brouillon", il faut ouvrir le mail dans l'éditeur
+               // sinon c'est une visu dans un onglet séparé
+               pclEmail est un cEmail dynamique = allouer un cEmail(TABLE_EMAIL.COL_IDEMAIL)
+               pclCompte est un cCompte dynamique = cCompte::s_GetCompte(pclEmail.IDCompte)
+               
+               si pclEmail.IDDossier=pclCompte.getDossierBrouillon().IDDossier ALORS
+               	OngletOuvre(ONG_WDMail,pclEmail.Sujet, FI_EmailNouveau, pclCompte.IDCompte, cEmail.MODE_EDITION, pclEmail)
+               sinon
+               	OngletOuvre(ONG_WDMail,pclEmail.Sujet,FI_AffichageEmail,pclEmail)
+               FIN
+               
+              type : 66051
+            -
+              code : |1+
+               
+               // Touche supprimé relâchée ?
+               SI  _EVE.wParam = VK_DELETE ALORS
+               	tabSuppr est un tableau d'entiers sur 8
+               	POUR TOUTE LIGNE SELECTIONNÉE DE TABLE_EMAIL
+               		tabSuppr.ajoute(COL_IDEMAIL)
+               	FIN
+               	
+               	pour tout nIDEmailSuppr de tabSuppr
+               		pclEmail est un cEmail dynamique = allouer un cemail(nIDEmailSuppr)
+               		pclCompte est un cCompte dynamique = cCompte::s_GetCompte(pclEmail.IDCompte)
+               		pclCompte.emailSupprime(nIDEmailSuppr)
+               	fin
+               	
+               	// Actualise
+               	actualiseListeDossier()	
+               FIN
+              type : 65793
+    type : 16
+    controls : []
+    code_elements :
+     type_code : 24
+     p_codes : []
+  -
+    name : IMG_NON_LU
+    identifier : 0x2ff34c3c0901904a
+    internal_properties : CAAAAAgAAAAbDJw4KVLXciM+39VuqDnCYq2XvRrKJ77bzrchw65t3h/8GWoA/6kpHeIZL94ElkppaW7gDfxfmJLhA1EhZVAFdDT58dvYnsCYT8k3JGRevVYvp2L9uw1O9K6uFfQ+Wfa+qvFUlSg9EaO8WYuFF93ut4cQzn3ers8CXbmrdpOJuj0FaqERKc4TTxZMXMr9Xd+NS2T6P/oKaR0vWyG4A4n7E1xkJxxUU6RztclrgH+VGySh5RiEMK9VTtHHiOsu7aTI2eDlRiXXvANvFuyMyE24aVhO9t1nm4kaj7a7tBpx6O0onULi2EfrRxjuihPHTH47W/qXHMhV07HhHaOKhwZ/UUupiRZGTzp7v9XhxJ9TvUFRg5OjzmDLiDogdAzFJIgSI4TBeA56LgGa14AEOzSgHs6HMrEq4/WCp6Uer066z7GmOa/wPlFD1V7Oxyj4UJ0QVyMLqwy1owhft445S8+Ky34Xu2LHSFjZbGu2T93zQuGPcqyPnkZPQqmzsOSFPPAtKNXsLncJHyXM8unf9qzYMnb9GNsJpAMhBPMkLCZF5lmugJVMDLFndn7tBij4kLUuAujZyZjhqihCEWsqIpihyw/EsOErsqj5GvA9kR8umTnbBBd18sz2GPzDNKhEsUqbFOs6qwpLPENnS7Yzn1ypOgDXaAY1c6iuVqRNVHwb4ax4c2ob5fM6vpPx/9E7J6wF3wrUy3S7ZVJlnsoxES7aR+siC/v1UfVFNJvJ8gfGGAzC2iDjC7HLpbH7Z89xk2iPOL1jMYQpaOe13nDPbiEUnRYJW0d9bBFGbQHMqMuDt/jr7Tyiu27L4Jwh9wucXMDzg+mp5l/tJRvLxu2qnsg9TETUW+ajQ5yZ2eWGEaQ5zF+zt/Czn7dpqRfUWEBSjjF4zZOUR3OXZNp6Byz8ciXnn7xN2hlw2LI5yxabFK6Vcwfk6eU1ugA5Ew==
+    properties :
+     x : -316
+     y : 23
+     width : 10
+     height : 10
+    type : 8
+    code_elements :
+     type_code : 8
+     p_codes : []
+  -
+    name : IMG_PIECE_JOINTE
+    identifier : 0x2ff34c3c0905904a
+    internal_properties : CAAAAAgAAABweCSYc+Vw9gR3riyPJRHF5vYlbxTNAkx0Enu/AbwUGlZxVRY3yeYayndbsFYXzNOihmH8sHnk85O4T3/VJB9ZhJbEWlemEacEu/v4GE7XDv1mR7jYZWcPeYKPLHJpGXm/4Zq1PjJttIFtrnkJS1HBP69X5JVHX3OLBv+ddLzYr4c9XxnueuL7AC9iKCgMyxE36xjBcSvAEF1ANRd1fhoG8CG03A7duZ7bKz1UhBYy9WkLAxYr5nTkgwKtSGe1MTn7UhHN/RR0iLXaSQhVz8nx/BaCBCgg8e+llOCRZ76eS8X4gJhQUkudaDQ287Iq3k2HT2xX2RB1plaozj8zml2PK+ko4tk3Ym2uvU4wMYFpENbnjVvM/UQooROyyIZP0bPwkdMYAZGihnSgl37z60nlycj9c0QtaakAMbK6s+ojBVD2Hi46UtljRnQOBuOf9GHyFGnSymzzWvIGLhig5UT+cds/+yoplOMpdxMk9P7MBWL4G4psx63NEkHjAbVQSjy9Yhqo8/DcIi6EukrqNV4xFWVuYZcwwOYB51BYEo3Ek1OB5stjZu+qYTanxg+3mmmTDp1mW6U6SynrYutNFrEB6CANcyjO7pXk/wrRCR+Xeh72i5SddVWeIv4VVFSiZ1O3DAulUPhWzxAeayxYJaTo/b6jwproVZr/WoT7TXc81mCD8JXE0ohNNBPOoQMacF9hbtBZIrgB7d2Ot/FpB9HInooxQgCK0WHMIEkFtW0QOONtUm30AGbklyCQ0Kw+9hiTOHR2mQRyzet1IElb5yfKC7T6bXXmNOtUe80np8i4pTgedWfxx/2cnzXESdGaEHflqxaJTH/kRislzCAAOx/a8OS/Sg5RbwTkzYrUyFd+pkdm3/4fLBRZz+CtQ3ZKjdiE+nwMywoaJ3ZjTKFeBl0Fw1MUwzc=
+    properties :
+     x : -305
+     y : 21
+     width : 18
+     height : 18
+    type : 8
+    code_elements :
+     type_code : 8
+     p_codes : []
+  -
+    name : JAUGE_ReleveEnCours
+    identifier : 0x2007f3f9139e3354
+    internal_properties : CAAAAAgAAABAr2nRDukdXvNjovuJMwbenXVOeQjEb5UCWUK1XX/vegm7GwzOgEWEsGW+aN7eznnerljaqV+nauZkEd4gt3omk+DrFf06aybYmU/70bCfkxAQUWOd0GzwZDDpci/WpSekqNCWsHdqK8BQMV4Ca0gb0UGGLsjKLy6N7it/FT97atDKHL0SSXionQV9hjWUC7CSP/IRF1jPg7epNL5iljmPZE1bp6VSlsCn+Jqn/fH3kJqVI821UvzRt1bNn5mIGdkFLfGFgGgC/u66xURRCxuMgOtq5b8pVuHf5xie8MR9vNAKN+avQMO1hZtHHTMBevzCBcqMXw2dQmJAz6d5BmF7QPTaTGrW8pQharRaCb1eFhCuGpfjMC+Op84dXX2Prn9CpYJmtY4BaVzDrg6+8G/mp2rCJPWjLQtSpV9mvgmVYdY5TyH+08rKZJfwIRgenaC7O21nOGxwvMiKiqz7dDfE
+    properties :
+     x : 763
+     y : 13
+     width : 222
+     height : 16
+    type : 113
+    code_elements :
+     type_code : 136
+     p_codes :
+      -
+        code : |1+
+         // Version 1
+         // Description 
+         // Jauge d'attente infinie linéaire au look système (native)
+        type : 14
+  -
+    name : BTN_ArretSynchro
+    identifier : 0x20084a1b13bea788
+    internal_properties : CAAAAAgAAAD2JNTRJjr1gVEgV6y4S4EToI1V+MI9xPxZhG3XLZfZHPR7ppJdfWGDeIMsQMe7o7EYkdw8tg7T74iOyZicaGvVp7Bp8u5mMhvtLU7pX0UoKsw7Wn7vIvbplHZb1BUcK9E8w487A0GNTfAzuWuFe0ICxBD5BQTfKGVRzGgNRttQPep0YJNYWxwPdPbS1SHencEciiqjJT3KphQtJ5K/Y2PiLXAWBCElfGddOXx+9HY7o016RYOSyqpwtT5ed+D1P7LWU5n+7GRGRyEhox1UVwCCqhwWLHfOGHkbKXBqgVRwxN2Bo0ukf/tQN4S/hK6C2O5PKwq4aeY3NkJQd+FHTmU9TH07bhFPXTr5xWkAtClCdcdKa+qXKeBIlC2svO153c64mpgYY2aHycHEbNf7MQcHJXupwuhYrNIStI3XqwOpAiU/an21jmHsX5KfgqpY+/4OeB7k1jAXIPCYualzus4tBL6fw8dDgHL9bMGZxoG227ev2UVQDCiN4nSWRMMUFbQ2OHvPEg+Cagnc+bUj/wknoCHouBkbbnHfsVghht+mfL2cpsOkKccqIb2dS+adDi/kIkkjiWLcyiNeHZWpWRpDpC3o8C6xtR9C29uj7sCF0OwFgopCgNBnl3R4IbS5c369AgixqDeFrDFJoLo8v4OektbGausABFbnJfj/4ycZAfsJHFxWgiOSNpnY7sM+3Iq3fIFU8eU/OkU7m4+xB8xf0+Ixy8BRvok8iDP8QzpWN2/1ypnWDsreR7N4/QysDeraRmxvqb/wfvQmY12zHG8N0KSkD12FGZLzemskEjQASARBLGai128WKVxacItTJ1l4neRdAmF2+7+KIcABKbNfNzHA+bRlYF5VK9KytQMNWi/f1BBYmqOcAS9SGyomqIQ6oAmE6DK0vzawRoxrqwkonTVMhsmLep1BaXhoT9W1eclVW6FMt9HV+vQNejECPYkaG9hta0xC7aJmKmDzdngQgaIPg/CVTTJw7mXDEdX76Mdet1kA+U0QUZLGB/yatHM+y51ne84Ahj+1w8410flNdcWLo4EgXzqNs/XEsbFLhZ9qLAzSlRe2LF03u6uwLUwAI0A6k+Fu5pJk4M4VtZtL13LLlCmxQMPE6i/0/HP5
+    properties :
+     x : 991
+     y : 9
+     width : 24
+     height : 24
+    type : 4
+    code_elements :
+     type_code : 4
+     p_codes :
+      -
+        code : |1-
+         
+        type : 14
+      -
+        code : |1-
+         
+         COL_WDMail.gbDemandeAbandonOperation = vrai
+        type : 18
+      -
+        type : 161
+        enabled : false
+ menu :
+  name : _Menu
+  identifier : 0x2b4b3dd572d1a749
+  internal_properties : CAAAAAgAAABeLsChunBaPiFNIDXRY96BIjxwYsz86PsHQauRxCsk8V/omnLuWx6wNM4Hr1AJ/moh5pEHtSSzzNt3TGM7YKravmcYUXN82PaX7RKbtNd94o/zF/iFa7lM4A4bHHaB06d1sGia8PqcOShFTLtlavHUWMmja9LmvLizc9XaLRnZGNaTeOE0Zr9NqpRgl2K249OlJpVBAhFM917+7/4E21DDOL4b0VtNmifY304pIJQAD5kusAFdMZZtfU3wtQwQ/C1xN91uoYEIaRZst2GFkZS6PfRGjbLu1xXfpgLg6Cx/2VYyCxKIAVjs5g==
+  options :
+   -
+     name : OPT_Menu
+     identifier : 0x2b4b4563d0562e82
+     internal_properties : CAAAAAgAAAAyhkT15MSMIiWW6mRhi8cYi/vU/brp0PGuHMvSG94IIeEe0n/MoIFFGinSmT9EOZqeXprH+mfgfMWdTdbdQHBSob1q5cYmkRBiW9i2OecnjOdX8fTngqFRNsfZ45EOM4LXrr7qFmozQwrDmtPVLj88tHuDdn//sNLO2HLRDzGG9xFaY8/5ZOiw9ZPlciyO3m9zEphokcw0Vo9SuCpuhA/xG0KbAtlNyQTeHvVAnl1ZaGA6ysk/lJEL4wkh2SZiGwgesoQb6GqsOygHS+jsqWqUFkmhDSq5Cn4BF/BIEZWrMITdu9vlMRFn5zdsxnYB4kkUBr/glL1sVA4=
+     options :
+      -
+        name : OPT_Nouveau
+        identifier : 0x2b4b4581d349a324
+        internal_properties : CAAAAAgAAADSV1QEtci7TMvBc3UpR8aNdgR+fOcVQ0EcAQ5Rz3xVfCEqniVUkxmOghv81RzEPDAXv5iyK8k3Vd0hdJFkSkKhFNi02CK9m8KUL9jq0cfUD/sNWw0f/NvXyer0/HnvQMc9hctIRnTPOsPz2tcZ+TCrbLYaGNxQJenfOpYHd4IXl69I5n+trkbHlrBvRltMxRB73KgNobVFCW6YfgvsXWINXlJx0o+pRSOppZWnVpLwr8gVMMgJOvccQtNqs3/kbDp/GYPF7ghqakZUigHNQAiOgdbgxAyqiXMDntQYocGmwVXr/3m2hliAwjEKoKFNa9hz0m+GG4BPfNOqmaBxsFDhjLgrbHiMaHR0cUECHhwcYbh3d0nt
+        code_elements :
+         type_code : 26
+         p_codes :
+          -
+            code : |1+
+             
+             OngletOuvre(ONG_WDMail,"Nouveau message",FI_EmailNouveau)
+            type : 32
+      -
+        name : OPT_Relever_les_emails
+        identifier : 0x2b55b19d2a802ea1
+        internal_properties : CAAAAAgAAAA+vcVvc9q9H7YVlrfXQe43EDcKcEqXC2fJeH9kXj8GOvoeXLgihRmnbjMHwhirWpT0JsupqG4rOY5fTk/FBlBUS4maPQ2esEzTQ5eoOH31qsMstFeETXRjw3iP2nBIri+cmTt44NsdvpJ9t3nmrzc4qXbF/23MgZYG1G00iFqN81ipzXS7f1XOcF/oNr49gSWacCBxKf802x0nf0YC23jXuKNmonH1vkUlIAJqfSNnJMUSyaV/jajp+TMNMD+xu2t3YKYSeP3tvEE7uXlvdRw7rhq4hegRbYkrA+qjpsE5BQ4MXcbLQ0Loruh224jizDYBzZ1xoW2lqDwaU0OU9Lqp2VqEjEBiG72wkZCOjeo=
+        code_elements :
+         type_code : 26
+         p_codes :
+          -
+            code : |1+
+             
+             si TABLEH_COMPTES.COL_IDCOMPTE=0 ALORS
+             	ToastAffiche("Sélectionnez un compte à relever")
+             	retour
+             FIN
+             
+             arreteTimers()
+             
+             emailReleve([cCompte::s_GetCompte(TABLEH_COMPTES.COL_IDCOMPTE)])
+            type : 32
+      -
+        name : OPT_Relever_pour_tous_les_comptes
+        identifier : 0x2b55cde90542b55f
+        internal_properties : CAAAAAgAAADRrJuueFpFtoKfLy3u69PU1anly0Nl0+ci+FHPKNGennIbl8Q8GgjeN2Dhfs9rrBYbo4/jYRdE72AJWqZW/88+EUOu4PKag9hctHwR1UgG5SESui/2D1J3PBcVUJEaT7Yh8qGG4h7KMfHwoio6RF4QiFxWeV0T05y3vPE3syjD3GbnS46jItOF8tkApyBIdQ+JQiL588p/sZcYKl8h/ww9WcDk5763mU1PbU0zjTWILRktUazmsMkTaTtPILBYdy4swAUVMn9M4ThOJbiB8i6eD2XWqex/MdA3XhCZYhmdI22lxexRTPxHTDMTqhBhxJVaWUFovAkwiOFjLsHFhyBkKnMBW1wGj9mkkPsji99/alWl5Ys1c0iojYLHZHqzEwfAfzKLgySoSQ==
+        code_elements :
+         type_code : 26
+         p_codes :
+          -
+            code : |1-
+             
+             arreteTimers()
+             
+             emailReleverTout()
+             
+             actualiseListeDossier()
+            type : 32
+      -
+        name : OPT_Séparateur
+        identifier : 0x2b4b48b90ed433df
+        internal_properties : CAAAAAgAAAAIit//6E1QF6CjAWWw1B+a2pnojWykI8+I6BAEWX+vIC/IaZs50Cc8P0Os81FbTr+5JKarFFbrKUCu90pyyVZcFlDQFrn9iMY7IP8hz9YQx5/hk3Nu60DPu38vJ6cw64rS964es3imICOir7ZkCwLpTxqzyTPJpIYyr7N5v7XWpjxxU5bk3Pdp2EBrN2SCvmYUr7afnXTrQwS/8QE+XDQxZcOPrord1izWcPA9BgeNm6FhjE81q1/ssINX4p2lJmf7oFcdT60KjxQT8qfx1EdIH1NAXmY6YR1PWgssUamy4I7Y2zqU+6+JgOsrwYr9POAQe9MUp40x7OJa
+        code_elements :
+         type_code : 26
+         p_codes : []
+      -
+        name : OPT_Options
+        identifier : 0x2ff3230001087ce1
+        internal_properties : CAAAAAgAAAD5u8s2RVlVTIePl7z2LxW0BEnE1YmDG1zS1BlkbqNYk/7jwtaN1TR25ZhluhhdqU/yzXdm7i2HUGa6iAiJYPRqFohBIMqhGLqOztjDeWvZDXMvDwBRGdqY/ggO+Fz+ng8F60flw/80zeEtg8k1V/wG1twOhCkQXEiFV5yJ1U0JtlywFAmG7lwjpsn6gF5+Yy60YAMwUOwaYey/xPd/tQjaj0L0NMAtz3VxDCT2kF3OwfHw4WHCGvnMhA/k3a+3Sh7uju4Nu/K6ykDwWgRLrmKmdGU0a4PRAV7FosoP08vrgq6M0J9ohrqmcWpFDDmmEFmuk5mMn0/qbw==
+        code_elements :
+         type_code : 26
+         p_codes :
+          -
+            code : |1+
+             ouvre(FEN_Options)
+            type : 32
+      -
+        name : OPT_Séparateur3
+        identifier : 0x2ff322f801065b4f
+        internal_properties : CAAAAAgAAADRY7igAXarfhN0WKRxFdBdm1qpwjHRFroXVVNHDrxk5/DdQvAm/XKXahCDGkaIU6paAYMU1ZJjtbYSAyKSITySeExUZoFd5PY1+N/5S3quhamlU8f+S6zPtX8ztxeg0dDM+2IKy6CKePU6L8oo11jnyXYb4eOZqAKkLz+Zl9o7Fbfuejfn0ex0z5HagK+fS5VbUPmcLOXQPkeE7J6d/bVEbNRiG3ne29vxnYsqNeBaHgwuw4Dg8BQrv0SW04iCw/5qefo6rg5pbDHw37LE4bA3bCCViUkfTAZkL1DnFPbvo/NFSE2HyHLKwaxsgEk+fadZzLw7juaIRQsz
+        code_elements :
+         type_code : 26
+         p_codes : []
+      -
+        name : OPT_Quitter
+        identifier : 0x2b4b461cee3002ff
+        internal_properties : CAAAAAgAAADEj51993etD0lOdcwOIMjqGATVwLOF6mMraufg1mArl67VMrDiBo7McAXvxOiJoUlCpCfo63SUfuUSnKUbTEQj/Av9AS8UGX9xnvgtGHYZQ0QYSOzMcuXKMxNUrVuPpmv11I4c3h4u0IzGxQ+53j5qnY4UYWEZkUZMc+kqiX5zd9on18VFN6k/TfBbk5ztXTysIxCrweRlXP3MhJOgljcSH8R0ERSbu3IXBGUjcr9K+F1jLQzB5hkqQGllsm0ZNynum7hwX5X9QNcaiib1O31oQapnq0/FFbeoPUEMG0N7Taqu32px3dGjVFzXxMurfFC/D4pTnzvonskTjiTYyLuavUk=
+        code_elements :
+         type_code : 26
+         p_codes :
+          -
+            code : |1-
+             
+             Ferme()
+            type : 32
+     code_elements :
+      type_code : 26
+      p_codes : []
+   -
+     name : OPT_Compte
+     identifier : 0x2b4b48bf0f414a4c
+     internal_properties : CAAAAAgAAADdEsCVMURcBma0DvN6t0LyDgPADG3f313JreizxkbyiKhk1VUwbFg44tbDVXaygXFgHX/eAK4iOIbyy46aRlc/PIJChululeXz5bE6sgyN9I7qBTAnKBRAWFbXfkTdADLQjhs+wFTZYW9a/yQSQABQqzGILDCc7vyIe6YGEF6JUfbhC9XrkLhpvaIFTqz7fVO6h/S+r0wYqzEqUZ+ZYurbl1E7qv2Tj/WkFc1WUGiKBIExRHVfoCHuiXJtX1CCiWxsdozMGx02ejPf/NYXQZBJh/I3U6Q/W64jZL8jG9FKvPmmLz1vWPYRcI+jwMUL1SRhvZeCsiwQS0OkTA==
+     options :
+      -
+        name : OPT_Nouveau_compte
+        identifier : 0x2b4b48c50f71600d
+        internal_properties : CAAAAAgAAABx+nw2je0Yu7eOm4xDkLYcf6rhTkF14zgAUdKjK6N3Jq5qJpQ0G5wbJNIp5qMby4BSgn465C6XhIgcOc3VhRdpBUwKeDFfAHlFsea3+G8g3UpVMKtBQEgDenhdkqXuFDCIv9eZwB8nGz3Qhq5sIwhAGluwcYP2XGvgtiJmKDI2FDhlnHAU4fyxITS1DUI5hKmNf9MReOyqgvul/OqGIIb7q6q65ug4Sk+womTYER6iELKP99TmIdrwKK/e4i5laClN0SpLjn6lCsiNXnVZ/ow/UZIcSu/nLDxeZOkycusfVKdf9IoQ6uiYGJQ41yda4rKC3xwwTzViLcdlqix794goPnbAd911Tb8sKsr/OzzuKbLP3Hxd0zazWQ==
+        code_elements :
+         type_code : 26
+         p_codes :
+          -
+            code : |1-
+             
+             // Créer un nouveau compte
+             SI Ouvre(FEN_CompteCreation) = Vrai ALORS
+             	
+             	// Arrête le notifieur
+             	arreteNotifieur()
+             	
+             	// Actualise
+             	actualiseListeDossier()	
+             	
+             	
+             	// Relance
+             	demarreNotifieur()
+             	
+             	// Relève les comptes
+             	emailReleverTout()	
+             FIN
+            type : 32
+      -
+        name : OPT_Modifier_le_compte
+        identifier : 0x2b4b48cb0f9e77c1
+        internal_properties : CAAAAAgAAABJwRrMk7OcaTNF2k5DurALn+PaRvkS9SyWRbP7TBMRB0zok9FVet2oPUmaxVGrZl77ccNc6I4uoCHkfRzjYlOPCvFWs94D8sdvasitCbWMIm3ItXSH+uhseiP42sCLr/SttEOJyHGwcIEDCvAKeyLaNOA8W8aX8U6zzKIgm7+7IwyBMwh6xM6OMaSdh2IJul169NKo8YW5Zv8TmmZeaM4rfeZmTJZKMA1i1KaS24H7wsBL+6Kz/2CTm8G0TuR/SplbPIZDhkQ/dDgbh1ndye/+V1hWbNkh6x+eG+FbZDFP6o8fTqeJ/jx4cr5CyNlWbuBiETa4oBuKrdskKRObpy/NEx1fx501vB+qiRlaJmEU1MkEQQV2eBGLYQ==
+        code_elements :
+         type_code : 26
+         p_codes :
+          -
+            code : |1-
+             
+             configureCompte()
+            type : 32
+      -
+        name : OPT_Supprimer_le_compte
+        identifier : 0x2b66e221213888f6
+        internal_properties : CAAAAAgAAACY6vqLC+FXV0n9a7pKQngzC7MUu4xThOH2HbATZLMC1G3Fr4nGwi5tWEHj/Aj/6xtDtCuq4J2d/b3ElsczH5o9Yu3RJ/oPA9Hv7liPo6+z+5nr4YYL39ELBrFOv7s23y0tNREItC/jAmWhvjjlqGiH3NAUyHBVr9LF+JQLniSg9pMp5PfnPB54pcwEC9/gifs/SCmlv9kuQNcb88oRa2bA9uIlnpMkcQ/xvgHVTh6vy5mM6pN1v7FA07u9R2ZSxHhAKUneLt76KaQoCt233SRzKQ/OlVph+bFAT7bmHM25Op9VqAQX6BrB+oaFn6eAYcEg/nqTBV9buik6+ok+kCHX6eM/2YaANVl/FkOa3GgFJS93kVY=
+        code_elements :
+         type_code : 26
+         p_codes :
+          -
+            code : |1+
+             
+             
+             //1 : &Supprimer
+             //2 : &Ne pas supprimer
+             SELON Dialogue(<§?1B4C741F01CFB21B§>)
+             	// &Supprimer
+             	CAS 1
+             		// Arrête le notifieur
+             		arreteNotifieur()
+             		
+             		// Supprime le compte
+             		cCompte::s_Supprime(TABLEH_COMPTES.COL_IDCOMPTE)
+             		
+             		// Actualise
+             		actualiseListeDossier()	
+             		
+             		// Relance
+             		demarreNotifieur()
+             	// &Ne pas supprimer
+             	CAS 2
+             		
+             FIN
+            type : 32
+     code_elements :
+      type_code : 26
+      p_codes : []
+   -
+     name : OPT_Outils
+     identifier : 0x2b5494128403d14f
+     internal_properties : CAAAAAgAAADletidOXwkfm6MBtuSn1qappsoRCVn12XBVfDrLn6aYFBsTjydBESYzgaTXQJ+eZVcvZuKpAr66CpiAxYWko+7+KK+IvX6DY2P7VkCxlhF8GqqkSyz/Dy4ROZX3gDhuEbs/p8K1CB54aN6F4S+XOhMl5mU4ARIrnTU+w72LDSzLzCzWTOBjprD00QDdLrBP9H02VqkdTr6jS/k99XHILyJ0auhMGPRwSfaB9usbk60ottrEgMNbuOwfyT7Ne7gc3p22EKiecvYpBEp6gR15yKfOTTVoVLV9UaLHOf7M6lyZAGuJzVnoD7ZCBc7aK0zLfxZtZ+KuiQIQ0u8VA==
+     options :
+      -
+        name : OPT_Carnet_d_adresses
+        identifier : 0x2ff32677012d02f9
+        internal_properties : CAAAAAgAAAApeYgvzfTXu48WaME7t0pGLTR7ieGrLzDyBP95Jwa3Xdc034kmL4a+yfvykq6iXOgJcvlfoJoG7MaTKkRStLnmKrssHDPOODMDKGWnrjR8SlQpbvpIk+LTnwvBhCGMOqw+WFwCyp3CGjdarLbuEFQmaf+drGLPXzUgymJv0l3yTtBcVF14py2FMv6rDqDtyt/9/bIeW8juH6Ees3ufHG1A0EmR6uo2bGboSh8sow+9EnFoQH4GFvFUNUxJfUlhgv4s94cLrGc3ybAxTRXUpJk6ShGGLXIr0phI0aRu5t9wmSSf3+JKSQHxq2FE7fsMuoNqV6ASGdFYNO4PwhGMSDiKBx4i
+        code_elements :
+         type_code : 26
+         p_codes :
+          -
+            code : |1-
+             si FenEtat(FEN_ContactListe)=Inexistant alors
+             	Ouvresoeur(FEN_ContactListe, cCompte::s_GetCompte(TABLEH_COMPTES.COL_IDCOMPTE))
+             fin
+            type : 32
+      -
+        name : OPT_Gestion_des_filtres
+        identifier : 0x2b54941b8446f37e
+        internal_properties : CAAAAAgAAACxADjo7ibJSyK53IHtGcrziIciOEBb4wcpmNlayEvA7FYUITbSbiCUo30rNseC7YRK7CKZ4vxUB8toSh/IKmZeMeAhKPq3biy/xw3O4klxtlTF6arJ5j1o/MleTff5gUJFSmBHZVyWI0MOflRduA5v3hNGFoLpbvr6YMNutmalU9Rd0UAxN2m1FdTHrz+ejLI31e0Ebqz5JtxmNreHksegzwJF3zYMy0gsJ1HTkjKqeYxhCIJ87E1MiILccQS4fCqGbxWX37zsfTYgnmzGAKlGXYG36lW4yCIiCueOefACzEvBurlgkudPxc9r3ttNYcm0OLCuYKwkbc99NNJr80dEfFUPCX/52jpL/AsLAmU=
+        code_elements :
+         type_code : 26
+         p_codes :
+          -
+            code : |1-
+             
+             Ouvre(FEN_FiltreListe, cCompte::s_getCompte(TABLEH_COMPTES.COL_IDCOMPTE))
+            type : 32
+     code_elements :
+      type_code : 26
+      p_codes : []
+  code_elements :
+   type_code : 26
+   p_codes : []
+ popup_menus :
+  -
+    name : MENU_COMPTE
+    identifier : 0x2b4c54ba30620e99
+    internal_properties : CAAAAAgAAAC8B/OW3BgUd0FUh40NkHKCbvL6y8+vhNrnKUnUkb5z+KmQ4PvsNGFpzQ6itl5JJhSxKeGS132x1VoJG1QdTwf4h4TjECPet6n15vse+3cgEqVDGn5+fTKyDNywETM3SHSoAaiWAbs1Uj50a85jbC9WZvs7KeYBswv+dReveFttZ5FBmMGSpqHRFpECl9yDl0WMCm57iHuFeAvDFSmxyALWuwMspz3binH+aGMQQfSshEO9khFsISaomG3fq0dLfikl7kkmc2DOqwU4hjXAXAGEFhtXlHYpkj0st1b4CRE7tj4J+XokT6Uzhwb/OJ2nFT8A9zD6aeMeOBDuv9+jaJv01wgf7pTCgeI9zgNHnQvR1QpVSD5q8crFEz7tValXLM6G5ytV/ZOusTgpySLD1NWpuA==
+    options :
+     -
+       name : OPT_DOSSIER_CREER
+       identifier : 0x2b4c54ba30630e99
+       internal_properties : CAAAAAgAAAAttI2Tb0Ajeret+UXeDPVDO17W2XMWjOtOBkfGxlkW5QRsSuRibWVJMV8Z2ByWACDm0uf7lTi31Q+ksYSpgNvKAvkFWOpMUHAHpGbV5qhb2vixsfU+lL5d3IM2A5vkMaN5TGa5xDhxtTdtaANWuvwcB/qmatTOhQ4C6WhlzoIKuEef+YS9MSXBWforATLIdY9jpZY71blf+HH4V6E27J1OuaRX1n+JpA5Q4cn3UqMmTX50reLIpaqOv2hiMd3EIpbfhhb8PKQUi/GHBTnldx4oiOA4rUg2BL7+/GktzuxhHDN1WmuyrSr41eJkxaOKvxOxfqb/Hx0JWxbqyqZNdHNXUFLDII0Ur8uBi7noW7FJHWvXmQYPdx1Mpj2qOTZL/O1goe1TbE/RczSsLYBZIhlJoi5k5B4iBNGYRkwop8I9WV6TBcvlqgGiTUqDUFsVWY5rkWXeQFyY87PmiRSRz7eWx+8e1Q==
+       code_elements :
+        type_code : 26
+        p_codes :
+         -
+           code : |1-
+            
+            // Ajoute un dossier
+            SI Ouvre(FEN_DossierAjoute, cCompte::s_getCompte(TABLEH_COMPTES.COL_IDCOMPTE), TABLEH_COMPTES.COL_IDDOSSIER) = Vrai ALORS
+            	actualiseListeDossier()
+            FIN
+           type : 32
+     -
+       name : OPT_DOSSIER_SUPPRIME
+       identifier : 0x2b4c54ee3552d87c
+       internal_properties : CAAAAAgAAAD6G8lDv/G0E26bR0BRD4qka8oY45dvA3X7LlJ14n6yXhbOVQd7WVPMefzp68+BseEoGlKvbIWloHVbsA4YDkSWMi6XLW4rQw5ezb9N5ItvmnxCnDHbDavDF17iHdAs8Wo3fbH8sSvEIMgi9bbttNuvSLh/Gz3fcEvWMg+7P113pV9ZlOC3CLQG0fOk3CNmLuu2z89kNCV7GHMerm5Op7XILimP4h5mZeU5eIJF0DZ63Vgl1iCiQK5qDA9/sZwucgr/jK6yuDg/U6iS5Dgx+hzkb9hKIiTvDB7DSjXq1HwmqPt0ooiNpQTj2+YXdFAyDjzHTv72hoWDzmSK2zU2q/6sGRr/0lIs+nqtWdCNJF2azfqMjH2s2bxqwU0IKtDOuXkrWkqdEqi+5CTy7xNpBWaF+haiBSL9jyRj5Nyooz7ekK6f2rau1FCvuZS7qyiSuoQtm/ewLLS7VsJH8nBpTg==
+       code_elements :
+        type_code : 26
+        p_codes :
+         -
+           internal_properties : CAAAAAgAAAANK99aT578pqrY5vHKk6We4QlF1n4phI60i5kiJ2ajIXqY8ANw+K+Ev0qF5XyF7/X5nkR47wx/A9HQAdXUtV09qS9IbkPPF7nTWSaUTtcQidvXNTL45w==
+           code : |1-
+            
+            // Suppression
+            suppressionTableHierarchique()
+           type : 32
+     -
+       name : OPT_Séparateur1
+       identifier : 0x2b4c55363cddf494
+       internal_properties : CAAAAAgAAAAbdOX0S+5E1Ht5hmk/B6BJs8+AVydbdOGrnFulxTd7SzpENlBoUO2GQSP9HfLekGYXPhieBQKksdhRzWWdpn5W/rqdGNIwV37Z/Iy1HAZUmfC4QXPbQyQTj745oreg0akykM1Xuu4uaxo3MXumiChYIEffZs9gkAv+VWk05e9CQoU69LgJiiWNEyThHAlV0ZBe0sDgPzaP0bklnwrW6XwuEvAw9ILuD3sdLNv/jYrbswu+9hBb9mTTU/Cm13F8fF5eJ6BvxNUBxG5U5GJMQjr6sWg5/TQ9yO5r0HajY7o7xz+cSTztrStng4Z++xhSNHIwB8AA0L+vwgYGPNzsQAptCqgqdCl12DXQXRakPtu1jcvJVS2H/XUEN8kBcDyIxvceFM8Uxlw60kFBt7PwSL9QfUaZY+T/
+       code_elements :
+        type_code : 26
+        p_codes : []
+     -
+       name : OPT_COMPTE_MODIFIER
+       identifier : 0x2b4c551e3995967d
+       internal_properties : CAAAAAgAAACSqMWKAPNJ2cvh+VLr2LeerZgviwh+4Z5gQH0evVYZPfKFUekIaydsDPbLKJr/EGMeW1y+GZLs2a2LkAkyR1QAbRcbv326xIS9Vn8Jt+Wwo/Gg0PIW7gliNmSfJpq/4i6ytF68xkgIocx5O/Fcc6rUKcpTOLOYecPiHRIzVA3jwEjw+lgJGnFvZ6YX/wV05IMdcdTRylWSaK8kLaPDWWKxd72VdYbxnvrXhMAqdTxQp0uoljVej+0PpgTAiyIWFzyS35gm4ziOkrSMn3yXuvYvV7lwaNKw3lKQ8o1lCtm8S9nyzMhgDvJ8c4HFhN0DvWBvhueb6LCMzSP4TzC4ktpQn4DMYnGn9CLYlFNeATwoS7imMsclOidL/JPq83OqQhzAFK817aoj4DfKIpEFTT1aSG5qTGS1KvPcWxcVxw8c/z+uRUFoKPA274HSF5mxLKi/19nEG5n9yfaW8fQZnum+8J2R
+       code_elements :
+        type_code : 26
+        p_codes :
+         -
+           code : |1-
+            
+            SI Ouvre(FEN_CompteConfiguration, cCompte::s_getCompte(TABLEH_COMPTES.COL_IDCOMPTE)) = Vrai ALORS
+            	actualiseListeDossier()
+            	
+            FIN
+           type : 32
+    controls : []
+    code_elements :
+     type_code : 26
+     p_codes : []
+  -
+    name : MENU_EMAIL
+    identifier : 0x2b4dfaa5aa1922d6
+    internal_properties : CAAAAAgAAAAxinYvpVGf3PrdDAqCF/0x82WNuDx0c3eUGinHn3KvMgMuQDkiWGuhC+6mJujRFuoDY/GgQT3nUeSh39yf76d+zRaHioH60fnjVuaFeiBBL/x0uy0RzJ8RF4Mf5GoIscG3csnVrMoe+aEvtu1eNXwHMSQE5FTtFWfI3ctXknuNZVMThKfIggOhTO3GQ6rHa79mdHbdchujfADCLMAIY+nPHOKD3kxE2Tif877rFAO/bZxUyVjrckFnWQAqdmqws9Bmi+6NGrkRbN5Nq3wvTa4rUxxQr2kueQLlvCOniBL4xftKuiVH/Jwq7N0e13zGbLy5jt9JGNzxb7l5grIea3YZDGNyCUdHMO02UcYqqJKYEpPcVyVJAr02gKtaIHxkGTkTdLjYeBgpKqHCUlk6TVIkNQ==
+    options :
+     -
+       name : OPT_DEPLACER
+       identifier : 0x2b4dfaa5aa1a22d6
+       internal_properties : CAAAAAgAAAB6g79kBJnB2zy5hjBValINA+ArOYuXrK0oLi60wwYKssymfMWcdr6NAz/Re+dqrS50id7nzn++IbK8PukcRfZNDX2r/vQHbSlbQgQlpxXkC5T+WRqQ8DRAvrbVFHRyNVUU3wsywDr5IjAcrwbbyK4FvEKXWroQyIaJSCNjFmXuWyjBQcgvry9A6gFQCVgvALqyD/1YhonmcAEhAlEpP9IGagF6DwvpCWvUvrQT1CFznJWWOZkVL+H0/fDB0oS4oeBKKA7v9WaftdunaMpC8x/cayc/eVoRuglVwfnsi2jV2P6QP7i/6Q3egrHysLwepFskwjSZTzu1T2+xO+wiq/ZuyZMwq6+pjm1ZbqxJUQRkiYq7gymQmayrNPS62plygjupMm0gwXKKgVtRh1iDSxNALDfQXMC7OFSbfwK48+0Bxmsz+jtNxcjOQ/m4SLmSf4DJCMvOY/Dx4XTXfsuOUXsPg5Db0VU=
+       code_elements :
+        type_code : 26
+        p_codes :
+         -
+           code : |1+
+            
+            
+            
+            deplaceEmail()
+           type : 32
+     -
+       name : OPT_Marquer_comme_non_lu
+       identifier : 0x2ff5c8c60c241184
+       internal_properties : CAAAAAgAAACKm2vACK8ytoHtnnjd0Gibx5e8zTknChKoglduBaYvVKW2AvGE7uJTcR8quviETAiT2RfGE2L5rZQP0BuSb6jYAJ373CkegYT6AihwViqlgao0ZqXF3MTxiFKcTqAoNcsDoV/9HBHDlkQ6GbHakpxa7f2nDKiLEhf0hOH0hSjPOXSZm4dUVrK3FJMe5zQ9dh42OvtD37T6Xp3LMcQMbHo1Xe8dJoHns0fi0CHibOKBlhO8s+MOMqhOE9LxSJh2k8RasL6bKpLgi/UWkRiDClYPv5/dvI3jNtHNM0+7f2o7VGlXgvJwwsKHlUbIFlHts0WEcnTRmbQp5WPZo1F2sup/NPTyIzLIee75cpY2lblzsytUjGthoLlWskyiLwO9Q8PW1Z541E5dKPSY0ovU5rU8Y1bPrqFfBhF1/KnUd/SLmYw=
+       code_elements :
+        type_code : 26
+        p_codes :
+         -
+           code : |1-
+            emailChangeEtatSelection(faux)
+            actualiseListeEmail(TABLEH_COMPTES.COL_IDCOMPTE,TABLEH_COMPTES.COL_IDDOSSIER)
+           type : 32
+     -
+       name : OPT_CHANGER_ETAT
+       identifier : 0x2c238794431e4bdb
+       internal_properties : CAAAAAgAAACWLDSzl6SzVrsSmR2jQoIgPMLXXNsx4tIsSfzqd3v1xe6E9/TTEAaTS5hCpU1M5auj7mOPgFZinZECacURD2Fw/FPejyzCOCHY7RkGG+zv07sAWUQbSraBN2auGWxBa4a54ViAYoHlhv+p8FVVAPnYsiXWL1qqQk4ysSaRLYNlbu0owFcxivQAZsY5pBlxVECicH5DNE7G3EFs8P3g3D1HoaVf6rpBdWaSiN/FWuJJByB7/kZE3IZrMBt7wOB43Q/O0GB50I9YfIGEqRb1Yor4AlcHQWLpglpmfHes9u0XcMnvRNBExfiofw6Avn75BqzL7y4xhu9Tu2wA8q4OnHGB/zH3L+MgrfxaJnuupVrI5WTP3BC67IynLn6wd83mugTphZwuksPOXcax73GLYaR2fOupiWQcx4q1N9B3h5S65eS+1QPA/V0mg29Ost57F5tErV4Zdmrt
+       code_elements :
+        type_code : 26
+        p_codes :
+         -
+           code : |1-
+            emailChangeEtatSelection(vrai)
+            actualiseListeEmail(TABLEH_COMPTES.COL_IDCOMPTE,TABLEH_COMPTES.COL_IDDOSSIER)
+           type : 32
+     -
+       name : OPT_Lire_dans_un_nouvel_onglet
+       identifier : 0x2fdcc53308c9cf8e
+       internal_properties : CAAAAAgAAADqydNjRW14czXLe2iR9dYj6xPojqgUY/Ed8/IrwWx9dojOl5iAaNU92AJnbWgIzxPLazVQQFYKPM9U6RifaBwvGWCwDi6bg4XQVeZ9bPW+ySshJBLC1nr57IBRvAR3nd1hxBbBNASyFDbKKJ2sjKuM8LbfWx7s2Scp3c2MmTFtRVyaPAM39FVAoaRa2tyVjyto5sz1aKoLO78+D4Tmyo9k2k9jesx83LyuWIZPd39LBvB1GXvZJyzNXf8EzbGm4HecNL3bGTf86r9VjHqDJ5hghVg1pS9tOnMqCKKLs5ASi7dNGeofAITurEserLjY4HNmwyyf4E2IC1OWJM60bh8TVwKCh6WbLVDHC1eHpLucK1dP+OcxbFDr5ZiZJeHMoSGndbvYfTHddDVgWsrqTebYzamcx9gEuSPycUPwKM2xZGwaUn+hCYNC
+       code_elements :
+        type_code : 26
+        p_codes :
+         -
+           code : |1+
+            // Variable
+            pclCompte	est un cCompte dynamique	= cCompte::s_GetCompte(TABLEH_COMPTES.COL_IDCOMPTE)
+            pclEmail	est un cEmail dynamique		= Null
+            
+            POUR TOUTE LIGNE SELECTIONNÉE DE TABLE_EMAIL
+            	pclEmail	= pclCompte.getEmail(TABLE_EMAIL.COL_IDEMAIL)
+            	
+            	OngletOuvre(ONG_WDMail,pclEmail.Sujet,FI_AffichageEmail,pclEmail)
+            FIN
+            
+           type : 32
+    controls : []
+    code_elements :
+     type_code : 26
+     p_codes : []
+  -
+    name : MENU_RELEVER
+    identifier : 0x2fdcc12b01f4103e
+    internal_properties : CAAAAAgAAAAVfjR/3bYkozJJpGy2RA1nYyCu0+9x2TR4vsct55frXan/rTW+NHg23oHfmU3IiShpUzMqP1fgQuCLwMCfA0Ccn8v18lY1iR5g1ORzlRSKqpiKf/Gnv/lqxInXK4PDmX2AoBbXrmXZljA3JlIUCdgc097RNTQ6L3aaxamdPJ37d/8rClzEYnJJ9mCsJrRUogj0nryNPnqI2k6K16mu0/5HKrlMag7Ra+gQsz52cTUz5qkODmi0QegaOls3D8cbXLo7ux3U5Eu1PHqG1Am49V2VUr0J7MjFlmnMi9vNJ+4l8cnjxjfGFy99xVT4UhyedJHdrDPurVw7nWga0nYFxMUNOixyhvIb6IZ+ekHQpPobmV12M56w8OprBU7WX9xPtz8SICtqUq51ZRkwQsXVVAMXnTLqu3xvq5WhVvf00Y5JpuolBIay
+    options :
+     -
+       name : OPT_Tous_les_comptes
+       identifier : 0x2fdcc12b01f5103e
+       internal_properties : CAAAAAgAAACNa85TVcda7xPGlCgpsv/1LO4QlKAF1/JQBvhZk5HyhyOsl+Hy8g0fXDQXfCvoS3NPwEjlZBPgJRbufqYR4F4U8KuPn6WHIPW+CNSo4hoPHutHNpX/4/CucZr5A4xT4pvOHXZiaJWbGCPmosBtkOxaSolWckbAabV4aR17yxOVInMAyxzfPcd3SFT4x1tNftQ9rAkm/aI2yWP6wf0X+y58twjZZ78NEW4H+uiryjv8433EJaN0NhUWCfxtY8pLYJulgv89+l5dY+dx/nj3dGxMnG+gk8O456re+pO/RES6eqS6jUAH51ORNdQ4Q4UU70yRkHdHtvn46trfgKsZNDgH8/w7oUfCgh5vF2Sp8IPYkNpcpEP9FQc5DaNQjuz8rGmdi0ss8etdlqTtJ/3GfxfRfusK6meJ7H0=
+       code_elements :
+        type_code : 26
+        p_codes :
+         -
+           code : |1+
+            emailReleverTout()
+           type : 32
+     -
+       name : OPT_Séparateur2
+       identifier : 0x2fdcc13d01f6547b
+       internal_properties : CAAAAAgAAAB9GQcgUFECph3VGiKB133ohnVX38b8i3iAL894c0BBoewa42EE3ftbKY1p0sjCGVRqjV7FgPabsZbqI8zIhJbl7SHiN/vRRyA1lS59WmeUDbLnELTzXJrbDmP1kO/AKFrQTMcaX/VVqN9anOqw+Xi1lEDtCWQ28kVLDhe3Xz+Dd0vVNzVfOsWHYMEM8/VPqkvc2PEQJC2Zb/DwW02XKirztNKPrMJE7tkSVzqw8EnJD8HYX1QLlRAy+Z5+MwMQ/761zrWkIH0538a1qgqcFuFO9mg3vhtKe1CgQeDnrNDQR39ToPABIccQtWMKCwvn1TRv73K2CK3/USaVd3c4LPW3ojeaBSqsIj42I3JGKqctZtYMq83sWFbxjO0bqcawsPj++IU7Y9sKPctUkPxk
+       code_elements :
+        type_code : 26
+        p_codes : []
+    controls : []
+    code_elements :
+     type_code : 26
+     p_codes : []
+ languages :
+  - fr-FR
+ message_bar :
+  internal_properties : CAAAAAgAAAD6OiyPG7zSg3Rh6d/jGXUfBJCopUTcTVz/PEwB8RsOrnFqPUCFdYnHrtBwsCF6/k+p8FwlCXD4JyQZGLERbWiysXvgq/10fyc9LNPL75WsV5ZDLT/ULlJnchWmPQ==
+  controls :
+   -
+     name : CBM_MessageTexte
+     identifier : 0x2ff8606d0cfd7dac
+     internal_properties : CAAAAAgAAAC0262SamV/J+Pt4/fXm8u4m3NN0ytiRiH2lHI5eyz9eZ+lF9O3mzfI5lIlCJh07kUtbYnGLMatGBupr7B72Bx30Fb+Gw+4yy7y2xTsQWgwJG2vCeA4UZs0HH31
+     type : 62
+     code_elements :
+      type_code : 62
+      p_codes :
+       -
+         type : 15
+         enabled : false
+       -
+         type : 16
+         enabled : false
+       -
+         type : 39
+         enabled : false
+       -
+         type : 17
+         enabled : false
+ actionbar : {}
+ code_elements :
+  internal_properties : CAAAAAgAAABoDR841WOAqA0o6aYCQI5lkN/gM3n5SIuof1rDktMWrcjhp9xutnxTzWcMc6hhsoexSGTuPQ77k7cvOsU6jVnh8yD32lQPKRGmXTk6gGeo37e9fSmPqFZs+vLy5YbmpZo7MSrEby32OC+CWXqwCjiqgDnDuQKYRr0vXKPXd3b1yCF+EN7THQA/7nzFvZfM3oAwIvQ86cxSbzrLLN9RFDB88nEwpzXYFgK8i8g56ugyEfXZe3LydLUqSPbFMbxKIxH8x08qy1aoyRp+oluLbJ6juqHXnZGgr5jE+gByZDljkpczw7xXg5uEhWxWJjTBCD4pGFK9S4fyl3ea5mMrz/O23sk7rUmm+THix4PK20j3ApnYZQQvSc/EjbdL9KbrNZWbqoGh7Sli+FccVANYB1PHt1IbOa0PAp0DqrMvqiYgsqFFMyL2ZdDp7ejufDUbVaWHtG8U3XENd0sTCRN/gKe/BMikLyk1B4we2YT1+ymVsv/284N1RyxeQdg8DGGtyLB2kZU18FrDg4oJpv1LErKwDrO+/b+5SH4FSqwn
+  type_code : 1
+  p_codes :
+   -
+     code : |1+
+      
+      constant
+      	TIMER_SYS_DOUBLE_CLIC = 1
+      	TIMER_SYS_PASSE_LU = 2
+      	VK_DELETE = 46
+      fin
+   -
+     code : |1+
+      
+      // Actualise l'affichage
+      actualiseListeDossier()
+      
+      // Mise en place des vérifications automatiques
+      COL_Notifieur.m_nHandleFenetre = Handle(FEN_Principale)
+      Evénement(FEN_Principale..NomComplet + "." + "callbackNouveauEmail", "*.*", WM_NOTIF_EMAIL)
+      
+      demarreNotifieur()
+      
+      // Icône dans la barre
+      i est une icone
+      i.valeur = fChargeRessource("wdmail_systray.ico")
+      SysIconeAjoute(i,"","WD Mail","callbackSysIcone")
+      
+      // Vérifications des comptes au lancement si on n'est pas lancé en mode miniature
+      SI COL_WDMAIL.MODEMINIATURE = Vrai ALORS
+      	SurMiniaturise()
+      SINON
+      	emailReleveLancement()	
+      	DonneFocus(TABLEH_COMPTES)
+      FIN
+      
+      ActualiseMenuRelever()
+     type : 34
+   -
+     type : 180
+     enabled : false
+   -
+     type : 230
+     enabled : false
+   -
+     code : |1-
+      
+      si fenetat(FEN_ContactListe)<>Inexistant ALORS
+      	ferme(FEN_ContactListe)
+      FIN
+      
+      // Arrêt des vérifications automatiques
+      arreteNotifieur()
+     type : 2
+   -
+     type : 11
+   -
+     type : 12
+   -
+     type : 17
+   -
+     type : 13
+   -
+     internal_properties : CAAAAAgAAABkYxCOAWHWSEcmS47+Q4zr76DFeUhRJGaNs29bIcM+i9P48K1hoWenUlLTUcG+n+jT4Jtjp2sXjnWCcDud5gVpkt1ArZhMBRqjw7AWM4YjS6jH+jMDU88Vva+NPKIVwCdEi8l9zIuOl9Q91Q==
+     code : |1-
+      
+      // Minimized ?
+      SI _EVE.wParam = 1 ALORS
+      	SurMiniaturise()
+      FIN
+     type : 65541
+  procedures :
+   -
+     name : actualiseListeDossier
+     procedure_id : 1967013820972204429
+     type_code : 14
+     code : |1+
+      // Résumé : Actualise les données affichées à la fenêtre
+      // Syntaxe :
+      //actualiseListeDossier ()
+      //
+      // Paramètres :
+      //	Aucun
+      // Valeur de retour :
+      // 	Aucune
+      
+      PROCÉDURE actualiseListeDossier()
+      
+      // Variables
+      taListeCompte    est un tableau associatif (*, *, wlEntier_8) de cCompte dynamique
+      tabFils          est un tableau de cDossier dynamique
+      pclCompte        est un cCompte dynamique
+      pclDossier       est un cDossier dynamique
+      sImage           est une chaîne
+      nIndAjout        est un entier
+      
+      // Mémorise la sélection
+      nTypeSelectionDossier est un entier // 0 = pas de sélection, 1 = compte sélectionné, 2 = dossier sélectionné
+      nIdSelection est un entier sur 8 octets
+      si TableSelectOccurrence(TABLEH_COMPTES)>0 alors
+      	si TABLEH_COMPTES.COL_IDDOSSIER=0 ALORS
+      		nIdSelection = TABLEH_COMPTES.COL_IDCOMPTE
+      		nTypeSelectionDossier = 1
+      	sinon
+      		nIdSelection = TABLEH_COMPTES.COL_IDDOSSIER
+      		nTypeSelectionDossier = 2
+      	FIN
+      sinon
+      	nTypeSelectionDossier = 0
+      FIN
+      
+      // Réinitialisation
+      TableSupprimeTout(TABLEH_COMPTES)
+      
+      // Affiche la liste des comptes
+      taListeCompte = cCompte::s_getListeCompte()
+      
+      // Aucun compte ?
+      SI taListeCompte..Occurrence = 0 ALORS
+      	SI Ouvre(FEN_CompteCreation) = Vrai ALORS
+      		taListeCompte = cCompte::s_getListeCompte()
+      		emailReleverTout()
+      		retour
+      	SINON
+      		Ferme()
+      	FIN
+      FIN
+      
+      // Ajoute dans la table hiérarchique
+      POUR TOUT ELEMENT pclCompte DE taListeCompte
+      	// Ajoute le compte dans la table hiérarchique
+      	TABLEH_COMPTES..ImageDéroulée = IMG_COMPTE
+      	TABLEH_COMPTES..ImageEnroulée = IMG_COMPTE
+      	TableAjouteFils(TABLEH_COMPTES, Null, pclCompte.Nom, pclCompte.IDCompte, cDossier::DOSSIER_AUCUN_PARENT, Vrai,0)
+      	
+      	// Récupère la liste des dossiers du compte
+      	tabFils = pclCompte.getDossiers()
+      	
+      	si tabFils..Occurrence>0 alors
+      		
+      		// Ajoute les dossiers dans la table hiérarchique
+      		POUR TOUT ELEMENT pclDossier DE tabFils
+      			si pclDossier.bDossierAIgnorer() ALORS continuer
+      			//  Récupère l'image associé au type de fichier
+      			sImage = pclDossier.image()
+      			
+      			// Ajoute dans la table hiérarchique
+      			TABLEH_COMPTES..ImageDéroulée = sImage
+      			TABLEH_COMPTES..ImageEnroulée = sImage
+      			
+      			// Ajoute les dossiers fils
+      			sCheminDossierParentDansTableH est une chaine = Remplace(pclDossier.cheminDossierParent(),"/",tab)
+      			sCheminDossierParentDansTableH = remplace(sCheminDossierParentDansTableH,"[Gmail]","")
+      			
+      			nIndAjout = TableAjouteFils(TABLEH_COMPTES, pclCompte.Nom + [TAB] + sCheminDossierParentDansTableH, pclDossier.Libelle , pclCompte.IDCompte, pclDossier.IDDossier, Faux, pclDossier.NbNonLus)
+      			ChangeNombreNonLusTableHierarchique(nIndAjout,pclDossier.NbNonLus)
+      		FIN
+      	fin
+      	
+      FIN
+      
+      actualiseTitre()
+      
+      // Restaure la sélection
+      selon nTypeSelectionDossier
+      	cas 1 // Compte
+      		nLigne est un entier = TableCherche(COL_IDCOMPTE,nIdSelection)
+      		SI nLigne>0 ALORS TableSelectPlus(TABLEH_COMPTES,nLigne)
+      	cas 2 // Dossier
+      		nLigne est un entier = TableCherche(COL_IDDOSSIER,nIdSelection)
+      		SI nLigne>0 ALORS TableSelectPlus(TABLEH_COMPTES,nLigne)
+      	AUTRE CAS
+      		// Rien
+      fin
+      
+      // Action de sélection
+      selectionTableHierarchique()
+      
+     type : 458752
+   -
+     name : selectionTableHierarchique
+     internal_properties : CAAAAAgAAABK+wMsO9TiBl+ksfDf5buElP+yI25FSQyZuEokcnnsv4Zj0UW7l/98CQKzkdDYDvcEx7GQGgyzNqHZdhBl4v3wldOHlCi2oaBZaphLxSwZjtMYk6dIQ9Slh+8Mk6qZ2hEcQWduGK4x4KGsbnWR
+     procedure_id : 1967500737082479315
+     type_code : 14
+     code : |1+
+      // Résumé : Appelé lorsqu'une sélection est effectuée dans la table hiérarchique
+      // Syntaxe :
+      //selectionTableHierarchique ( [<bSynchro> est booléen])
+      //
+      // Paramètres :
+      // 	bSynchro (booléen - valeur par défaut=1) : <indiquez ici le rôle de bSynchro>
+      // Valeur de retour :
+      // 	Aucune
+      
+      PROCÉDURE selectionTableHierarchique( bSynchro est un booleen = faux )
+      
+      // Variables
+      pclCompte		est un cCompte dynamique	= ccompte::s_getCompte(TABLEH_COMPTES.COL_IDCOMPTE)
+      si pclCompte=Null ALORS
+      	retour
+      FIN
+      
+      actualiseTitre()
+      
+      nLigneTH est un entier = TABLEH_COMPTES
+      pclReception	est un cDossier dynamique	= pclCompte.getDossierReception()
+      
+      // Ré-initialise
+      SI optionExiste(MENU_COMPTE,"OPTION_VIDER") ALORS
+      	MenuSupprime("MENU_COMPTE.OPTION_VIDER")
+      FIN
+      
+      // Change de plan si on a sélectionné la racine d'un compte
+      pclDossier est un cDossier dynamique = null
+      SI TABLEH_COMPTES.COL_RACINE = Vrai ALORS
+      	// Modifie l'affichage dans le menu
+      	MENU_COMPTE.OPT_DOSSIER_SUPPRIME..Libellé = <§$0011§>
+      	TABLE_EMAIL..MenuContextuel = MenuContextuelDésactivé
+      	TableSupprimeTout(TABLE_EMAIL)
+      	CFI_Message.ChangeFenêtreSource(FI_AffichageEmail)
+      	
+      SINON
+      	// Modifie l'affichage dans le menu
+      	MENU_COMPTE.OPT_DOSSIER_SUPPRIME..Libellé = <§$0010§>
+      	
+      	// Affiche les emails associés au dossier (si ça en est un)
+      	SI TABLEH_COMPTES.COL_IDDOSSIER <> cDossier::DOSSIER_AUCUN_PARENT ALORS
+      		pclDossier = pclCompte.getDossier(TABLEH_COMPTES.COL_IDDOSSIER)
+      		si pclCompte.TypeReception = cCompte::RECEPTION_IMAP _et_ bSynchro alors
+      			GR_OPERATION_EN_COURS..visible = vrai
+      			COL_WDMail.gbDemandeAbandonOperation = Faux
+      			si pclDossier.SynchroAFaire() alors
+      				arreteNotifieur()
+      				pclCompte.CallbackAvancement = callbackAvancementOperation
+      				pclCompte.dossierSynchroniseIMAP(pclDossier)
+      				ChangeNombreNonLusTableHierarchique(nLigneTH,pclDossier.NbNonLus)
+      				demarreNotifieur()
+      			fin
+      			GR_OPERATION_EN_COURS..visible = faux
+      		fin
+      		actualiseListeEmail(TABLEH_COMPTES[nLigneTH].COL_IDCOMPTE, TABLEH_COMPTES[nLigneTH].COL_IDDOSSIER)
+      	FIN	
+      	
+      	// Sélectionne le premier email de la table par défaut
+      	SI TABLE_EMAIL..Occurrence > 0 ALORS
+      		timerDoubleClic()
+      	SINON
+      		CFI_Message.ChangeFenêtreSource(FI_AffichageEmail)
+      	FIN
+      	
+      	// Propose de vider
+      	SI PAS optionExiste(MENU_COMPTE,"OPTION_VIDER") ALORS
+      		MenuAjouteOption(MENU_COMPTE,"OPTION_VIDER", <§$000d§>, viderDossier, TABLEH_COMPTES[nLigneTH].COL_IDDOSSIER)
+      	FIN
+      	
+      	// Change le menu de la table selon qu'on a sélectionné le dossier des brouillons ou un autre
+      	si pclDossier=null _ou_ pclDossier.Type=cDossier.DOSSIER_BROUILLON alors
+      		TABLE_EMAIL..MenuContextuel = MenuContextuelDésactivé
+      	SINON
+      		TABLE_EMAIL..MenuContextuel = MENU_EMAIL
+      	fin
+      FIN
+      
+      // Donne le focus à la table
+      DonneFocus(TABLE_EMAIL)
+      
+     type : 458752
+   -
+     name : suppressionTableHierarchique
+     internal_properties : CAAAAAgAAAANK//aDJap4Sbc9fqdCz2Aucld2mLRLMJK+5GiJ2ajIXqY8ANw+K+Ev0qFZfwFb3V5HsT4b4z/g1FQAc2s60MfF63O1P0hR1kj2OoX3wDqeDq3FTL45w==
+     procedure_id : 1967840589289012407
+     type_code : 14
+     code : |1+
+      // Résumé : Suppression dans la table hiérarchique
+      // Syntaxe :
+      //suppressionTableHierarchique ()
+      //
+      // Paramètres :
+      //	Aucun
+      // Valeur de retour :
+      // 	Aucune
+      //
+      // Exemple :
+      // Indiquez ici un exemple d'utilisation.
+      //// Traitement automatique des exceptions :   exécuter le bloc de code CAS EXCEPTION:
+      //
+      
+      PROCÉDURE suppressionTableHierarchique()
+      
+      arreteNotifieur()
+      
+      // Variables
+      pclCompte est un cCompte dynamique = cCompte::s_getCompte(TABLEH_COMPTES.COL_IDCOMPTE)
+      
+      // Vérification
+      dbgAssertion(pclCompte <> Null,"pclCompte == Null")
+      
+      // Suppression de dossier ou de compte ?
+      SI TABLEH_COMPTES.COL_RACINE = Vrai ALORS
+      	
+      	// Supprime le compte ?
+      	//1 : &Supprimer
+      	//2 : &Ne pas supprimer
+      	SELON Dialogue(<§?1B4C741F01CFB21B§>)
+      		// &Supprimer
+      		CAS 1
+      			ccompte::s_Supprime(TABLEH_COMPTES.COL_IDCOMPTE)
+      			
+      			actualiseListeDossier()	
+      		// &Ne pas supprimer
+      		CAS 2
+      			
+      	FIN
+      SINON
+      	// Supprime le dossier ?
+      	//1 : &Supprimer
+      	//2 : &Ne pas supprimer
+      	SELON Dialogue(<§?1B4C607100ECD2E2§>)
+      		// &Supprimer
+      		CAS 1
+      			// Supprime le dossier
+      			pclCompte.dossierSupprime(TABLEH_COMPTES.COL_IDDOSSIER)	
+      			
+      			// Actualise les informations
+      			actualiseListeDossier()
+      		// &Ne pas supprimer
+      		CAS 2
+      			
+      	FIN	
+      FIN
+      
+      demarreNotifieur()
+      
+      CAS EXCEPTION:
+      	Erreur(ExceptionInfo(errMessage))
+     type : 458752
+   -
+     name : emailReleve
+     procedure_id : 1969707010287560980
+     type_code : 14
+     code : |1-
+      // Résumé : Relève les emails pour le compte courant
+      // Syntaxe :
+      //emailReleve (<tabCompte> est tableau)
+      //
+      // Paramètres :
+      //	tabCompte (tableau) : liste des comptes à relever
+      // Valeur de retour :
+      // 	Aucune
+      
+      PROCÉDURE emailReleve(tabCompte est un tableau de cCompte dynamique)
+      
+      arreteNotifieur()
+      GR_OPERATION_EN_COURS..visible = vrai
+      COL_WDMail.gbDemandeAbandonOperation = faux
+      
+      // Variable
+      pclDossier	est un cDossier dynamique
+      pclCompte	est un cCompte dynamique
+      nNbEmail	est un entier
+      
+      // Initialisation
+      tabTP est un tableau de TâchesParallèles
+      POUR TOUT ELEMENT pclCompte DE tabCompte
+      	// Relève les emails
+      	pclCompte.CallbackAvancement = callbackAvancementOperation
+      	tp est une TâcheParallèle = TâcheParallèleExécute(pclCompte.emailRecupere,(),tpoCopieLégèreContexteHFSQL)
+      	tabTP.ajoute(tp)
+      	TâcheParallèleExécuteAprès(tp,()=>{ nNbEmail += MaTâcheParallèlePrécédente.ValeurRenvoyée })
+      FIN
+      
+      TâcheParallèleExécuteAprèsToutes(tabTP,finReleve,(),tpoThreadPrincipal)
+      
+      procedure interne finReleve()
+      
+      	// Actualise l'affichage
+      	actualiseListeDossier()
+      	SI nNbEmail > 0 ALORS
+      		
+      		// Se positionne sur la boite de réception du compte courant
+      		pclDossier = pclCompte.getDossierReception()
+      		
+      		// Cherche le dossier dans la table hiérarchique et se positionne
+      		TableSelectPlus(TABLEH_COMPTES, TableCherche(COL_IDDOSSIER,pclDossier.IDDossier,Vrai))
+      		
+      		// Action de sélection
+      		selectionTableHierarchique()
+      		
+      		si nNbEmail=1 ALORS
+      			message("Synchronisation terminée, un nouveau message")
+      		sinon
+      			message("Synchronisation terminée, [%nNbEmail%] nouveaux messages")
+      		FIN
+      	sinon
+      		message("Synchronisation terminée")
+      	FIN
+      	
+      	GR_OPERATION_EN_COURS..Visible = faux
+      	demarreNotifieur()
+      fin
+     type : 458752
+   -
+     name : callbackSysIcone
+     internal_properties : CAAAAAgAAACnkfGJJ/3ck259ALK1gajPsOXZaOVW8IHo4do26A2V7dNewBDN9PmJrrE3/mwKfQzBvLjk5gol+YGQuyQ5uWXF3BgpsPRdA0XvkYmHlzXBUdA7IdP0SkR247xr29jS4LztaMvMCmPBB1fqG0A=
+     procedure_id : 2016841368664240827
+     type_code : 14
+     code : |1+
+      // Résumé : Callback SysIconeAjoute
+      // Syntaxe :
+      //callbackSysIcone (<nActionSouris>)
+      //
+      // Paramètres :
+      //	nActionSouris : Action de la souris
+      // Valeur de retour :
+      // 	Aucune
+      //
+      PROCÉDURE callbackSysIcone(nActionSouris)
+      
+      // Affichage uniquement sur clic
+      SI nActionSouris = 514 OU PoidsFaible(nActionSouris) = 1029 ALORS
+      	// La fenêtre redevient visible
+      	FEN_Principale..Visible = Vrai
+      	Restaure(FEN_Principale)
+      	FenEtat(FEN_Principale,ActifDevant)
+      FIN
+     type : 458752
+   -
+     name : callbackNouveauEmail
+     internal_properties : CAAAAAgAAAAneoigXD2Oo8Yx3iBRq7Y0cj2fIwyPNTw6WDCAkm7BgJybQQuI5PbD53kYIsSzoPbAv+RZs/c10J1oB0Ip28T/Y4oTC2zkxDFi9uHtvjhAboHsZREZkKUYGR1I3hTOWhwh4BD7QGl4pdnVMgg8yCJcLCQ5+0uYXCmjV8Y0qGqQ
+     procedure_id : 2017548531941357248
+     type_code : 14
+     code : |1+
+      // Résumé : Callback appelée lors de la réception d'un nouvel email
+      // Syntaxe :
+      //callbackNouveauEmail (<MessageWindows>, <nNbEmail>, <lParam>)
+      //
+      // Paramètres :
+      // 	MessageWindows : Message Windows
+      //	nNbEmail : Nb mails
+      // 	lParam : lParam Windows
+      // Valeur de retour :
+      // 	Aucune
+      //
+      PROCÉDURE callbackNouveauEmail(MessageWindows <utile>, nNbEmail, lParam <utile>)
+      
+      ToastAffiche(ChaîneConstruit(<§$000f§>, nNbEmail),toastCourt,cvBas,chCentre)
+      
+      
+      actualiseListeDossier()
+      
+      
+     type : 458752
+   -
+     name : emailReleveLancement
+     internal_properties : CAAAAAgAAAA+lKnSuzvQYhCgMHqrfpGcKC3DNyqiLJfN6lgg5sgTe+aJm4EwcW6f0HcGYgxS9bhiLwRV3NbivhJDadAtUBLH7zHtsRqr5mbBMgpvYZfS6sBsGAr8+i2AbtDyO8PcH023fEOQpF9KXm4fsR60OmdtgJZ61tkJk4it4qQJZokjh99X/RzNBWjHI4CUIq3H0RI=
+     procedure_id : 2027482261938941016
+     type_code : 14
+     code : |1-
+      // Résumé : Relève les emails des comptes qui doivent l'être au lancement
+      // Syntaxe :
+      // emailReleveLancement ()
+      //
+      // Paramètres :
+      //	Aucun
+      // Valeur de retour :
+      // 	Aucune
+      
+      PROCÉDURE emailReleveLancement()
+      
+      // Variable
+      tabCompte est un tableau de cCompte dynamique
+      
+      // Construit la liste des comptes dont il faut relever les emails
+      POUR TOUT ELEMENT pclCompte DE cCompte::s_getListeCompte()
+      	SI pclCompte.VerificationLancement = Vrai ALORS
+      		Ajoute(tabCompte,pclCompte)
+      	FIN
+      FIN
+      
+      // Relève les emails
+      SI tabCompte..Occurrence > 0 ALORS
+      	ToastAffiche("Chargement des emails en cours...",toastLong,cvMilieu, chCentre)
+      	emailReleve(tabCompte)
+      FIN
+     type : 458752
+   -
+     name : viderDossier
+     procedure_id : 2027934556350480615
+     type_code : 14
+     code : |1+
+      // Résumé : Vide la corbeille du compte sélectionné
+      // Syntaxe :
+      //viderDossier (<nIDDossier>)
+      //
+      // Paramètres :
+      // 	nIDDossier : <indiquez ici le rôle de nIDDossier>
+      // Valeur de retour :
+      // 	Aucune
+      //
+      // Exemple :
+      // Indiquez ici un exemple d'utilisation.
+      //
+      PROCÉDURE viderDossier(nIDDossier  est un entier sur 8)
+      
+      // Variables
+      pclCompte    est un cCompte dynamique = cCompte::s_getCompte(TABLEH_COMPTES.COL_IDCOMPTE)
+      pclDossier   est un cDossier dynamique = pclCompte.getDossier(nIDDossier)
+      
+      tabID est un tableau d'entiers sur 8
+      pour tout pclEmail de pclDossier.emailsContenus()
+      	tabID.ajoute(pclEmail.IDEmail)
+      FIN
+      
+      pour tout nIDEmail de tabID
+      	pclCompte.emailSupprime(nIDEmail)
+      fin
+      	
+      	
+      actualiseListeDossier()
+     type : 458752
+   -
+     name : optionExiste
+     procedure_id : 2027936072474026427
+     type_code : 14
+     code : |1+
+      // Résumé : <indiquez ici ce que fait la procédure>
+      // Syntaxe :
+      //[ <Résultat> = ] optionExiste (<sNomMenu>, <sNomOption>)
+      //
+      // Paramètres :
+      //	sNomMenu : <indiquez ici le rôle de sNomMenu>
+      //	sNomOption : <indiquez ici le rôle de sNomOption>
+      // Valeur de retour :
+      // 	booléen : // 	Aucune
+      //
+      // Exemple :
+      // Indiquez ici un exemple d'utilisation.
+      //
+      PROCÉDURE optionExiste(sNomMenu, sNomOption)
+      
+      // Variables
+      sTmp est une chaîne
+      i    est entier = 1
+      
+      // Initialisation
+      sTmp = EnumèreMenu(sNomMenu, 1)
+      
+      TANTQUE sTmp <> ""
+      	SI sTmp ~= sNomOption ALORS
+      		RENVOYER Vrai
+      	FIN
+      
+      	i++ // menu suivant
+      	sTmp = EnumèreMenu(sNomMenu,i)
+      FIN
+      
+      RENVOYER Faux
+      
+     type : 458752
+   -
+     name : actualiseMenuRelever
+     procedure_id : 2295922579655888485
+     type_code : 14
+     code : |1+
+      procédure actualiseMenuRelever()
+      
+      n est un entier = 1
+      
+      tantque MenuExiste(MENU_RELEVER,"OPT_COMPTE_"+n)
+      	MenuSupprime(MENU_RELEVER..Nom+".OPT_COMPTE_"+n)
+      FIN
+      
+      n=1
+      pour tout pclCompte de ccompte::s_GetListeCompte()
+      	t est un tableau de cCompte dynamique = [ pclCompte ]
+      	MenuAjouteOption(MENU_RELEVER,"OPT_COMPTE_"+n,pclCompte.Nom,emailReleve,t)
+      	n++
+      FIN
+     type : 458752
+   -
+     name : emailReleverTout
+     procedure_id : 2295924898938309791
+     type_code : 14
+     code : |1-
+      procédure emailReleverTout()
+      
+      // Variable
+      tabCompte est un tableau de cCompte dynamique
+      
+      // Construit la liste des comptes dont il faut relever les emails
+      POUR TOUT ELEMENT pclCompte DE cCompte::s_GetListeCompte()
+      	Ajoute(tabCompte,pclCompte)
+      FIN
+      
+      // Relève les emails
+      emailReleve(tabCompte)
+     type : 458752
+   -
+     name : configureCompte
+     procedure_id : 2295942693100028358
+     type_code : 14
+     code : |1-
+      procédure configureCompte()
+      
+      // Actualise l'affichage si le compte a été modifié
+      SI Ouvre(FEN_CompteConfiguration,cCompte::s_GetCompte(TABLEH_COMPTES.COL_IDCOMPTE)) = Vrai ALORS
+      	
+      	// Arrête le notifieur
+      	arreteNotifieur()
+      	
+      	// Actualise
+      	actualiseListeDossier()
+      	
+      	// Relance le notifieur
+      	demarreNotifieur()
+      FIN
+     type : 458752
+   -
+     name : timerDoubleClic
+     procedure_id : 2302267590701306564
+     type_code : 14
+     code : |1+
+      // Résumé : Action dans la sélection de la table
+      // Syntaxe :
+      //timerDoubleClic ()
+      //
+      // Paramètres :
+      //	Aucun
+      // Valeur de retour :
+      // 	Aucune
+      
+      PROCÉDURE timerDoubleClic()
+      
+      FinTimerSys(TIMER_SYS_DOUBLE_CLIC)
+      
+      //Vérifier que la table n'est pas vide 
+      si TABLE_EMAIL = -1 alors
+      	retour
+      FIN
+      
+      // Variable
+      pclEmail est un cEmail dynamique = allouer un cEmail(TABLE_EMAIL.COL_IDEMAIL)
+      bTrouve  est un booléen = Faux
+      
+      FEN_Principale.CFI_Message.ChangeFenêtreSource(FI_AffichageEmail,pclEmail)
+      DonneFocus(TABLE_EMAIL)
+      
+     type : 458752
+   -
+     name : actualiseListeEmail
+     internal_properties : CAAAAAgAAAA3YVmM6xtqJlXQlSoNEj4iGTVEdqcMwuSefKBwNl6h3PCn3eNERI6HQ8WYAnDroAJ8C6jB3w/d9CnkX4LV+8Rt8Ry9wc7yyvtg6OPrTE725GfWHweLBvOKj+9K3FqcaNJ3urrRcoeek5Dr9+pxr9q+HgMInPmDSCpQED4kq3qA
+     procedure_id : 2302267590701700218
+     type_code : 14
+     code : |1+
+      // Résumé : Affiche les emails du dossier donné en paramètre
+      // Syntaxe :
+      //actualiseListeEmail (<nIDCompte> est entier sur 8 octets, <nIDDossier> est entier sur 8 octets)
+      //
+      // Paramètres :
+      //	nIDCompte (entier sur 8 octets) : <indiquez ici le rôle de nIDCompte>
+      //	nIDDossier (entier sur 8 octets) : <indiquez ici le rôle de nIDDossier>
+      // Valeur de retour :
+      // 	Aucune
+      
+      PROCÉDURE actualiseListeEmail(LOCAL nIDCompte est un entier sur 8, LOCAL nIDDossier est un entier sur 8)
+      
+      // Variables
+      pclDossier   est un cDossier dynamique = Null
+      pclCompte    est un cCompte dynamique  = Null
+      sImagePJ     est une chaîne
+      sImageLu     est une chaîne
+      sEmails      est une chaîne
+      taListeEmail est un tableau associatif (*, *, wlEntier_8) de cEmail dynamique
+      nIndice      est un entier
+      
+      // Initialise
+      nIndice = TABLE_EMAIL
+      TableSupprimeTout(TABLE_EMAIL)
+      
+      // Récupère le compte
+      pclCompte  = cCompte::s_getCompte(nIDCompte)
+      
+      // Récupère le dossier du compte
+      pclDossier = pclCompte.getDossier(nIDDossier)
+      
+      // Change le nom de la colonne adresse
+      SI pclDossier.Type = cDossier::DOSSIER_ENVOYE ALORS
+      	TABLE_EMAIL.COL_ADRESSE..Libellé = <§$0014§>
+      SINON
+      	TABLE_EMAIL.COL_ADRESSE..Libellé = <§$0015§>
+      FIN
+      
+      // Affiche les emails
+      taListeEmail = pclDossier.emailsContenus()
+      POUR TOUT ELEMENT pclEmail DE taListeEmail
+      	// Images dans la table
+      	sImagePJ = (pclEmail.NbPieceJointe > 0) ? IMG_PIECE_JOINTE SINON ""
+      	sImageLu = (pclEmail.Lu = Faux) ? IMG_NON_LU SINON ""
+      	
+      	// Définit l'adresse à afficher (destinataire ou expéditeur)
+      	SI pclDossier.Type = cDossier::DOSSIER_ENVOYE ALORS
+      		sEmails = TableauVersChaîne(pclEmail.Destinataire,", ")
+      	SINON
+      		sEmails = cEmail::s_nomExtrait(pclEmail.Expediteur)
+      	FIN
+      
+      	// Insère la ligne
+      	nInd est un entier = TABLE_EMAIL.AjouteLigne( sImagePJ, pclEmail.Sujet,sEmails,pclEmail.DateHeureReception, DateVersChaîne(pclEmail.DateHeureReception..partieDate,"JJJ JJ/MM") + rc +  HeureVersChaîne(pclEmail.DateHeureReception..partieheure,"HH:mm"), pclEmail.DateHeureReception..PartieHeure, pclEmail.IDEmail, pclEmail.Lu, pclEmail.Contenuhtml)
+      	TABLE_EMAIL.COL_SUJET[nInd].LIB_Expéditeur = sEmails
+      	TABLE_EMAIL.COL_SUJET[nInd].LIB_Expéditeur..Bulle = sEmails
+      	TABLE_EMAIL.COL_SUJET[nInd].LIB_Sujet..Bulle = pclEmail.Sujet
+      	TABLE_EMAIL.COL_SUJET[nInd].img_Lu = sImageLu
+      FIN
+      
+      // Trie la table par date
+      TableTrie(TABLE_EMAIL, "-" + TABLE_EMAIL.COL_DATE..Nom)
+      
+      // Il y a des emails ?
+      SI TABLE_EMAIL..Occurrence > 0 ALORS
+      	SI nIndice > TABLE_EMAIL..Occurrence ALORS
+      		TableSelectPlus(TABLE_EMAIL,TABLE_EMAIL..Occurrence)
+      	SINON SI nIndice <> -1 ALORS
+      		TABLE_EMAIL = nIndice
+      	SINON
+      		TABLE_EMAIL = 1
+      	FIN	
+      FIN
+     type : 458752
+   -
+     name : timerPasseEnLu
+     procedure_id : 2302267594996733628
+     type_code : 14
+     code : |1+
+      PROCÉDURE timerPasseEnLu()
+      
+      FinTimerSys(TIMER_SYS_PASSE_LU)
+      
+      si TABLE_EMAIL.gnLigneSelection=TABLE_EMAIL ALORS
+      	// Le passage automatique en lu ne se fait que si un seul email est sélectionné
+      	si TableSelectOccurrence(TABLE_EMAIL)=1 alors
+      		si emailChangeEtatSelection(Vrai)=1 alors
+      			// Passe la ligne en ligne normale
+      			TABLE_EMAIL.COL_LU = Vrai
+      			TABLE_EMAIL.COL_ADRESSE[TABLE_EMAIL.gnLigneSelection]..PoliceGras = Faux
+      			TABLE_EMAIL.COL_SUJET[TABLE_EMAIL.gnLigneSelection]..PoliceGras   = Faux
+      			TABLE_EMAIL.COL_DATE[TABLE_EMAIL.gnLigneSelection]..PoliceGras    = Faux
+      			TABLE_EMAIL.COL_SUJET[TABLE_EMAIL.gnLigneSelection].img_lu = ""
+      		fin
+      	FIN
+      FIN
+      
+      
+      
+      
+     type : 458752
+   -
+     name : emailRepondre
+     internal_properties : CAAAAAgAAACqmyOMw3YIVge8uUhX3bPcZH8isw4VsSSZiBoU0mlcP34riT1DT2/MwSqryRjwFp+kNzFQKnwvks09wtThpsHEgYfr2NzSvVwlrqRf4eBdQm8spxv8jyBhcwMIp6b9/sXoBVtCbCr3uAFMjhVx
+     procedure_id : 2302267594996799695
+     type_code : 14
+     code : |1+
+      // Résumé : <indiquez ici ce que fait la procédure>
+      // Syntaxe :
+      //emailRepondre (<sMode> est chaîne, <pclEmailBase> est cEmail dynamique)
+      //
+      // Paramètres :
+      //	sMode (chaîne UNICODE) : mode de réponse (MODE_TRANSFERT...)
+      //	pclEmailBase (cEmail dynamique) : email auquel répondre
+      // Valeur de retour :
+      // 	Aucune
+      
+      PROCÉDURE emailRepondre(sMode est une chaine, pclEmailBase est un cEmail dynamique)
+      
+      // Variables
+      pclCompte		est un cCompte dynamique	= ccompte::s_getCompte(TABLEH_COMPTES.COL_IDCOMPTE)
+      pclCorbeille	est un cDossier dynamique	= pclCompte.getDossierCorbeille()
+      
+      SI TABLE_EMAIL <> -1 ALORS
+      	// Passe l'email comme lu
+      	pclEmailBase.changeEtatLu(Vrai)
+      	
+      	// Ouvre le nouvel email
+      	OngletOuvre(ONG_WDMail, pclEmailBase.Sujet, FI_EmailNouveau, pclCompte.IDCompte, sMode, pclEmailBase)
+      FIN
+      
+     type : 458752
+   -
+     name : SurMiniaturise
+     procedure_id : 2302268793295051665
+     type_code : 14
+     code : |1-
+      procédure SurMiniaturise()
+      
+      // Variables
+      bTrouve est un booléen = Faux
+      
+      // Vérifie si un compte est en vérification automatique
+      POUR TOUT pclCompte DE cCompte::s_GetListeCompte()
+      	SI pclCompte.VerificationAuto = Vrai ALORS
+      		bTrouve = Vrai
+      		SORTIR
+      	FIN
+      FIN
+      
+      // Avertissement
+      SI bTrouve = Faux ALORS
+      	Info(<§$000a§>)
+      FIN
+      
+      // Rend la fenêtre invisible
+      FEN_Principale..Visible = Faux
+     type : 458752
+   -
+     name : emailChangeEtatSelection
+     procedure_id : 2302968920249138301
+     type_code : 14
+     code : |1-
+      procédure emailChangeEtatSelection( bLu est un booleen )
+      
+      nNbChangements est un entier
+      
+      POUR TOUTE LIGNE SELECTIONNÉE DE TABLE_EMAIL
+      	pclCompte est un cCompte dynamique = cCompte.s_GetCompte(TABLEH_COMPTES.COL_IDCOMPTE)
+      	pclCompte.getEmail(TABLE_EMAIL.COL_IDEMAIL)
+      	pclDossier est un cDossier dynamique = pclCompte.getDossier(TABLEH_COMPTES.COL_IDDOSSIER)
+      	pclEmail est un cEmail = pclDossier.getEmail(TABLE_EMAIL.COL_IDEMAIL)
+      	
+      	si pclEmail.changeEtatLu(bLu)<>bLu ALORS
+      		nNbChangements++
+      	FIN
+      FIN
+      
+      si bLu alors
+      	ChangeNombreNonLusTableHierarchique(TABLEH_COMPTES,TABLEH_COMPTES[TABLEH_COMPTES].COL_NB_NON_LUS-nNbChangements)
+      sinon
+      	ChangeNombreNonLusTableHierarchique(TABLEH_COMPTES,TABLEH_COMPTES[TABLEH_COMPTES].COL_NB_NON_LUS+nNbChangements)
+      fin
+      
+      FinTimerSys(TIMER_SYS_PASSE_LU)
+      
+      renvoyer nNbChangements
+     type : 458752
+   -
+     name : deplaceEmail
+     procedure_id : 2303734129497379690
+     type_code : 14
+     code : |1-
+      procédure deplaceEmail()
+      
+      arreteNotifieur()
+      
+      // Variable
+      tabEmail	est un tableau de cEmail dynamique
+      pclCompte	est un cCompte dynamique	= cCompte::s_GetCompte(TABLEH_COMPTES.COL_IDCOMPTE)
+      
+      // Construit la liste des emails sélectionnés
+      POUR TOUTE LIGNE SELECTIONNÉE DE TABLE_EMAIL
+      	Ajoute(tabEmail, pclCompte.getEmail(TABLE_EMAIL.COL_IDEMAIL))
+      FIN
+      
+      // Des emails ont été sélectionnés ?
+      SI tabEmail..Occurrence > 0 ALORS
+      	// Si ils ont été déplacés, on actualise
+      	SI Ouvre(FEN_EmailDeplace,tabEmail,pclCompte) = Vrai ALORS
+      		actualiseListeDossier()
+      		actualiseListeEmail(TABLEH_COMPTES.COL_IDCOMPTE,TABLEH_COMPTES.COL_IDDOSSIER)
+      	FIN
+      FIN
+      
+      fin:
+      demarreNotifieur()
+     type : 458752
+   -
+     name : changeNombreNonLusTableHierarchique
+     procedure_id : 1155520514070789021
+     type_code : 14
+     code : |1+
+      procédure changeNombreNonLusTableHierarchique( nIndice est un entier, nNbNonLus est un entier )
+      
+      TABLEH_COMPTES[nIndice].COL_NB_NON_LUS = nNbNonLus
+      TABLEH_COMPTES[nIndice]..PoliceGras = (nNbNonLus>0)
+     type : 458752
+   -
+     name : actualiseTitre
+     procedure_id : 1155964785497218080
+     type_code : 14
+     code : |1+
+      procédure actualiseTitre()
+      
+      pclCompte est un cCompte dynamique = ccompte.s_GetCompte(TABLEH_COMPTES.COL_IDCOMPTE)
+      si pclCompte<>null alors
+      	pclDossierReception	est un cDossier dynamique	= pclCompte.getDossierReception()
+      	SI pclDossierReception<>Null ALORS
+      		FEN_Principale..Titre	= ChaîneConstruit("%1 - %2 %3/%4", ProjetInfo(piNomProjet), pclCompte.Nom, pclDossierReception.NbNonLus, pclDossierReception.emaiNbTotal())
+      	FIN
+      sinon
+      	FEN_Principale..Titre = ProjetInfo(piNomProjet)
+      fin
+      
+     type : 458752
+   -
+     name : arreteTimers
+     procedure_id : 1155970016791277814
+     type_code : 14
+     code : |1-
+      procédure arreteTimers()
+      
+      FinTimerSys(TIMER_SYS_DOUBLE_CLIC)
+      FinTimerSys(TIMER_SYS_PASSE_LU)
+     type : 458752
+  procedure_templates : []
+  property_templates : []
+ code_parameters :
+  internal_properties : CAAAAAgAAACVGQgYbalU7DKC3oH4ItDrjtcTHXXV/EuH8q0IbhyQlw==
+  original_name : FEN_Fenêtre1
+resources :
+ string_res :
+  identifier : 0x1b4b3dce01448ddf
+  internal_properties : CAAAAAgAAACm76HWfKGWp33VjXInA4cRlqArlgTTA862QGt72W2ld5Y=
+  strings :
+   -
+     text :
+      fr-FR : Vous devez dans un premier temps sélectionner un email pour pouvoir l'imprimer
+     index : 0
+   -
+     text :
+      fr-FR : Vous devez d'abord sélectionner un email à supprimer
+     index : 1
+   -
+     text :
+      fr-FR : "%1 emails ont été importés"
+     index : 2
+   -
+     text :
+      fr-FR : 1 email a été importé
+     index : 3
+   -
+     text :
+      fr-FR : Aucun nouvel email
+     index : 4
+   -
+     text :
+      fr-FR : Expéditeur
+     index : 5
+   -
+     text :
+      fr-FR : Destinataire
+     index : 6
+   -
+     text :
+      fr-FR : Marquer comme non lu
+     index : 7
+   -
+     text :
+      fr-FR : Marquer comme lu
+     index : 8
+   -
+     text :
+      fr-FR : (Aucun sujet)
+     index : 9
+   -
+     text :
+      fr-FR : "Attention, aucun compte n'est configuré pour vérifier automatiquement la présence d'un nouvel email."
+     index : 10
+   -
+     text :
+      fr-FR : WD Mail
+     index : 11
+   -
+     text :
+      fr-FR : WD Mail - %1
+     index : 12
+   -
+     text :
+      fr-FR : Vider le dossier
+     index : 13
+   -
+     text :
+      fr-FR : Nouvel email
+     index : 14
+   -
+     text :
+      fr-FR : Vous avez reçu %1 email(s)
+     index : 15
+   -
+     text :
+      fr-FR : Supprimer le dossier
+     index : 16
+   -
+     text :
+      fr-FR : Supprimer le compte
+     index : 17
+   -
+     text :
+      fr-FR : Marquer comme non lu
+     index : 18
+   -
+     text :
+      fr-FR : Marquer comme lu
+     index : 19
+   -
+     text :
+      fr-FR : Destinataire
+     index : 20
+   -
+     text :
+      fr-FR : Expéditeur
+     index : 21
+ dialogs :
+  -
+    identifier : 0x1b4c741f01cfb21b
+    internal_properties : CAAAAAgAAAB8EQiIBV/Gida2QRyS+Ujo2ssJyhWmltUHDt5aavKMm+cTPJsa+EGDwssyaHVYLPRjHRcvRTPUVy78NveRPPrIrVpCDzMo7W8+Fg==
+    label :
+     fr-FR : "Voulez-vous vraiment supprimer ce compte ?\r\nAttention ! Tous les emails associés à ce compte seront supprimés également !"
+    image : {}
+    cancel_button : 1
+    buttons :
+     -
+       label :
+        fr-FR : "&Supprimer"
+       image : {}
+       value : 1
+     -
+       label :
+        fr-FR : "&Ne pas supprimer"
+       image : {}
+       value : 2
+  -
+    identifier : 0x1b4c607100ecd2e2
+    internal_properties : CAAAAAgAAAA12sHFwuzdfAVT2NuTOumrW2zqb4rD7QiKg12RUmoKMQ1LFAtiPYa2PYAlzZzBBRMAkjxKGAAnCF/NJ0Ygjcs/when6nb9uLh33w==
+    label :
+     fr-FR : "Voulez-vous vraiment supprimer ce dossier ?\r\n\r\nCette action supprimera tous les emails ainsi que les filtres associés à ce dossier."
+    image : {}
+    cancel_button : 1
+    buttons :
+     -
+       label :
+        fr-FR : "&Supprimer"
+       image : {}
+       value : 1
+     -
+       label :
+        fr-FR : "&Ne pas supprimer"
+       image : {}
+       value : 2
+custom_note :
+ internal_properties : CAAAAAgAAAC68/W0/adbG0nFCRhrE42B5HRnbDzVHaz86sSQyxlBk7I=
+associated_test :
+ name : TEST_Principale.wxt
+rad :
+ internal_properties : CAAAAAgAAABoAN7PLpwJW3EiA7WVZdCA5EwrCA1rvutcDHooMWKe

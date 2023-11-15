@@ -1,0 +1,316 @@
+#To edit and compare internal_properties, use WINDEV integrated tools.
+#Internal properties refer to the properties of controls in windows, reports, etc.
+info :
+ name : WD Mail
+ major_version : 28
+ minor_version : 0
+ type : 4097
+ description : ""
+ subtype : 0
+project :
+ identifier : 0x0
+ internal_properties : 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
+ configurations :
+  -
+    name : WD Mail
+    internal_properties : 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
+    configuration_id : 4184127139270890888
+    type : 1
+    generation_name : WD Mail.exe
+    version :
+     major_version : 1
+     generation_version : 22
+     internal_generation_version : 16
+    icon_filename : .\wdmail.ico
+    language : 1
+    new_features_help :
+     name : Aide_WD_Mail
+     internal_properties : CAAAAAgAAADUNkucLbtSr1YWzyOKceDB680wcow3oicMxtWYJhe8H/v//Cj5tiPiu5J1yx95uWi+6tnewkjTUDtENQZw1swMutjfbzhdWkWhbfyZaSEbTRHFk0Ty
+     physical_name :
+      fr-FR : Aide_WD_Mail005.chm
+ elements :
+  identifier : 0x4b4b3d8e001792bf
+  elements :
+   -
+     name : cPieceJointe
+     identifier : 0x4b4f671b00214e60
+     internal_properties : CAAAAAgAAAAjHxsPvOnB2vPM15m84UrifVjE1OgHWoFOp38HCzRmUq4CKmb5D5VNwHxmUtIO6t4mLg==
+     physical_name : .\cPieceJointe.wdc
+     type : 4
+   -
+     name : FEN_ContactSelection
+     identifier : 0x4b56e0e3005fce42
+     internal_properties : CAAAAAgAAAAwDmi0cyiAm7KLwnQvbcN7CrmBCUVk5tiIfldJn4wI4GiKvOR+ggI4/zulE5NNNasVHQ==
+     physical_name : .\FEN_ContactSelection.wdw
+     type : 2
+   -
+     name : COL_WDMail
+     identifier : 0x4c77cff401793682
+     internal_properties : CAAAAAgAAADEQiwIt+zE584XLlD7Wo+/yvtByYMQFD52wUmQ6lXHISvLf6GyVt4Um4dxT9cJ8efRUQ==
+     physical_name : .\COL_WDMail.wdg
+     type : 7
+   -
+     name : FEN_FiltreListe
+     identifier : 0x4b4efb2f001ec24e
+     internal_properties : CAAAAAgAAAAMCmSwjzR8r7aPlthzthcvEkNJISsA7wtCrkWcjmErPY8HAy06zlaMAz+5B49BOa8ZGQ==
+     physical_name : .\FEN_FiltreListe.wdw
+     type : 2
+   -
+     name : cFiltre
+     identifier : 0x4b5470fa0025b8ec
+     internal_properties : CAAAAAgAAADxTSl9yve/8PUSOU/CJvicT9hKGrBNDsiOtxfKwk3JxzX7cb+rXecfloJ8RMwE/OzUXA==
+     physical_name : .\cFiltre.wdc
+     type : 4
+   -
+     name : cCompte
+     identifier : 0x4b4b6837002736bf
+     internal_properties : CAAAAAgAAAD9WdXJ9qMLFDkGHaP2K5yoX8Jedsa60Glzo7bq/T7c1CDsfKS3ScsDirYgmBjIsCDoaA==
+     physical_name : .\cCompte.wdc
+     type : 4
+   -
+     name : cContact
+     identifier : 0x4b4dec750019b5b1
+     internal_properties : CAAAAAgAAADRLQkdqtdfENUyWe+iuRQg07IqckrvjH6i9tBRW9TGMopa7iJL/Ye/dqIc5Kwk3Mw0PA==
+     physical_name : .\cContact.wdc
+     type : 4
+   -
+     name : FEN_ContactListe
+     identifier : 0x4b4c500a003cc01c
+     internal_properties : CAAAAAgAAABFwa3xTmtDXGF+havuNoSoWzSmhkgVX4Ot+v1KZtU5rwXbca+/QcN7Mu7o0FCAeGhQ0A==
+     physical_name : .\FEN_ContactListe.wdw
+     type : 2
+   -
+     name : FEN_FiltreEdition
+     identifier : 0x4b54701f0022639c
+     internal_properties : CAAAAAgAAACB/fktmsdvAMXiCT8SS9h069668tLPOuOON4UrpUZMvDCMvNSbrTfvppIM9Lw0zDyEjA==
+     physical_name : .\FEN_FiltreEdition.wdw
+     type : 2
+   -
+     name : FEN_EmailDeplace
+     identifier : 0x4b4dfb7a00485f0b
+     internal_properties : CAAAAAgAAAANCWW5BnM7ZEmWrdNGoYiEZ1bexg6L4BeO3wjRq5T+4iKC5jon2VuTGgbwyEi4QLAYGA==
+     physical_name : .\FEN_EmailDeplace.wdw
+     type : 2
+   -
+     name : cDossier
+     identifier : 0x4b4b59ec00126250
+     internal_properties : CAAAAAgAAAAsKgQQr9RcD9bvdjgTUGvjOn9JKatvvdNKKLxdmGOxvz2xudearjbso58Z568h2c85OQ==
+     physical_name : .\cDossier.wdc
+     type : 4
+   -
+     name : FEN_EmailPieceJointe
+     identifier : 0x4b4f65a7001ea21a
+     internal_properties : CAAAAAgAAAANCWW5BnM7ZEmWrdNGpHgcy1jGjkyMu7iu86qzOMNTTbd58z0n2VuTGgbwyEi4QLAYGA==
+     physical_name : .\FEN_EmailPieceJointe.wdw
+     type : 2
+   -
+     name : FEN_CompteCreation
+     identifier : 0x4b4b5c5a0024de61
+     internal_properties : CAAAAAgAAAA6EGKmBULq9cgVIFbJGrnlMB1/59nlO5SOP+FzVsXPEfc7M33kZOAWmYV/eTm3Q7UfJw==
+     physical_name : .\FEN_CompteCreation.wdw
+     type : 2
+   -
+     name : FEN_DossierAjoute
+     identifier : 0x4b4c58d600441c01
+     internal_properties : CAAAAAgAAABj31tPfCmBmrOMl9l8tgYe4b60NBJH7o6JN4qWtnUZL4Fz9Ts5z1WNADymEpJOKp5m7g==
+     physical_name : .\FEN_DossierAjoute.wdw
+     type : 2
+   -
+     name : FEN_Principale
+     identifier : 0x4b4b3dd8001db4c0
+     internal_properties : CAAAAAgAAABFwa3xTmtDXGF+havuQdBMj86GLiKW6hdLJYW4N9S+coKS9rq/QcN7Mu7o0FCAeGhQ0A==
+     physical_name : .\FEN_Principale.wdw
+     type : 2
+   -
+     name : FEN_EmailEnvoi
+     identifier : 0x4b545c9300220880
+     internal_properties : CAAAAAgAAAD8WtTA/6QMHyY/Ruij11vjTjGtfdlmBJ1OywBhOeY20j6sgi5K/oa8c68plx/RqR/paQ==
+     physical_name : .\FEN_EmailEnvoi.wdw
+     type : 2
+   -
+     name : cEmail
+     identifier : 0x4b4b5a0c0022e045
+     internal_properties : CAAAAAgAAAC/m5eLOGVNXmdAax0ArQ7+cTzI2AjsJq+Ov2I4Y7jadkKungJlmxnRRPDq1l6SbmKqqg==
+     physical_name : .\cEmail.wdc
+     type : 4
+   -
+     name : FEN_Options
+     identifier : 0x4c77c28e0176df8b
+     internal_properties : CAAAAAgAAAAGDG6ycS6GqYzZ1Jq9M4n9eD+HX2eUGVC2WYhRxVo6xj6wmnbwEJRKzUmzDZVLN6kTEw==
+     physical_name : .\FEN_Options.wdw
+     type : 2
+   -
+     name : FEN_CompteConfiguration
+     identifier : 0x4b4c58ae00427ff1
+     internal_properties : CAAAAAgAAADRLQkdqtdfENUyWe+iykjEH0iqWnx5M5dxYQIWylFF29HPXTNL/Ye/dqIc5Kwk3Mw0PA==
+     physical_name : .\FEN_CompteConfiguration.wdw
+     type : 2
+   -
+     name : ETAT_EMAIL_IMPRIME
+     identifier : 0x4b4df306001b5950
+     internal_properties : CAAAAAgAAADPSyd7yPW97vcQO03QI/paUfCYwPyC+T2/kFPgTf6UlLS8CJjVa+khlIB6Rs4C/vLaWg==
+     physical_name : .\ETAT_EMAIL_IMPRIME.wde
+     type : 3
+   -
+     name : FI_EmailNouveau
+     identifier : 0x4faa9db906633c6d
+     internal_properties : CAAAAAgAAAAkIgwol8xkB39U9/vJCduyqBVnP5V8KbKuJpcGkr1XuR+Dzu5k4veGjKcR77cp0ccxMQ==
+     physical_name : .\FI_EmailNouveau.wdw
+     type : 8
+   -
+     name : FI_AffichageEmail
+     identifier : 0x4faa9dff06664e4b
+     internal_properties : CAAAAAgAAAD2XN7C4V7W2Q0WtUOT1huedjWN1dUUa46XUag1F+i0vDSuuQVc6rXEznljXSXbpxnjYw==
+     physical_name : .\FI_AffichageEmail.wdw
+     type : 8
+   -
+     name : COL_Notifieur
+     identifier : 0x4fd9d05501db446e
+     internal_properties : CAAAAAgAAADCuDpuXQoiPSEJemfozS2ZaGUnf0XbkzJSOn9RZsnLNbMPY1F1VGEH8l1HsXFvC/3HTw==
+     physical_name : .\COL_Notifieur.wdg
+     type : 7
+   -
+     name : COL_Contacts
+     identifier : 0x4fda1023067780c1
+     internal_properties : CAAAAAgAAACX8/8jgP21tqyl++qQ5JrJs/wOniT7+5VfjPDYZslV88EvrMSgpg3XbdjCPsY6xjqCgg==
+     physical_name : .\COL_Contacts.wdg
+     type : 7
+   -
+     name : FENMOD_WDMail
+     identifier : 0x4fdc6ee902bebc0d
+     internal_properties : CAAAAAgAAADudMba6ZaeUaXA+tV5IM3Q+q/5aX+vdE+Rp1zBhLvZFyUpxHhBuZD2RuHbJe3jnxH7ew==
+     physical_name : .\FENMOD_WDMail.wdt
+     type : 18
+   -
+     name : REQ_TestNettoyage
+     identifier : 0x4ff86907041815c5
+     internal_properties : CAAAAAgAAADPSeWhckBRZJ6whm8YPtkDFV3RF10srVlnDx84av2hXaXaDFFPEIp1FaM+eqVF8tlK
+     physical_name : .\REQ_TestNettoyage.WDR
+     type : 5
+  other_elements :
+   -
+     physical_name : .\icone.ico
+   -
+     physical_name : .\wdmail.ico
+   -
+     physical_name : .\wdmail_systray.ico
+  analysis : .\WD Mail.ana\WD Mail.wda
+  net_assemblies : []
+  uwp_api : []
+  external_components : []
+  internal_components : []
+ report_and_queries_enabled : false
+ test_data_directory : <RepDonneesUtilisateur>
+ common_generation_directory : true
+ languages :
+  - fr-FR
+ code_elements :
+  internal_properties : CAAAAAgAAABseimUYz4VdXZ8hGsGFqoxLDfDcHkNZdBf0iQg2FQcqmw5VrO2lryVMt3efm9RagPlXJBReauIsX3ZdB8=
+  type_code : 0
+  p_codes :
+   -
+     code : |1-
+      
+     type : 196608
+   -
+     type : 196627
+     enabled : false
+  orphans :
+   -
+     name : WD Mail
+     identifier : 0x4b4b3d8e001892bf
+     code_elements :
+      type_code : 159
+      p_codes : []
+ code_parameters :
+  internal_properties : CAAAAAgAAACVGQgYbalU7DKC3oH4ItDrjtcTHXXV/EuH8q0IbhyQlw==
+rad :
+ internal_properties : CAAAAAgAAABhIL0UXeZmxDJxY3Xy0Q==
+project_explorer :
+ explorer_type : project
+ children :
+  -
+    explorer_type : windows
+    children :
+     -
+       name : Contact
+       explorer_type : custom_folder
+       children :
+        -
+          name : FEN_ContactListe
+          explorer_type : element
+          type : 2
+        -
+          name : FEN_ContactSelection
+          explorer_type : element
+          type : 2
+     -
+       name : Email
+       explorer_type : custom_folder
+       children :
+        -
+          name : FEN_EmailDeplace
+          explorer_type : element
+          type : 2
+        -
+          name : FEN_EmailPieceJointe
+          explorer_type : element
+          type : 2
+        -
+          name : FEN_EmailEnvoi
+          explorer_type : element
+          type : 2
+        -
+          name : FI_AffichageEmail
+          explorer_type : element
+          type : 8
+        -
+          name : FI_EmailNouveau
+          explorer_type : element
+          type : 8
+     -
+       name : Compte
+       explorer_type : custom_folder
+       children :
+        -
+          name : FEN_CompteCreation
+          explorer_type : element
+          type : 2
+        -
+          name : FEN_CompteConfiguration
+          explorer_type : element
+          type : 2
+     -
+       name : Dossier
+       explorer_type : custom_folder
+       children :
+        -
+          name : FEN_DossierAjoute
+          explorer_type : element
+          type : 2
+     -
+       name : Filtre
+       explorer_type : custom_folder
+       children :
+        -
+          name : FEN_FiltreListe
+          explorer_type : element
+          type : 2
+        -
+          name : FEN_FiltreEdition
+          explorer_type : element
+          type : 2
+     -
+       name : Option
+       explorer_type : custom_folder
+       children :
+        -
+          name : FEN_Options
+          explorer_type : element
+          type : 2
+resources :
+ string_res :
+  identifier : 0x0
+  internal_properties : CAAAAAgAAACm76HWfKGWp33VjXInA4cRlqArlgTTA862QGt72W2ld5Y=
+custom_note :
+ internal_properties : CAAAAAgAAAAd98VSJfHHqE3P0QHwrwdhn7ig8dWBR6valpUTgnAMTVXiDg==

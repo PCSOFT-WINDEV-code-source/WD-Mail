@@ -1,0 +1,213 @@
+#To edit and compare internal_properties, use WINDEV integrated tools.
+#Internal properties refer to the properties of controls in windows, reports, etc.
+info :
+ name : COL_WDMail
+ major_version : 28
+ minor_version : 0
+ type : 7
+ description : ""
+ subtype : 0
+procedure_set :
+ identifier : 0x1fda0e320d9fec91
+ internal_properties : CAAAAAgAAABGLu41kG7fjQV3iS4F72qmnKaNh5694reolNKIW0iw
+ code_elements :
+  type_code : 31
+  p_codes :
+   -
+     code : |1+
+      
+      //
+      // Collection pour gérer les options de l'application
+      //
+      
+      CONSTANTE
+      	CLE_DEMARRAGE       = "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run\"
+      	VALEUR_NOM          = "WDMail"
+      	PARAMETRE_MODE       = "MODE"
+      	PARAMETRE_DEMARRAGE = "MINIATURISE"
+      
+      	PARAMETRE_SUPPRESSION_EN_REPONSE = "SUPPRESSIONENREPONSE"
+      	PARAMETRE_NOMBRE_COURRIER_LUS = "NOMBRECOURRIERLUS"
+      	
+      	IMG_BROUILLON = "imgBrouillon.png"
+      	IMG_ENTRANT = "imgEntrant.png"
+      	IMG_ENVOYE = "imgEnvoye.png"
+      	IMG_CORBEILLE = "imgSupprime.png"
+      	IMG_PERSONNEL = "imgPersonnel.png"
+      
+      	IMG_MARQUES = "imgMarques.png"
+      	IMG_ARCHIVE = "imgArchive.png"
+      	IMG_TOUS = "imgTous.png"
+      	IMG_JUNK = "imgJunk.png"
+      
+      FIN
+      
+      MODEMINIATURE		est un booléen	= Faux
+      
+      // Répertoires de travail
+      gsRépertoireData est une chaine
+      gsRepertoireTemp est une chaine
+      
+      // Ce booleen contrôle les traces de débogage de la section critique d'accès aux emails
+      gbTraceSectionCritique est un booléen = faux
+      
+      gbDemandeAbandonOperation est un booléen<section critique>
+      
+      
+      InitWDMail()
+     type : 720896
+  procedures :
+   -
+     name : DemarrageSupprime
+     procedure_id : 2295162568238492817
+     type_code : 15
+     code : |1-
+      // Résumé : Supprime le démarrage de l'application au lancement de la machine
+      // Syntaxe :
+      // DemarrageSupprime ()
+      //
+      // Paramètres :
+      //	Aucun
+      // Valeur de retour :
+      // 	Aucune
+      //
+      // Exemple :
+      // Indiquez ici un exemple d'utilisation.
+      //
+      PROCÉDURE DemarrageSupprime()
+      
+      RegistreSupprimeValeur(CLE_DEMARRAGE, VALEUR_NOM)
+     type : 458752
+   -
+     name : DemarrageAjoute
+     procedure_id : 2295162568238558353
+     type_code : 15
+     code : |1-
+      // Résumé : Ajoute l'application au démarrage de la machine
+      // Syntaxe :
+      //DemarrageAjoute (<bMiniaturisé> est booléen)
+      //
+      // Paramètres :
+      //	bMiniaturisé (booléen) : <indiquez ici le rôle de bMiniaturisé>
+      // Valeur de retour :
+      // 	Aucune
+      //
+      // Exemple :
+      // Indiquez ici un exemple d'utilisation.
+      //
+      PROCÉDURE DemarrageAjoute(bMiniaturisé est un booléen)
+      
+      // Variables
+      sCheminExe est une chaîne = """" + ComplèteRep(fRepExe()) + ProjetInfo(piNomEXE) + """"
+      
+      SI bMiniaturisé = Vrai ALORS sCheminExe += " /" + PARAMETRE_MODE + "=" + PARAMETRE_DEMARRAGE
+      
+      RegistreEcrit(CLE_DEMARRAGE, VALEUR_NOM, sCheminExe, RegistreTypeChaîne)
+     type : 458752
+   -
+     name : EstAuDemarrage
+     procedure_id : 2295162568238623889
+     type_code : 15
+     code : |1+
+      // Résumé : Permet de savoir si l'application se lance au démarrage
+      // Syntaxe :
+      //[ <Résultat> = ] EstAuDemarrage ( [<bMiniaturisé>])
+      //
+      // Paramètres :
+      //	bMiniaturisé (valeur par défaut=1) : <indiquez ici le rôle de bMiniaturisé>
+      // Valeur de retour :
+      // 	booléen : // 	Aucune
+      //
+      // Exemple :
+      // Indiquez ici un exemple d'utilisation.
+      //
+      PROCÉDURE EstAuDemarrage(bMiniaturisé = Vrai)
+      
+      // Variable
+      sValeur est une chaîne
+      
+      SI RegistreExiste(CLE_DEMARRAGE,VALEUR_NOM) ALORS
+      	sValeur = RegistreLit(CLE_DEMARRAGE, VALEUR_NOM)
+      	SI ChaîneOccurrence(sValeur,PARAMETRE_DEMARRAGE,SansCasse) > 0 ALORS
+      		bMiniaturisé = Vrai
+      	SINON
+      		bMiniaturisé = Faux
+      	FIN
+      	
+      	RENVOYER Vrai
+      SINON
+      	RENVOYER Faux
+      FIN
+     type : 458752
+   -
+     name : InitWDMail
+     internal_properties : CAAAAAgAAAA3fY5G733e29Qq/+72Hfkz/aG9YP6pBM60i9mip6Zj4frYMIMwuO+Ef4oFRRzlTxWZPmQYD+wfIzGwoTV0FT3dSU82yF3BOJh4km5zk1jOy9rWuFjG0Q==
+     procedure_id : 2295162847413331945
+     type_code : 15
+     code : |1-
+      procédure InitWDMail()
+      
+      // Répertoire des données et répertoire temporaire de travail
+      gsRépertoireData = ComplèteRep(fRepDonnéesUtilisateur())
+      gsRepertoireTemp = fRepTemp() + [fSep()] + ProjetInfo(piNomProjet) + [fSep()]
+      si enmodetest() ALORS
+      	gsRépertoireData = completerep(frepexe() + [fsep()] + "data")
+      	gsRépertoireTemp = ComplèteRep(fRepExe() + [fSep()] + "temp")
+      FIN
+      
+      // Vérifie ou crée les répertoires
+      fRepCrée(gsRépertoireData)
+      fRepCrée(gsRépertoiretemp)
+      
+      // Création/ouverture des fichiers de données
+      HChangeRep("*",gsRépertoireData)
+      HCréationSiInexistant("*")
+      
+      // Mode miniature ?
+      SI LigneCommande(PARAMETRE_MODE) = PARAMETRE_DEMARRAGE ALORS
+      	MODEMINIATURE = Vrai
+      FIN
+      
+      // Fixe le timeout des fonctions email à 30s (au lieu de 10 min. par défaut)
+      EmailChangeTimeOut(30s)
+      
+      CAS ERREUR:
+      	erreur("Une erreur s'est produite pendant l'initialisation de l'application.","Détail de l'erreur :",ErreurInfo())
+      	FinProgramme()
+     type : 458752
+   -
+     name : callbackAvancementOperation
+     internal_properties : CAAAAAgAAADbEW8Z/kxl81LkpRPFjLp+cFf3YE64vX2DDFGsChtQpc2dMk3OLFgfqbQxFMVSL3zm5THjDyPIMyQsoy91Rcjf9O4RAf6H4YbvKpVyPMH900cwGfwivQ==
+     procedure_id : 2303650781153621799
+     type_code : 15
+     code : |1+
+      procédure callbackAvancementOperation( sMessage est une chaine )
+      
+      si sMessage<>"" alors TTrace(sMessage)
+      
+      Message(sMessage)
+      Multitâche(-1)
+     type : 458752
+   -
+     name : TTrace
+     procedure_id : 1155183934531302567
+     type_code : 15
+     code : |1+
+      procédure TTrace( sMessage est une chaine )
+      
+      si gbTraceSectionCritique=faux alors retour
+      
+      nTID est un entier = ExeDonnePID(exeTID)
+      Trace("[%nTID%] - [%sMessage%]")
+     type : 458752
+  procedure_templates : []
+  property_templates : []
+ code_parameters :
+  internal_properties : CAAAAAgAAACVGQgYbalU7DKC3oH4ItDrjtcTHXXV/EuH8q0IbhyQlw==
+  original_name : COL_ProcéduresGlobales1
+resources :
+ string_res :
+  identifier : 0x1f98210c007be882
+  internal_properties : CAAAAAgAAACm76HWfKGWp33VjXInA4cRlqArlgTTA862QGt72W2ld5Y=
+custom_note :
+ internal_properties : CAAAAAgAAABtB9HWVzrXO2+4NDRVK0vmzaNKrCKqH1DBX30lMmGZ

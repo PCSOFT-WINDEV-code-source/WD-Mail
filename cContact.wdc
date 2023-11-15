@@ -1,0 +1,266 @@
+#To edit and compare internal_properties, use WINDEV integrated tools.
+#Internal properties refer to the properties of controls in windows, reports, etc.
+info :
+ name : cContact
+ major_version : 28
+ minor_version : 0
+ type : 4
+ description : ""
+ subtype : 0
+class :
+ identifier : 0x1b4dec2900ef8c70
+ internal_properties : CAAAAAgAAAB2/vstTMCJbS/hlxjFxirSqKvCUuv8YxgpWyl7S3iA
+ code_elements :
+  type_code : 10
+  p_codes :
+   -
+     code : |1+
+      
+      //
+      // Classe représentant un contact
+      //
+      cContact est une Classe <mapping=Contact>
+      
+      protegee
+      	<MAPPING>
+      	m_nIDContact	est un entier sur 8 octets	<mapping=IDContact, clé unique>
+      	m_sNom			est une chaîne UNICODE		<mapping=Nom>
+      	m_sPrenom		est une chaîne UNICODE		<mapping=Prenom>
+      	m_sAdresse		est une chaîne				<mapping=Adresse>
+      	m_CP			est une chaîne UNICODE		<mapping=CP>
+      	m_sVille		est une chaîne UNICODE		<mapping=Ville>
+      	m_sTelephone	est une chaîne UNICODE		<mapping=Telephone>
+      	m_sEmail		est une chaîne ANSI			<mapping=Email>
+      	<FIN>
+      
+      
+      FIN
+      
+     type : 131072
+  procedures :
+   -
+     name : Constructeur
+     procedure_id : 1967488273084353648
+     type_code : 27
+     code : |1-
+      PROCÉDURE Constructeur(LOCAL nIDContact est un entier sur 8 = -1)
+      
+      // Sauvegarde contexte
+      nPositionContact est un entier = HSauvePosition(Contact,"*",hSauveRubriques)
+      
+      // Sauvegarde l'ID
+      :m_nIDContact = nIDContact
+      
+      // Contact a charger ?
+      SI nIDContact <> -1 ALORS
+      	HLitRecherchePremier(Contact,IDContact,nIDContact)
+      	dbgAssertion(HTrouve(Contact),"Impossible de trouver le contact")
+      	
+      	FichierVersMémoire(objet,Contact)
+      FIN
+      
+      FIN:
+      	HRetourPosition(nPositionContact)
+     type : 589824
+   -
+     name : Destructeur
+     procedure_id : 1967488273084419184
+     type_code : 28
+     code : |1+
+      PROCÉDURE Destructeur()
+      
+     type : 655360
+   -
+     name : sauvegarde
+     procedure_id : 1967489402660884613
+     type_code : 12
+     code : |1+
+      // Résumé : Sauvegarde le contact en base
+      // Syntaxe :
+      //[ <Résultat> = ] sauvegarde ()
+      //
+      // Paramètres :
+      //	Aucun
+      // Valeur de retour :
+      // 	entier sur 8 octets : ID du contact
+      //
+      PROCÉDURE sauvegarde()
+      
+      // Sauvegarde contexte
+      nPositionContact est un entier = HSauvePosition(Contact,"*",hSauveRubriques)
+      
+      // Ajout ? Modification ?
+      SI :m_nIDContact <> -1 ALORS
+      	// Positionnement
+      	HLitRecherchePremier(Contact,IDContact,:m_nIDContact)
+      	dbgAssertion(HTrouve(Contact),"Impossible de trouver le contact")
+      SINON
+      	HRAZ(Contact)
+      FIN
+      
+      // Affectation des valeurs
+      MémoireVersFichier(objet,Contact)
+      
+      // Sauvegarde
+      HEnregistre(Contact)
+      :m_nIDContact = Contact.IDContact
+      
+      RENVOYER :m_nIDContact
+      
+      FIN:
+      	HRetourPosition(nPositionContact)
+     type : 458752
+  properties :
+   -
+     name : IDContact
+     identifier : 0x1b5440ec009801ca
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCÉDURE IDContact() : entier sur 8
+         
+         RENVOYER m_nIDContact
+        type : 1966080
+      -
+        code : |1+
+         PROCÉDURE PRIVÉ IDContact(Valeur <utile>)
+        type : 2031616
+     template_refs : []
+   -
+     name : Adresse
+     identifier : 0x1b5440f9009935c5
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCÉDURE Adresse()
+         
+         RENVOYER m_sAdresse
+        type : 1966080
+      -
+        code : |1-
+         PROCÉDURE Adresse(Valeur)
+         
+         m_sAdresse = Valeur
+        type : 2031616
+     template_refs : []
+   -
+     name : CodePostal
+     identifier : 0x1b544101009a55b3
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCÉDURE CodePostal()
+         
+         RENVOYER m_CP
+        type : 1966080
+      -
+        code : |1-
+         PROCÉDURE CodePostal(Valeur)
+         
+         m_CP = Valeur
+        type : 2031616
+     template_refs : []
+   -
+     name : Email
+     identifier : 0x1b544109009b75d1
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCÉDURE Email()
+         
+         RENVOYER m_sEmail
+        type : 1966080
+      -
+        code : |1-
+         PROCÉDURE Email(Valeur)
+         
+         m_sEmail = Valeur
+        type : 2031616
+     template_refs : []
+   -
+     name : Nom
+     identifier : 0x1b544115009ca549
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCÉDURE Nom()
+         
+         RENVOYER m_sNom
+        type : 1966080
+      -
+        code : |1-
+         PROCÉDURE Nom(Valeur)
+         
+         m_sNom = Valeur
+        type : 2031616
+     template_refs : []
+   -
+     name : Prenom
+     identifier : 0x1b54411c009dbf3f
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCÉDURE Prenom()
+         
+         RENVOYER m_sPrenom
+        type : 1966080
+      -
+        code : |1-
+         PROCÉDURE Prenom(Valeur)
+         
+         m_sPrenom = Valeur
+        type : 2031616
+     template_refs : []
+   -
+     name : Telephone
+     identifier : 0x1b544125009ee140
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCÉDURE Telephone()
+         
+         RENVOYER m_sTelephone
+        type : 1966080
+      -
+        code : |1-
+         PROCÉDURE Telephone(Valeur)
+         
+         m_sTelephone = Valeur
+        type : 2031616
+     template_refs : []
+   -
+     name : Ville
+     identifier : 0x1b54412c009ffb54
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCÉDURE Ville()
+         
+         RENVOYER m_sVille
+        type : 1966080
+      -
+        code : |1-
+         PROCÉDURE Ville(Valeur)
+         
+         m_sVille = Valeur
+        type : 2031616
+     template_refs : []
+  procedure_templates : []
+  property_templates : []
+ code_parameters :
+  internal_properties : CAAAAAgAAACVGQgYbalU7DKC3oH4ItDrjtcTHXXV/EuH8q0IbhyQlw==
+  original_name : CClasse1
+resources :
+ string_res :
+  identifier : 0x1f98210c0049e843
+  internal_properties : CAAAAAgAAACm76HWfKGWp33VjXInA4cRlqArlgTTA862QGt72W2ld5Y=
+custom_note :
+ internal_properties : CAAAAAgAAABtB9HWVzrXO2+4NDRVK0vmzaNKrCKqH1DBX30lMmGZ
